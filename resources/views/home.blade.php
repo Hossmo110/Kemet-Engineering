@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
-@section('title','KEMET')
+@section('title', 'KEMET')
 
 @section('content')
 
-@include('sections.hero')
+    @include('sections.hero')
 
-@include('sections.about')
+    @include('sections.about')
 
-@include('sections.businesses')
+    @include('sections.businesses')
 
-@include('sections.innovation')
+    @include('sections.projects')
 
-@include('sections.csr')
+    @include('sections.clients')
 
-@include('sections.contact')
+    @include('sections.contact')
 
 @endsection
