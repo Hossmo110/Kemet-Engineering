@@ -14,6 +14,9 @@
 
     @include('sections.clients')
 
-    @include('sections.contact')
+    @include('sections.news')
+
+        @include('sections.carrers')
+
 
 @endsection
