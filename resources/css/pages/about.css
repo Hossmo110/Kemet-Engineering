@@ -1,18 +1,6 @@
-
 /* =========================================================
    ABOUT US PAGE
    ========================================================= */
-
-
-/* =========================================================
-   COMMON SECTION SPACING
-   ========================================================= */
-
-.group-overview-section,
-.our-approach-section,
-.our-expertise-section {
-    background: #ffffff;
-}
 
 
 /* =========================================================
@@ -20,6 +8,7 @@
    ========================================================= */
 
 .group-overview-section {
+    background: #ffffff;
     padding: 90px 0 85px;
 }
 
@@ -29,11 +18,13 @@
 }
 
 
-/* Heading */
+/* ---------------------------------------------------------
+   Heading
+   --------------------------------------------------------- */
 
 .group-overview-heading {
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 25px;
 }
 
 .group-overview-heading h2 {
@@ -54,11 +45,13 @@
 
     background: #c9a227;
 
-    margin: 18px auto 0;
+    margin: 16px auto 0;
 }
 
 
-/* Overview Text */
+/* ---------------------------------------------------------
+   Overview Text
+   --------------------------------------------------------- */
 
 .group-overview-text {
     max-width: 1200px;
@@ -87,14 +80,18 @@
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 60px;
+    gap: 55px;
 
     width: 100%;
     max-width: 1400px;
 
-    margin: 75px auto 0;
+    margin: 65px auto 0;
 }
 
+
+/* ---------------------------------------------------------
+   Individual Pillar
+   --------------------------------------------------------- */
 
 .about-pillar {
     text-align: center;
@@ -103,9 +100,9 @@
 }
 
 
-/* =========================================================
-   PILLAR ICONS
-   ========================================================= */
+/* ---------------------------------------------------------
+   Icons
+   --------------------------------------------------------- */
 
 .pillar-icon {
     width: 130px;
@@ -135,6 +132,10 @@
 }
 
 
+/* ---------------------------------------------------------
+   Hover
+   --------------------------------------------------------- */
+
 .about-pillar:hover .pillar-icon {
     transform: translateY(-8px);
 
@@ -142,12 +143,12 @@
 }
 
 
-/* =========================================================
-   PILLAR TITLES
-   ========================================================= */
+/* ---------------------------------------------------------
+   Titles
+   --------------------------------------------------------- */
 
 .about-pillar h3 {
-    margin: 0 0 17px;
+    margin: 0 0 15px;
 
     color: #c9a227;
 
@@ -160,9 +161,9 @@
 }
 
 
-/* =========================================================
-   PILLAR DESCRIPTIONS
-   ========================================================= */
+/* ---------------------------------------------------------
+   Descriptions
+   --------------------------------------------------------- */
 
 .about-pillar p {
     max-width: 340px;
@@ -172,6 +173,7 @@
     color: #102a43;
 
     font-size: 25px;
+
     line-height: 1.75;
 
     font-weight: 400;
@@ -183,8 +185,11 @@
    ========================================================= */
 
 .our-approach-section {
-    padding: 80px 0 85px;
+    background: #ffffff;
+
+    padding: 85px 0 90px;
 }
+
 
 .our-approach-section .container {
     max-width: 2000px;
@@ -195,9 +200,9 @@
 }
 
 
-/* =========================================================
-   APPROACH HEADING
-   ========================================================= */
+/* ---------------------------------------------------------
+   Heading
+   --------------------------------------------------------- */
 
 .our-approach-heading {
     text-align: center;
@@ -205,12 +210,14 @@
     margin-bottom: 55px;
 }
 
+
 .our-approach-heading h2 {
     margin: 0;
 
     color: #c9a227;
 
     font-size: 46px;
+
     font-weight: 700;
 
     line-height: 1.2;
@@ -225,7 +232,7 @@
 
     background: #c9a227;
 
-    margin: 18px auto 22px;
+    margin: 16px auto 22px;
 }
 
 
@@ -237,6 +244,7 @@
     color: #102a43;
 
     font-size: 25px;
+
     line-height: 1.8;
 
     font-weight: 400;
@@ -244,7 +252,7 @@
 
 
 /* =========================================================
-   APPROACH GRID
+   OUR APPROACH GRID
    ========================================================= */
 
 .our-approach-grid {
@@ -256,9 +264,9 @@
 }
 
 
-/* =========================================================
-   APPROACH ITEM
-   ========================================================= */
+/* ---------------------------------------------------------
+   Image Item
+   --------------------------------------------------------- */
 
 .approach-item {
     position: relative;
@@ -271,7 +279,9 @@
 }
 
 
-/* Image */
+/* ---------------------------------------------------------
+   Image
+   --------------------------------------------------------- */
 
 .approach-item img {
     width: 100%;
@@ -281,13 +291,23 @@
 
     object-fit: cover;
 
-    transition: transform 0.6s ease;
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
 }
 
 
-/* =========================================================
-   APPROACH OVERLAY
-   ========================================================= */
+/* ---------------------------------------------------------
+   Overlay
+   --------------------------------------------------------- */
+
+/*
+   الوضع العادي:
+   التظليل خفيف حتى تظهر الصورة بشكل واضح.
+
+   Hover:
+   التظليل يزيد تدريجيًا حتى يكون النص واضحًا.
+*/
 
 .approach-overlay {
     position: absolute;
@@ -301,26 +321,46 @@
 
     padding: 35px 28px;
 
-    /*
-       Very light overlay by default.
-       This keeps the image visible.
-    */
-
     background: linear-gradient(
         to top,
-        rgba(16, 42, 67, 0.30) 0%,
-        rgba(16, 42, 67, 0.12) 35%,
-        rgba(16, 42, 67, 0.03) 70%,
-        transparent 100%
+        rgba(16, 42, 67, 0.68) 0%,
+        rgba(16, 42, 67, 0.32) 35%,
+        rgba(16, 42, 67, 0.08) 70%,
+        rgba(16, 42, 67, 0) 100%
     );
 
-    transition: background 0.45s ease;
+    transition:
+        background 0.5s ease;
 }
 
 
-/* =========================================================
-   APPROACH CONTENT
-   ========================================================= */
+/* ---------------------------------------------------------
+   Hover Overlay
+   --------------------------------------------------------- */
+
+.approach-item:hover .approach-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(16, 42, 67, 0.88) 0%,
+        rgba(16, 42, 67, 0.52) 40%,
+        rgba(16, 42, 67, 0.15) 75%,
+        rgba(16, 42, 67, 0.02) 100%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   Hover Image
+   --------------------------------------------------------- */
+
+.approach-item:hover img {
+    transform: scale(1.06);
+}
+
+
+/* ---------------------------------------------------------
+   Content
+   --------------------------------------------------------- */
 
 .approach-content {
     width: 100%;
@@ -335,11 +375,14 @@
     color: #c9a227;
 
     font-size: 30px;
+
     font-weight: 700;
 
     line-height: 1.3;
 
     letter-spacing: 0.3px;
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 
@@ -351,29 +394,12 @@
     color: #ffffff;
 
     font-size: 20px;
+
     line-height: 1.7;
 
     font-weight: 400;
-}
 
-
-/* =========================================================
-   APPROACH HOVER
-   ========================================================= */
-
-.approach-item:hover img {
-    transform: scale(1.06);
-}
-
-
-.approach-item:hover .approach-overlay {
-    background: linear-gradient(
-        to top,
-        rgba(16, 42, 67, 0.88) 0%,
-        rgba(16, 42, 67, 0.55) 40%,
-        rgba(16, 42, 67, 0.12) 75%,
-        transparent 100%
-    );
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.45);
 }
 
 
@@ -382,8 +408,11 @@
    ========================================================= */
 
 .our-expertise-section {
-    padding: 80px 0 85px;
+    background: #ffffff;
+
+    padding: 90px 0 95px;
 }
+
 
 .our-expertise-section .container {
     max-width: 2000px;
@@ -394,16 +423,16 @@
 }
 
 
-/* =========================================================
-   EXPERTISE HEADING
-   ========================================================= */
+/* ---------------------------------------------------------
+   Heading
+   --------------------------------------------------------- */
 
 .our-expertise-heading {
     text-align: center;
 
     max-width: 1000px;
 
-    margin: 0 auto 55px;
+    margin: 0 auto 60px;
 }
 
 
@@ -413,6 +442,7 @@
     color: #c9a227;
 
     font-size: 50px;
+
     font-weight: 700;
 
     line-height: 1.2;
@@ -425,7 +455,7 @@
 
     background: #c9a227;
 
-    margin: 20px auto 22px;
+    margin: 18px auto 22px;
 }
 
 
@@ -453,9 +483,9 @@
 }
 
 
-/* =========================================================
-   EXPERTISE ITEM
-   ========================================================= */
+/* ---------------------------------------------------------
+   Item
+   --------------------------------------------------------- */
 
 .expertise-item {
     position: relative;
@@ -468,7 +498,9 @@
 }
 
 
-/* Image */
+/* ---------------------------------------------------------
+   Image
+   --------------------------------------------------------- */
 
 .expertise-item img {
     width: 100%;
@@ -478,13 +510,23 @@
 
     object-fit: cover;
 
-    transition: transform 0.6s ease;
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
 }
 
 
-/* =========================================================
-   EXPERTISE OVERLAY
-   ========================================================= */
+/* ---------------------------------------------------------
+   Overlay
+   --------------------------------------------------------- */
+
+/*
+   التظليل في الوضع العادي خفيف.
+   الهدف إن الصور تفضل واضحة.
+
+   عند Hover التظليل يزيد
+   علشان العنوان الذهبي يبقى واضح جدًا.
+*/
 
 .expertise-item::after {
     content: "";
@@ -493,41 +535,48 @@
 
     inset: 0;
 
-    pointer-events: none;
-
     background: linear-gradient(
         to top,
-        rgba(16, 42, 67, 0.30),
-        rgba(16, 42, 67, 0.10),
-        rgba(16, 42, 67, 0)
+        rgba(16, 42, 67, 0.70) 0%,
+        rgba(16, 42, 67, 0.32) 35%,
+        rgba(16, 42, 67, 0.08) 70%,
+        rgba(16, 42, 67, 0) 100%
     );
 
-    transition: background 0.45s ease;
+    pointer-events: none;
+
+    transition:
+        background 0.5s ease;
 }
 
 
-/* =========================================================
-   EXPERTISE HOVER
-   ========================================================= */
+/* ---------------------------------------------------------
+   Hover Overlay
+   --------------------------------------------------------- */
+
+.expertise-item:hover::after {
+    background: linear-gradient(
+        to top,
+        rgba(16, 42, 67, 0.90) 0%,
+        rgba(16, 42, 67, 0.55) 40%,
+        rgba(16, 42, 67, 0.15) 75%,
+        rgba(16, 42, 67, 0.02) 100%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   Hover Image
+   --------------------------------------------------------- */
 
 .expertise-item:hover img {
     transform: scale(1.07);
 }
 
 
-.expertise-item:hover::after {
-    background: linear-gradient(
-        to top,
-        rgba(16, 42, 67, 0.92),
-        rgba(16, 42, 67, 0.55),
-        rgba(16, 42, 67, 0.10)
-    );
-}
-
-
-/* =========================================================
-   EXPERTISE CONTENT
-   ========================================================= */
+/* ---------------------------------------------------------
+   Content
+   --------------------------------------------------------- */
 
 .expertise-content {
     position: absolute;
@@ -542,28 +591,41 @@
 }
 
 
+/* ---------------------------------------------------------
+   Title
+   --------------------------------------------------------- */
+
 .expertise-content h3 {
     margin: 0 0 14px;
 
     color: #c9a227;
 
     font-size: 32px;
+
     font-weight: 700;
 
     line-height: 1.3;
+
+    text-shadow: 0 2px 9px rgba(0, 0, 0, 0.45);
 }
 
 
-.expertise-content p {
-    max-width: 520px;
+/* ---------------------------------------------------------
+   Description
+   --------------------------------------------------------- */
 
+.expertise-content p {
     margin: 0;
 
-    color: rgba(255, 255, 255, 0.92);
+    max-width: 520px;
+
+    color: rgba(255, 255, 255, 0.96);
 
     font-size: 20px;
 
     line-height: 1.7;
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -577,14 +639,12 @@
     margin: 0;
 
     padding: 0;
-
-    background: #ffffff;
 }
 
 
-/* =========================================================
-   COMMITMENT BACKGROUND
-   ========================================================= */
+/* ---------------------------------------------------------
+   Background
+   --------------------------------------------------------- */
 
 .commitment-responsibility-background {
     position: relative;
@@ -617,9 +677,9 @@
 }
 
 
-/* =========================================================
-   COMMITMENT OVERLAY
-   ========================================================= */
+/* ---------------------------------------------------------
+   Overlay
+   --------------------------------------------------------- */
 
 .commitment-responsibility-overlay {
     position: absolute;
@@ -630,13 +690,13 @@
 
     background: linear-gradient(
         90deg,
-        rgba(16, 42, 67, 0.60) 0%,
-        rgba(16, 42, 67, 0.38) 35%,
-        rgba(16, 42, 67, 0.10) 65%,
+        rgba(16, 42, 67, 0.72) 0%,
+        rgba(16, 42, 67, 0.48) 35%,
+        rgba(16, 42, 67, 0.12) 65%,
         rgba(16, 42, 67, 0) 100%
     );
 
-    opacity: 0.65;
+    opacity: 0.60;
 
     transition: opacity 0.45s ease;
 }
@@ -648,9 +708,9 @@
 }
 
 
-/* =========================================================
-   COMMITMENT CONTENT
-   ========================================================= */
+/* ---------------------------------------------------------
+   Content
+   --------------------------------------------------------- */
 
 .commitment-responsibility-content {
     position: relative;
@@ -669,7 +729,9 @@
 }
 
 
-/* Label */
+/* ---------------------------------------------------------
+   Label
+   --------------------------------------------------------- */
 
 .commitment-responsibility-label {
     display: block;
@@ -685,10 +747,14 @@
     letter-spacing: 2.5px;
 
     text-align: left;
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 
-/* Heading */
+/* ---------------------------------------------------------
+   Heading
+   --------------------------------------------------------- */
 
 .commitment-responsibility-content h2 {
     max-width: 720px;
@@ -706,6 +772,8 @@
     letter-spacing: 0.3px;
 
     text-align: left;
+
+    text-shadow: 0 2px 9px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -716,20 +784,23 @@
 }
 
 
-/* Line */
+/* ---------------------------------------------------------
+   Heading Line
+   --------------------------------------------------------- */
 
 .commitment-responsibility-line {
     width: 65px;
-
     height: 3px;
 
-    margin: 25px 0 28px;
+    margin: 22px 0 26px;
 
     background: #c9a227;
 }
 
 
-/* Description */
+/* ---------------------------------------------------------
+   Description
+   --------------------------------------------------------- */
 
 .commitment-responsibility-content > p {
     max-width: 760px;
@@ -745,12 +816,14 @@
     font-weight: 400;
 
     text-align: left;
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
 
-/* =========================================================
-   COMMITMENT VALUES
-   ========================================================= */
+/* ---------------------------------------------------------
+   Values
+   --------------------------------------------------------- */
 
 .commitment-responsibility-values {
     display: grid;
@@ -766,6 +839,10 @@
     text-align: left;
 }
 
+
+/* ---------------------------------------------------------
+   Individual Value
+   --------------------------------------------------------- */
 
 .commitment-responsibility-value {
     padding-left: 20px;
@@ -810,6 +887,8 @@
     font-weight: 400;
 
     text-align: left;
+
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -822,9 +901,7 @@
 
     background: #ffffff;
 
-    padding: 25px 60px 30px;
-
-    margin: 0;
+    padding: 35px 60px;
 }
 
 
@@ -841,7 +918,9 @@
 }
 
 
-/* Links */
+/* ---------------------------------------------------------
+   Links
+   --------------------------------------------------------- */
 
 .page-nav-link {
     display: inline-flex;
@@ -864,12 +943,15 @@
 }
 
 
-/* Arrow */
+/* ---------------------------------------------------------
+   Arrow
+   --------------------------------------------------------- */
 
 .page-nav-arrow {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     color: #D6A93D;
@@ -884,21 +966,19 @@
 }
 
 
-/* Home Hover */
+/* ---------------------------------------------------------
+   Navigation Hover
+   --------------------------------------------------------- */
 
 .page-nav-prev:hover .page-nav-arrow {
     transform: translateX(-8px);
 }
 
 
-/* Our Businesses Hover */
-
 .page-nav-next:hover .page-nav-arrow {
     transform: translateX(8px);
 }
 
-
-/* Text Hover */
 
 .page-nav-link:hover {
     color: #0F214D;
@@ -906,7 +986,7 @@
 
 
 /* =========================================================
-   TABLET
+   RESPONSIVE
    ========================================================= */
 
 @media (max-width: 1200px) {
@@ -916,32 +996,20 @@
         max-width: 1100px;
     }
 
-
     .our-approach-grid {
         grid-template-columns: repeat(2, 1fr);
 
         gap: 25px;
     }
 
-
     .approach-item {
         height: 430px;
-    }
-
-
-    .our-expertise-grid {
-        gap: 25px;
-    }
-
-
-    .expertise-item {
-        height: 450px;
     }
 }
 
 
 /* =========================================================
-   TABLET / SMALL LAPTOP
+   TABLET
    ========================================================= */
 
 @media (max-width: 991px) {
@@ -952,11 +1020,9 @@
         padding: 75px 20px 70px;
     }
 
-
     .group-overview-heading h2 {
         font-size: 40px;
     }
-
 
     .group-overview-text {
         font-size: 18px;
@@ -966,69 +1032,69 @@
         padding: 0 20px;
     }
 
-
     .about-pillars {
         grid-template-columns: 1fr;
 
         gap: 55px;
 
-        margin-top: 65px;
+        margin-top: 60px;
     }
-
 
     .about-pillar p {
         max-width: 600px;
     }
 
 
-    /* Approach */
+    /* Our Approach */
 
     .our-approach-section {
-        padding: 70px 20px 75px;
+        padding: 75px 20px 80px;
     }
-
 
     .our-approach-heading {
         margin-bottom: 45px;
     }
 
-
     .our-approach-heading h2 {
         font-size: 40px;
     }
-
 
     .our-approach-heading p {
         font-size: 18px;
     }
 
+    .our-approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 20px;
+    }
 
     .approach-item {
         height: 400px;
     }
 
 
-    /* Expertise */
+    /* Our Expertise */
 
     .our-expertise-section {
-        padding: 70px 30px 75px;
+        padding: 80px 30px 85px;
     }
-
 
     .our-expertise-section .container {
         width: 100%;
     }
 
+    .our-expertise-heading {
+        margin-bottom: 50px;
+    }
 
     .our-expertise-heading h2 {
         font-size: 42px;
     }
 
-
     .our-expertise-heading p {
         font-size: 18px;
     }
-
 
     .our-expertise-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1036,20 +1102,15 @@
         gap: 25px;
     }
 
-
     .expertise-item {
         height: 450px;
     }
 
-
     .expertise-content {
         left: 30px;
-
         right: 30px;
-
         bottom: 30px;
     }
-
 
     .expertise-content h3 {
         font-size: 28px;
@@ -1062,23 +1123,19 @@
         min-height: auto;
     }
 
-
     .commitment-responsibility-content {
         padding: 75px 35px;
 
         text-align: left;
     }
 
-
     .commitment-responsibility-content h2 {
         font-size: 42px;
     }
 
-
     .commitment-responsibility-content > p {
         font-size: 18px;
     }
-
 
     .commitment-responsibility-values {
         grid-template-columns: 1fr;
@@ -1086,13 +1143,6 @@
         gap: 28px;
 
         max-width: 700px;
-    }
-
-
-    /* Navigation */
-
-    .page-navigation-section {
-        padding: 25px 35px 30px;
     }
 }
 
@@ -1106,28 +1156,24 @@
     /* Group Overview */
 
     .group-overview-section {
-        padding: 60px 20px 60px;
+        padding: 60px 20px 65px;
     }
-
 
     .group-overview-heading {
         margin-bottom: 22px;
     }
 
-
     .group-overview-heading h2 {
         font-size: 32px;
     }
-
 
     .heading-line {
         width: 45px;
 
         height: 3px;
 
-        margin-top: 14px;
+        margin-top: 13px;
     }
-
 
     .group-overview-text {
         font-size: 16px;
@@ -1137,36 +1183,29 @@
         padding: 0;
     }
 
-
     .about-pillars {
         gap: 50px;
 
         margin-top: 55px;
     }
 
-
     .pillar-icon {
         width: 110px;
-
         height: 110px;
 
         margin-bottom: 20px;
     }
 
-
     .pillar-icon svg {
         width: 100px;
-
         height: 100px;
     }
-
 
     .about-pillar h3 {
         font-size: 26px;
 
-        margin-bottom: 14px;
+        margin-bottom: 13px;
     }
-
 
     .about-pillar p {
         font-size: 15px;
@@ -1175,33 +1214,29 @@
     }
 
 
-    /* Approach */
+    /* Our Approach */
 
     .our-approach-section {
         padding: 60px 20px 65px;
     }
 
-
     .our-approach-heading {
         margin-bottom: 35px;
     }
 
-
     .our-approach-heading h2 {
         font-size: 32px;
     }
-
 
     .approach-heading-line {
         width: 45px;
 
         height: 3px;
 
-        margin-top: 14px;
+        margin-top: 13px;
 
         margin-bottom: 18px;
     }
-
 
     .our-approach-heading p {
         font-size: 16px;
@@ -1209,28 +1244,23 @@
         line-height: 1.8;
     }
 
-
     .our-approach-grid {
         grid-template-columns: 1fr;
 
         gap: 18px;
     }
 
-
     .approach-item {
         height: 350px;
     }
-
 
     .approach-overlay {
         padding: 25px 22px;
     }
 
-
     .approach-content h3 {
         font-size: 26px;
     }
-
 
     .approach-content p {
         max-width: 100%;
@@ -1241,29 +1271,25 @@
     }
 
 
-    /* Expertise */
+    /* Our Expertise */
 
     .our-expertise-section {
-        padding: 60px 20px 65px;
+        padding: 65px 20px 70px;
     }
-
 
     .our-expertise-heading {
         margin-bottom: 40px;
     }
 
-
     .our-expertise-heading h2 {
         font-size: 34px;
     }
 
-
     .our-expertise-heading p {
-        font-size: 16px;
+        font-size: 17px;
 
         line-height: 1.8;
     }
-
 
     .our-expertise-grid {
         grid-template-columns: 1fr;
@@ -1271,25 +1297,19 @@
         gap: 18px;
     }
 
-
     .expertise-item {
         height: 420px;
     }
 
-
     .expertise-content {
         left: 25px;
-
         right: 25px;
-
         bottom: 25px;
     }
-
 
     .expertise-content h3 {
         font-size: 26px;
     }
-
 
     .expertise-content p {
         font-size: 15px;
@@ -1304,13 +1324,11 @@
         padding: 60px 25px;
     }
 
-
     .commitment-responsibility-label {
         font-size: 13px;
 
         letter-spacing: 1.8px;
     }
-
 
     .commitment-responsibility-content h2 {
         font-size: 34px;
@@ -1318,11 +1336,9 @@
         line-height: 1.25;
     }
 
-
     .commitment-responsibility-line {
-        margin: 20px 0 23px;
+        margin: 18px 0 22px;
     }
-
 
     .commitment-responsibility-content > p {
         font-size: 16px;
@@ -1330,23 +1346,19 @@
         line-height: 1.8;
     }
 
-
     .commitment-responsibility-values {
         margin-top: 38px;
 
         gap: 24px;
     }
 
-
     .commitment-responsibility-value {
         padding-left: 16px;
     }
 
-
     .commitment-responsibility-value h3 {
         font-size: 20px;
     }
-
 
     .commitment-responsibility-value p {
         font-size: 15px;
@@ -1356,14 +1368,8 @@
     /* Page Navigation */
 
     .page-navigation-section {
-        padding: 20px 20px 25px;
+        padding: 25px 20px;
     }
-
-
-    .page-navigation {
-        gap: 15px;
-    }
-
 
     .page-nav-link {
         gap: 10px;
@@ -1371,9 +1377,7 @@
         font-size: 18px;
     }
 
-
     .page-nav-arrow {
         font-size: 30px;
     }
-
 }
