@@ -1,6 +1,8 @@
+<!-- Hero -->
+
 <section class="hero">
 
-    <img src="{{ asset('images/hero.png') }}" alt="Hero Image" class="hero-image">
+    <img src="{{ asset($heroImage ?? 'images/hero.png') }}" alt="Hero Image" class="hero-image">
 
     <div class="hero-overlay"></div>
 
@@ -19,7 +21,7 @@
                 with Excellence
 
             </h1>
-             <div class="hero-line"></div>
+            <div class="hero-line"></div>
             <p>
 
                 Delivering innovative engineering and construction

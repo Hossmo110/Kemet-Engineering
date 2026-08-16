@@ -1,0 +1,173 @@
+/*==========================
+LATEST PROJECTS
+==========================*/
+
+.projects-section {
+    background: #fff;
+    padding: 120px 0;
+}
+
+.projectsSwiper {
+    width: 100%;
+    margin-top: 60px;
+    overflow: hidden;
+}
+
+.projectsSwiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+.projectsSwiper .swiper-slide {
+    height: auto;
+    transition: transform .4s ease;
+}
+
+.project-card {
+    position: relative;
+    height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 30px;
+
+    background: linear-gradient(to top,
+            rgba(15, 33, 77, .92),
+            rgba(15, 33, 77, .35),
+            transparent);
+
+    opacity: 0;
+    transition: opacity .4s ease;
+}
+
+.project-overlay span {
+    color: #D6A93D;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.project-overlay h3 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.project-card:hover img {
+    transform: scale(1.08);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+
+/*==========================
+PROJECT NAVIGATION
+==========================*/
+
+.projects-navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+    padding-right: 5%;
+}
+
+.project-arrow {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 55px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #0F214D;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.project-arrow svg {
+    width: 65px;
+    height: 30px;
+
+    display: block;
+
+    transition: .3s ease;
+}
+
+.project-arrow:hover {
+    color: #D6A93D;
+}
+
+.project-prev:hover svg {
+    transform: translateX(-6px);
+}
+
+.project-next:hover svg {
+    transform: translateX(6px);
+}
+
+
+/*==========================
+PROJECT MOBILE
+==========================*/
+
+@media (max-width: 767px) {
+
+    .projects-navigation {
+        margin-top: 25px;
+
+        padding-right: 20px;
+
+        gap: 10px;
+    }
+
+    .project-arrow {
+        width: 55px;
+        height: 45px;
+    }
+
+    .project-arrow svg {
+        width: 55px;
+        height: 25px;
+    }
+
+}
+
+

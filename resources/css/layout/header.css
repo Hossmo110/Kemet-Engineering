@@ -1,0 +1,146 @@
+/*==========================
+KEMET HEADER
+==========================*/
+
+/*========================
+HEADER
+========================*/
+/* ==========================
+   HEADER
+========================== */
+
+.site-header {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    z-index: 9999;
+
+    padding: 18px 0;
+
+    transition: .4s;
+
+}
+
+.site-header.scrolled {
+
+    background: #ffffff;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .08);
+
+    padding: 10px 0;
+
+}
+
+.header-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+.logo img {
+
+    height: 185px;
+
+    transition: .4s;
+
+}
+
+.site-header.scrolled .logo img {
+
+    height: 120px;
+
+}
+
+nav {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+.nav-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 38px;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+.nav-menu a {
+
+    color: #fff;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: .3s;
+
+}
+
+.site-header.scrolled .nav-menu a {
+
+    color: #0F214D;
+
+}
+
+.nav-menu a:hover {
+
+    color: #D6A93D;
+
+}
+
+.active {
+
+    color: #D6A93D !important;
+
+}
+
+.header-btn {
+
+    background: #D6A93D;
+
+    color: #fff;
+
+    padding: 15px 34px;
+
+    border-radius: 4px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+.header-btn:hover {
+
+    background: #fff;
+
+    color: #0F214D;
+
+}

@@ -1,0 +1,230 @@
+/*==========================
+CAREERS
+==========================*/
+
+.careers-section {
+    width: 100%;
+    padding: 0;
+    background: #fff;
+}
+
+
+/*==========================
+CAREERS IMAGE
+==========================*/
+
+.careers-image {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+
+.careers-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform .6s ease;
+}
+
+
+
+
+
+/*==========================
+CAREERS CONTENT
+==========================*/
+
+.careers-content {
+    position: absolute;
+
+    top: 50%;
+    left: 8%;
+
+    transform: translateY(-50%);
+
+    width: 650px;
+    max-width: 80%;
+
+    color: #fff;
+}
+
+
+.careers-subtitle {
+    display: block;
+
+    color: #D6A93D;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+}
+
+
+.careers-content h2 {
+    margin: 0 0 25px;
+
+    color: #fff;
+
+    font-size: 55px;
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+
+.careers-content p {
+    margin: 0 0 35px;
+
+    color: #eee;
+
+    font-size: 21px;
+    font-weight: 400;
+
+    line-height: 1.8;
+
+    max-width: 700px;
+}
+
+
+/*==========================
+CAREERS BUTTON
+==========================*/
+
+.careers-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    padding: 16px 30px;
+
+    background: #D6A93D;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    transition: .3s ease;
+}
+
+
+.careers-btn span {
+    font-size: 25px;
+
+    line-height: 1;
+
+    transition: transform .3s ease;
+}
+
+
+.careers-btn:hover {
+    background: #fff;
+    color: #0F214D;
+}
+
+
+.careers-btn:hover span {
+    transform: translateX(5px);
+}
+
+
+/*==========================
+HOVER IMAGE
+==========================*/
+
+.careers-image:hover img {
+    transform: scale(1.03);
+}
+
+
+/*==========================
+TABLET
+==========================*/
+
+@media (max-width: 1199px) {
+
+    .careers-image {
+        height: 550px;
+    }
+
+    .careers-content {
+        left: 7%;
+        width: 600px;
+    }
+
+    .careers-content h2 {
+        font-size: 48px;
+    }
+
+    .careers-content p {
+        font-size: 19px;
+    }
+
+}
+
+
+/*==========================
+MOBILE
+==========================*/
+
+@media (max-width: 767px) {
+
+    .careers-image {
+        height: 600px;
+    }
+
+    .careers-overlay {
+        background: rgba(15, 33, 77, .78);
+    }
+
+    .careers-content {
+        left: 25px;
+        right: 25px;
+
+        width: auto;
+        max-width: none;
+    }
+
+    .careers-subtitle {
+        font-size: 18px;
+        letter-spacing: 3px;
+
+        margin-bottom: 15px;
+    }
+
+    .careers-content h2 {
+        font-size: 38px;
+        line-height: 1.2;
+
+        margin-bottom: 20px;
+    }
+
+    .careers-content p {
+        font-size: 17px;
+        line-height: 1.7;
+
+        margin-bottom: 30px;
+    }
+
+    .careers-btn {
+        padding: 14px 25px;
+        font-size: 16px;
+    }
+
+}
