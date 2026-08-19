@@ -1,8 +1,13 @@
+
 <!-- Hero -->
 
 <section class="hero">
 
-    <img src="{{ asset($heroImage ?? 'images/hero.png') }}" alt="Hero Image" class="hero-image">
+    <img
+        src="{{ asset($heroImage ?? 'images/hero.png') }}"
+        alt="Hero Image"
+        class="hero-image"
+    >
 
     <div class="hero-overlay"></div>
 
@@ -10,40 +15,100 @@
 
         <div class="hero-content">
 
-            <span>
-                KEMET ENGINEERING
-            </span>
+            @if(isset($hideHeroContent) && $hideHeroContent)
 
-            <h1>
+                {{-- Custom Hero Content --}}
 
-                Building the Future
-                <br>
-                with Excellence
+                @if(!empty($heroTitle))
 
-            </h1>
-            <div class="hero-line"></div>
-            <p>
+                    <h1>
+                        {!! nl2br(e($heroTitle)) !!}
+                    </h1>
 
-                Delivering innovative engineering and construction
-                solutions with the highest standards of quality.
+                @endif
 
-            </p>
+                @if(!empty($heroSubtitle))
 
-            <div class="hero-buttons">
+                    <p>
+                        {{ $heroSubtitle }}
+                    </p>
 
-                <a href="#" class="gold-btn">
+                @endif
 
-                    EXPLORE PROJECTS
+                @if(!empty($heroPrimaryText) || !empty($heroSecondaryText))
 
-                </a>
+                    <div class="hero-buttons">
 
-                <a href="#" class="outline-btn">
+                        @if(!empty($heroPrimaryText))
 
-                    CONTACT US
+                            <a
+                                href="{{ $heroPrimaryUrl ?? '#' }}"
+                                class="gold-btn"
+                            >
+                                {{ $heroPrimaryText }}
+                            </a>
 
-                </a>
+                        @endif
 
-            </div>
+                        @if(!empty($heroSecondaryText))
+
+                            <a
+                                href="{{ $heroSecondaryUrl ?? '#' }}"
+                                class="outline-btn"
+                            >
+                                {{ $heroSecondaryText }}
+                            </a>
+
+                        @endif
+
+                    </div>
+
+                @endif
+
+            @else
+
+                {{-- =================================================
+                     DEFAULT HOME HERO
+                     ================================================= --}}
+
+                <span>
+                    KEMET ENGINEERING
+                </span>
+
+                <h1>
+
+                    Building the Future
+                    <br>
+                    with Excellence
+
+                </h1>
+
+                <div class="hero-line"></div>
+
+                <p>
+
+                    Delivering innovative engineering and construction
+                    solutions with the highest standards of quality.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#" class="gold-btn">
+
+                        EXPLORE PROJECTS
+
+                    </a>
+
+                    <a href="#" class="outline-btn">
+
+                        CONTACT US
+
+                    </a>
+
+                </div>
+
+            @endif
 
         </div>
 

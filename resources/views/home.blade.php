@@ -738,6 +738,29 @@ CAREERS
 
     </div>
 
+
+    {{-- =========================================================
+     PAGE NAVIGATION
+     ========================================================= --}}
+    <section class="businesses-page-navigation">
+
+        <a href="{{ url('/about-us') }}" class="businesses-page-nav-link">
+
+
+
+        <a href="{{ url('/innovation') }}" class="businesses-page-nav-link">
+
+            <span>
+                About Us
+            </span>
+
+            <span class="businesses-page-nav-arrow">
+                →
+            </span>
+
+        </a>
+
+
 </section>
 
 

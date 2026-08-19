@@ -1,0 +1,1426 @@
+
+/* =========================================================
+   KEMET ENGINEERING
+   OUR BUSINESSES PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+
+    --business-navy: #102a43;
+    --business-navy-dark: #0b2036;
+
+    --business-gold: #c9a227;
+    --business-gold-light: #d6a93d;
+
+    --business-white: #ffffff;
+    --business-light: #f6f6f4;
+
+    --business-text: #102a43;
+
+}
+
+
+/* =========================================================
+   GLOBAL CONTAINER
+   ========================================================= */
+
+.businesses-container {
+
+    width: 92%;
+
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.businesses-hero {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+
+    min-height: 650px;
+
+    overflow: hidden;
+
+    background: var(--business-navy);
+
+}
+
+
+.businesses-hero-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+}
+
+
+.businesses-hero-overlay {
+    display: none;
+}
+
+.businesses-hero-content {
+
+    position: absolute;
+
+    z-index: 2;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+
+    padding: 0 50px;
+
+    text-align: center;
+
+}
+
+
+.businesses-hero-content h1 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 58px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.5px;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.55);
+
+    animation: businessesHeroAnimation 0.9s ease forwards;
+
+}
+
+
+@keyframes businessesHeroAnimation {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.businesses-intro-section {
+
+    background: #ffffff;
+
+    padding: 110px 0 100px;
+
+}
+
+
+.businesses-intro-label {
+
+    margin-bottom: 20px;
+
+    color: var(--business-gold);
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-align: center;
+
+}
+
+
+.businesses-intro-title {
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    color: var(--business-navy);
+
+    font-size: 45px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+}
+
+
+.businesses-intro-title span {
+
+    color: var(--business-gold);
+
+}
+
+
+.businesses-intro-line {
+
+    width: 60px;
+
+    height: 3px;
+
+    margin: 22px auto 35px;
+
+    background: var(--business-gold);
+
+}
+
+
+.businesses-intro-text {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+}
+
+
+.businesses-intro-text p {
+
+    margin: 0 auto 22px;
+
+    color: #263f56;
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    line-height: 1.85;
+
+}
+
+
+.businesses-intro-text p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   BUSINESS COMPANY SECTION
+   ========================================================= */
+
+.business-company {
+
+    position: relative;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    padding: 110px 0;
+
+}
+
+
+.business-company-dark {
+
+    background: var(--business-navy);
+
+}
+
+
+.business-company-container {
+
+    width: 92%;
+
+    max-width: 1700px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+    gap: 90px;
+
+    align-items: center;
+
+}
+
+
+.business-company-reverse {
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+}
+
+
+.business-company-reverse .business-company-media {
+
+    order: 2;
+
+}
+
+
+.business-company-reverse .business-company-content {
+
+    order: 1;
+
+}
+
+
+/* =========================================================
+   BUSINESS IMAGE
+   ========================================================= */
+
+.business-company-media {
+
+    position: relative;
+
+}
+
+
+.business-company-main-image {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 620px;
+
+    overflow: hidden;
+
+    background: #dddddd;
+
+}
+
+
+/* التظليل الكحلي فوق الصور تم حذفه فقط */
+
+
+.business-company-main-image img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+
+}
+
+
+.business-company-media:hover
+.business-company-main-image img {
+
+    transform: scale(1.05);
+
+    filter: brightness(0.94);
+
+}
+
+
+.business-company-image-caption {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    z-index: 2;
+
+    padding: 16px 25px;
+
+    background: var(--business-gold);
+
+    color: var(--business-navy);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================================
+   BUSINESS CONTENT
+   ========================================================= */
+
+.business-company-content {
+
+    max-width: 700px;
+
+}
+
+
+.business-company-number {
+
+    margin-bottom: 18px;
+
+    color: var(--business-gold);
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+.business-company-content h2 {
+
+    margin: 0;
+
+    color: var(--business-navy);
+
+    font-size: 52px;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+
+}
+
+
+.business-company-dark
+.business-company-content h2 {
+
+    color: #ffffff;
+
+}
+
+
+.business-company-content h2 span {
+
+    color: var(--business-gold);
+
+}
+
+
+.business-company-line {
+
+    width: 60px;
+
+    height: 3px;
+
+    margin: 22px 0 30px;
+
+    background: var(--business-gold);
+
+}
+
+
+.business-company-content p {
+
+    margin: 0 0 20px;
+
+    color: #30495f;
+
+    font-size: 19px;
+
+    line-height: 1.85;
+
+}
+
+
+.business-company-dark
+.business-company-content p {
+
+    color: rgba(255, 255, 255, 0.88);
+
+}
+
+
+/* =========================================================
+   BUSINESS INFO
+   ========================================================= */
+
+.business-company-info {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 0;
+
+    margin-top: 42px;
+
+    border-top: 1px solid rgba(16, 42, 67, 0.18);
+
+    border-bottom: 1px solid rgba(16, 42, 67, 0.18);
+
+}
+
+
+.business-company-dark
+.business-company-info {
+
+    border-top-color: rgba(255, 255, 255, 0.20);
+
+    border-bottom-color: rgba(255, 255, 255, 0.20);
+
+}
+
+
+.business-info-item {
+
+    min-height: 105px;
+
+    padding: 20px 22px;
+
+    border-right: 1px solid rgba(16, 42, 67, 0.18);
+
+}
+
+
+.business-info-item:last-child {
+
+    border-right: none;
+
+}
+
+
+.business-company-dark
+.business-info-item {
+
+    border-right-color: rgba(255, 255, 255, 0.20);
+
+}
+
+
+.business-info-item strong {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--business-gold);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+}
+
+
+.business-info-item span {
+
+    display: block;
+
+    color: var(--business-navy);
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+}
+
+
+.business-company-dark
+.business-info-item span {
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   BUSINESS BUTTON
+   ========================================================= */
+
+.business-company-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 38px;
+
+    padding: 15px 0;
+
+    color: var(--business-gold);
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+    border-bottom: 2px solid var(--business-gold);
+
+    transition:
+        color 0.3s ease,
+        gap 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+.business-company-button span {
+
+    font-size: 25px;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+}
+
+
+.business-company-button:hover {
+
+    gap: 28px;
+
+    color: var(--business-navy);
+
+    border-color: var(--business-navy);
+
+}
+
+
+.business-company-dark
+.business-company-button:hover {
+
+    color: #ffffff;
+
+    border-color: #ffffff;
+
+}
+
+
+/* =========================================================
+   INTEGRATED APPROACH
+   ========================================================= */
+
+.businesses-integrated-section {
+
+    position: relative;
+
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 100px 30px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b2036,
+            #102a43
+        );
+
+}
+
+
+.businesses-integrated-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(201, 162, 39, 0.13),
+            transparent 35%
+        );
+
+    pointer-events: none;
+
+}
+
+
+.businesses-integrated-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+}
+
+
+.businesses-integrated-label {
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: var(--business-gold);
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+.businesses-integrated-content h2 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 45px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+}
+
+
+.businesses-integrated-content h2 span {
+
+    color: var(--business-gold);
+
+}
+
+
+.businesses-integrated-line {
+
+    width: 65px;
+
+    height: 3px;
+
+    margin: 25px auto 30px;
+
+    background: var(--business-gold);
+
+}
+
+
+.businesses-integrated-content p {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 25px;
+
+    line-height: 1.85;
+
+}
+
+
+.businesses-integrated-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 40px;
+
+    padding: 16px 35px;
+
+    border: 1px solid var(--business-gold);
+
+    color: var(--business-gold);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+.businesses-integrated-button:hover {
+
+    background: var(--business-gold);
+
+    color: var(--business-navy);
+
+}
+
+
+/* =========================================================
+   PAGE NAVIGATION
+   ========================================================= */
+
+.businesses-page-navigation {
+
+    width: 100%;
+
+    padding: 35px 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background: #ffffff;
+
+}
+
+
+.businesses-page-nav-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    color: var(--business-gold-light);
+
+    font-size: 40px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease;
+
+}
+
+
+.businesses-page-nav-arrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 45px;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.businesses-page-nav-link:hover {
+
+    color: var(--business-navy);
+
+}
+
+
+.businesses-page-nav-link:first-child:hover
+.businesses-page-nav-arrow {
+
+    transform: translateX(-8px);
+
+}
+
+
+.businesses-page-nav-link:last-child:hover
+.businesses-page-nav-arrow {
+
+    transform: translateX(8px);
+
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .business-company-container {
+
+        width: 90%;
+
+        gap: 55px;
+
+    }
+
+
+    .business-company-main-image {
+
+        height: 540px;
+
+    }
+
+
+    .business-company-content h2 {
+
+        font-size: 45px;
+
+    }
+
+
+    .business-company-content p {
+
+        font-size: 18px;
+
+    }
+
+
+    .business-info-item {
+
+        padding: 18px 15px;
+
+    }
+
+
+    .business-info-item span {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    /* Hero */
+
+    .businesses-hero {
+
+        height: 75vh;
+
+        min-height: 550px;
+
+    }
+
+
+    .businesses-hero-content {
+
+        padding: 0 30px;
+
+    }
+
+
+    .businesses-hero-content h1 {
+
+        font-size: 46px;
+
+    }
+
+
+    /* Intro */
+
+    .businesses-intro-section {
+
+        padding: 80px 0;
+
+    }
+
+
+    .businesses-container {
+
+        width: 88%;
+
+    }
+
+
+    .businesses-intro-title {
+
+        font-size: 42px;
+
+    }
+
+
+    .businesses-intro-text p {
+
+        font-size: 18px;
+
+    }
+
+
+    /* Businesses */
+
+    .business-company {
+
+        padding: 80px 0;
+
+    }
+
+
+    .business-company-container,
+    .business-company-reverse {
+
+        width: 88%;
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .business-company-reverse .business-company-media {
+
+        order: 1;
+
+    }
+
+
+    .business-company-reverse .business-company-content {
+
+        order: 2;
+
+    }
+
+
+    .business-company-main-image {
+
+        height: 500px;
+
+    }
+
+
+    .business-company-content {
+
+        max-width: none;
+
+    }
+
+
+    .business-company-content h2 {
+
+        font-size: 42px;
+
+    }
+
+
+    .business-company-content p {
+
+        font-size: 18px;
+
+    }
+
+
+    /* Integrated */
+
+    .businesses-integrated-section {
+
+        min-height: 520px;
+
+        padding: 80px 30px;
+
+    }
+
+
+    .businesses-integrated-content h2 {
+
+        font-size: 44px;
+
+    }
+
+
+    .businesses-integrated-content p {
+
+        font-size: 18px;
+
+    }
+
+
+    /* Navigation */
+
+    .businesses-page-navigation {
+
+        padding: 30px 35px;
+
+    }
+
+
+    .businesses-page-nav-link {
+
+        font-size: 23px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 576px) {
+
+    /* Hero */
+
+    .businesses-hero {
+
+        height: 70vh;
+
+        min-height: 500px;
+
+    }
+
+
+    .businesses-hero-content {
+
+        padding: 0 20px;
+
+    }
+
+
+    .businesses-hero-content h1 {
+
+        font-size: 32px;
+
+        line-height: 1.3;
+
+    }
+
+
+    /* Intro */
+
+    .businesses-intro-section {
+
+        padding: 65px 0 60px;
+
+    }
+
+
+    .businesses-container {
+
+        width: 88%;
+
+    }
+
+
+    .businesses-intro-label {
+
+        margin-bottom: 15px;
+
+        font-size: 13px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .businesses-intro-title {
+
+        font-size: 32px;
+
+        line-height: 1.3;
+
+    }
+
+
+    .businesses-intro-line {
+
+        width: 45px;
+
+        margin: 15px auto 25px;
+
+    }
+
+
+    .businesses-intro-text p {
+
+        font-size: 16px;
+
+        line-height: 1.8;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    /* Business */
+
+    .business-company {
+
+        padding: 60px 0;
+
+    }
+
+
+    .business-company-container,
+    .business-company-reverse {
+
+        width: 88%;
+
+        gap: 35px;
+
+    }
+
+
+    .business-company-main-image {
+
+        height: 350px;
+
+    }
+
+
+    .business-company-image-caption {
+
+        padding: 12px 16px;
+
+        font-size: 11px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+
+    .business-company-number {
+
+        margin-bottom: 12px;
+
+        font-size: 16px;
+
+    }
+
+
+    .business-company-content h2 {
+
+        font-size: 34px;
+
+        line-height: 1.2;
+
+    }
+
+
+    .business-company-line {
+
+        width: 45px;
+
+        margin: 16px 0 22px;
+
+    }
+
+
+    .business-company-content p {
+
+        font-size: 16px;
+
+        line-height: 1.8;
+
+    }
+
+
+    /* Info */
+
+    .business-company-info {
+
+        grid-template-columns: 1fr;
+
+        margin-top: 30px;
+
+    }
+
+
+    .business-info-item {
+
+        min-height: auto;
+
+        padding: 15px 0;
+
+        border-right: none;
+
+        border-bottom: 1px solid rgba(16, 42, 67, 0.18);
+
+    }
+
+
+    .business-info-item:last-child {
+
+        border-bottom: none;
+
+    }
+
+
+    .business-company-dark
+    .business-info-item {
+
+        border-bottom-color: rgba(255, 255, 255, 0.20);
+
+    }
+
+
+    .business-company-button {
+
+        margin-top: 28px;
+
+        font-size: 13px;
+
+    }
+
+
+    /* Integrated */
+
+    .businesses-integrated-section {
+
+        min-height: 500px;
+
+        padding: 65px 20px;
+
+    }
+
+
+    .businesses-integrated-label {
+
+        font-size: 12px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .businesses-integrated-content h2 {
+
+        font-size: 34px;
+
+        line-height: 1.25;
+
+    }
+
+
+    .businesses-integrated-line {
+
+        width: 45px;
+
+        margin: 18px auto 22px;
+
+    }
+
+
+    .businesses-integrated-content p {
+
+        font-size: 16px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .businesses-integrated-button {
+
+        margin-top: 30px;
+
+        padding: 14px 25px;
+
+        font-size: 12px;
+
+    }
+
+
+    /* Navigation */
+
+    .businesses-page-navigation {
+
+        padding: 25px 20px;
+
+        gap: 15px;
+
+    }
+
+
+    .businesses-page-nav-link {
+
+        gap: 10px;
+
+        font-size: 17px;
+
+    }
+
+
+    .businesses-page-nav-arrow {
+
+        font-size: 28px;
+
+    }
+
+}
+

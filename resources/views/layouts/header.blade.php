@@ -72,14 +72,7 @@
                     </li>
 
 
-                    <li>
-                        <a
-                            href="{{ route('contact') }}"
-                            class="{{ request()->routeIs('contact') ? 'active' : '' }}"
-                        >
-                            CONTACT US
-                        </a>
-                    </li>
+
 
                 </ul>
 
@@ -92,7 +85,7 @@
                 href="{{ route('contact') }}"
                 class="header-btn"
             >
-                GET IN TOUCH
+                CONTACT US
             </a>
 
         </div>
