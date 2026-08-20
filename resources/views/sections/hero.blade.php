@@ -71,10 +71,7 @@
                      DEFAULT HOME HERO
                      ================================================= --}}
 
-                <span>
-                    KEMET ENGINEERING
-                </span>
-
+                
                 <h1>
 
                     Building the Future
@@ -83,30 +80,9 @@
 
                 </h1>
 
-                <div class="hero-line"></div>
 
-                <p>
 
-                    Delivering innovative engineering and construction
-                    solutions with the highest standards of quality.
 
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#" class="gold-btn">
-
-                        EXPLORE PROJECTS
-
-                    </a>
-
-                    <a href="#" class="outline-btn">
-
-                        CONTACT US
-
-                    </a>
-
-                </div>
 
             @endif
 

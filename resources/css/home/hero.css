@@ -14,6 +14,11 @@ HERO
 
 }
 
+
+/*========================
+HERO IMAGE
+========================*/
+
 .hero-image {
 
     position: absolute;
@@ -32,6 +37,11 @@ HERO
 
 }
 
+
+/*========================
+HERO OVERLAY
+========================*/
+
 .hero-overlay {
 
     position: absolute;
@@ -42,13 +52,39 @@ HERO
 
 }
 
+
+/*========================
+HERO CONTENT
+========================*/
+
 .hero-content {
-    position: relative;
+
+    position: absolute;
+
     z-index: 10;
-    padding-top: 260px;
-    max-width: 650px;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    padding: 0 30px;
+
     color: #fff;
+
+    text-align: center;
+
 }
+
+
+/*========================
+HERO SMALL TITLE
+========================*/
 
 .hero-content span {
 
@@ -56,7 +92,7 @@ HERO
 
     color: #D6A93D;
 
-    font-size: 30px;
+    font-size: 35px;
 
     letter-spacing: 6px;
 
@@ -64,13 +100,35 @@ HERO
 
     text-transform: uppercase;
 
-    margin-top: 60px;
-    /* ينزل عن اللوجو */
+    margin-top: 0;
 
     margin-bottom: 20px;
-    /* يبعد عن العنوان */
 
 }
+
+
+/*========================
+HERO LINE
+========================*/
+
+.hero-line {
+
+    width: 120px;
+
+    height: 3px;
+
+    background: #D6A93D;
+
+    margin: 25px auto;
+
+    border-radius: 50px;
+
+}
+
+
+/*========================
+HERO TITLE
+========================*/
 
 .hero-content h1 {
 
@@ -82,21 +140,14 @@ HERO
 
     font-weight: 700;
 
-}
-
-.hero-line {
-
-    width: 120px;
-
-    height: 3px;
-
-    background: #D6A93D;
-
-    margin: 35px 0;
-
-    border-radius: 50px;
+    text-align: center;
 
 }
+
+
+/*========================
+HERO DESCRIPTION
+========================*/
 
 .hero-content p {
 
@@ -108,15 +159,31 @@ HERO
 
     margin-bottom: 40px;
 
+    text-align: center;
+
 }
+
+
+/*========================
+HERO BUTTONS
+========================*/
 
 .hero-buttons {
 
     display: flex;
 
+    justify-content: center;
+
+    align-items: center;
+
     gap: 20px;
 
 }
+
+
+/*========================
+GOLD BUTTON
+========================*/
 
 .gold-btn {
 
@@ -131,6 +198,11 @@ HERO
     font-weight: 600;
 
 }
+
+
+/*========================
+OUTLINE BUTTON
+========================*/
 
 .outline-btn {
 
@@ -147,6 +219,10 @@ HERO
 }
 
 
+/*========================
+HERO ANIMATION
+========================*/
+
 .hero-content {
 
     animation: fadeUp 1s ease;
@@ -159,7 +235,7 @@ HERO
 
         opacity: 0;
 
-        transform: translateY(60px);
+        margin-top: 60px;
 
     }
 
@@ -167,7 +243,96 @@ HERO
 
         opacity: 1;
 
-        transform: translateY(0);
+        margin-top: 0;
+
+    }
+
+}
+
+
+/*========================
+RESPONSIVE
+========================*/
+
+@media (max-width: 768px) {
+
+    .hero-content {
+
+        max-width: 100%;
+
+        padding: 0 20px;
+
+    }
+
+    .hero-content span {
+
+        font-size: 18px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 15px;
+
+    }
+
+    .hero-line {
+
+        width: 80px;
+
+        height: 3px;
+
+        margin: 20px auto;
+
+    }
+
+    .hero-content h1 {
+
+        font-size: 45px;
+
+        line-height: 1.1;
+
+    }
+
+    .hero-content p {
+
+        font-size: 18px;
+
+    }
+
+    .hero-buttons {
+
+        flex-wrap: wrap;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .hero-content span {
+
+        font-size: 15px;
+
+        letter-spacing: 2px;
+
+    }
+
+    .hero-content h1 {
+
+        font-size: 36px;
+
+    }
+
+    .hero-content p {
+
+        font-size: 16px;
+
+    }
+
+    .gold-btn,
+    .outline-btn {
+
+        padding: 13px 25px;
 
     }
 

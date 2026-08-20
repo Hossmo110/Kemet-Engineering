@@ -1,0 +1,675 @@
+/* =========================================================
+   KEMET CSR PAGE
+   ========================================================= */
+
+:root {
+    --kemet-navy: #0c2340;
+    --kemet-navy-light: #163654;
+    --kemet-gold: #d6a93d;
+    --kemet-gray: #7e7e7e;
+    --kemet-dark: #303031;
+    --kemet-light: #f5f5f3;
+}
+
+
+/* =========================================================
+   CSR HERO
+   ========================================================= */
+
+.csr-hero {
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+
+    min-height: 650px;
+
+    overflow: hidden;
+
+    background: var(--csr-navy);
+
+}
+
+.csr-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.csr-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 35, 64, 0.62);
+    z-index: 1;
+}
+
+.csr-hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 30px;
+}
+
+.csr-hero-content h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 5vw, 76px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+
+.csr-intro {
+    width: 100%;
+    background: #ffffff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.csr-intro-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.csr-intro-label {
+    display: block;
+    color: #D6A93D;
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.csr-intro-container h2 {
+    margin: 0 auto 20px;
+    color: #102A43;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.csr-intro-line {
+    width: 60px;
+    height: 3px;
+    background: #D6A93D;
+    margin: 0 auto 30px;
+}
+
+.csr-intro-container p {
+    max-width: 850px;
+    margin: 0 auto;
+    color: #555;
+    font-size: 25px;
+    line-height: 1.9;
+    text-align: center;
+}
+
+/* =========================================================
+   CSR TABS SECTION
+   ========================================================= */
+
+.csr-tabs-section {
+    width: 100%;
+    background: #ffffff;
+
+    padding: 30px 30px 110px;
+}
+
+.csr-tabs-container {
+    width: min(1800px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   TABS HEADING
+   ========================================================= */
+
+.csr-tabs-heading {
+    display: flex;
+    align-items: stretch;
+
+    width: 100%;
+
+    border-bottom: 1px solid #dddddd;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+}
+
+.csr-tabs-heading::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================================
+   TAB
+   ========================================================= */
+
+.csr-tab {
+    position: relative;
+
+    flex: 1 0 20%;
+
+    min-width: 220px;
+
+    min-height: 145px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    padding: 20px 18px 25px;
+
+    border: 0;
+    background: transparent;
+
+    color: var(--kemet-gray);
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease;
+}
+
+.csr-tab:hover {
+    color: var(--kemet-dark);
+}
+
+.csr-tab::after {
+    content: "";
+
+    position: absolute;
+
+    left: 12%;
+    right: 12%;
+    bottom: -1px;
+
+    height: 3px;
+
+    background: transparent;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.csr-tab.is-active {
+    color: var(--kemet-gold);
+}
+
+.csr-tab.is-active::after {
+    background: var(--kemet-gold);
+}
+
+
+/* =========================================================
+   TAB ICON
+   ========================================================= */
+
+.csr-tab-icon {
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.csr-tab-icon svg {
+    width: auto;
+    height: 39px;
+
+    display: block;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.csr-icon-active {
+    position: absolute;
+
+    opacity: 0;
+}
+
+.csr-icon-normal {
+    opacity: 1;
+}
+
+.csr-tab.is-active .csr-icon-normal {
+    opacity: 0;
+}
+
+.csr-tab.is-active .csr-icon-active {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   TAB TITLE
+   ========================================================= */
+
+.csr-tab-title {
+    max-width: 210px;
+
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    line-height: 1.45;
+
+    transition: color 0.3s ease;
+}
+
+
+/* =========================================================
+   FIFTH TAB NUMBER
+   ========================================================= */
+
+.csr-simple-icon {
+    border: 1px solid var(--kemet-gray);
+
+    border-radius: 50%;
+
+    width: 42px;
+    height: 42px;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.csr-tab-number {
+    font-size: 13px;
+    font-weight: 700;
+
+    color: var(--kemet-gray);
+
+    transition: color 0.3s ease;
+}
+
+.csr-tab.is-active .csr-simple-icon {
+    border-color: var(--kemet-gold);
+    background: var(--kemet-gold);
+}
+
+.csr-tab.is-active .csr-tab-number {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TAB CONTENT
+   ========================================================= */
+
+.csr-tabs-content {
+    width: 100%;
+}
+
+.csr-tab-panel {
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+
+    min-height: 560px;
+
+    opacity: 0;
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+.csr-tab-panel.is-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   PANEL IMAGE
+   ========================================================= */
+
+.csr-panel-media {
+    width: 100%;
+    min-height: 560px;
+
+    overflow: hidden;
+}
+
+.csr-panel-media img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+.csr-tab-panel:hover .csr-panel-media img {
+    transform: scale(1.03);
+}
+
+
+/* =========================================================
+   PANEL INFO
+   ========================================================= */
+
+.csr-panel-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 80px 8%;
+
+    background: var(--kemet-navy);
+
+    color: #ffffff;
+}
+
+.csr-panel-number {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: var(--kemet-gold);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.csr-panel-info h3 {
+    max-width: 600px;
+
+    margin: 0;
+
+    color: var(--kemet-gold);
+
+    font-size: clamp(34px, 3.2vw, 54px);
+
+    font-weight: 600;
+
+    line-height: 1.12;
+}
+
+.csr-panel-line {
+    width: 65px;
+    height: 3px;
+
+    margin: 28px 0;
+
+    background: var(--kemet-gold);
+}
+
+.csr-panel-info p {
+    max-width: 700px;
+
+    margin: 0 0 18px;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 25px;
+
+    line-height: 1.85;
+}
+
+.csr-panel-info p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   CLOSING
+   ========================================================= */
+
+.csr-closing {
+    background: var(--kemet-navy);
+
+    padding: 110px 30px;
+}
+
+.csr-closing-content {
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.csr-closing-content > span {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: var(--kemet-gold);
+
+    font-size: 35px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.csr-closing-content h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(38px, 4vw, 60px);
+
+    line-height: 1.1;
+}
+
+.csr-closing-line {
+    width: 70px;
+    height: 3px;
+
+    margin: 28px auto;
+
+    background: var(--kemet-gold);
+}
+
+.csr-closing-content p {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size:25px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .csr-hero {
+        height: 560px;
+    }
+
+    .csr-tab {
+        min-width: 190px;
+    }
+
+    .csr-tab-panel {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .csr-panel-info {
+        padding: 60px 45px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .csr-hero {
+        height: 470px;
+    }
+
+    .csr-hero-content {
+        padding: 20px;
+    }
+
+    .csr-hero-content h1 {
+        font-size: 38px;
+    }
+
+
+    .csr-intro {
+        padding: 75px 22px 60px;
+    }
+
+    .csr-intro-container h2 {
+        font-size: 38px;
+    }
+
+    .csr-intro-container p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+
+    .csr-tabs-section {
+        padding: 15px 15px 75px;
+    }
+
+
+    .csr-tabs-heading {
+        margin-right: -15px;
+        margin-left: -15px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .csr-tab {
+        flex: 0 0 175px;
+
+        min-width: 175px;
+
+        min-height: 135px;
+
+        padding: 18px 12px 22px;
+    }
+
+    .csr-tab-title {
+        font-size: 14px;
+    }
+
+
+    .csr-tab-panel {
+        display: flex;
+        flex-direction: column;
+
+        min-height: auto;
+    }
+
+
+    .csr-panel-media {
+        min-height: 300px;
+
+        height: 300px;
+    }
+
+
+    .csr-panel-info {
+        padding: 50px 28px;
+    }
+
+
+    .csr-panel-info h3 {
+        font-size: 34px;
+    }
+
+    .csr-panel-info p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+
+    .csr-closing {
+        padding: 75px 22px;
+    }
+
+    .csr-closing-content h2 {
+        font-size: 38px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .csr-hero {
+        height: 420px;
+    }
+
+    .csr-hero-content h1 {
+        font-size: 32px;
+    }
+
+    .csr-tab {
+        flex-basis: 160px;
+        min-width: 160px;
+    }
+
+    .csr-panel-media {
+        height: 250px;
+        min-height: 250px;
+    }
+
+    .csr-panel-info {
+        padding: 40px 22px;
+    }
+
+    .csr-panel-info h3 {
+        font-size: 30px;
+    }
+
+}
