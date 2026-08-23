@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,8 +17,6 @@
 
     @vite([
         'resources/css/app.css',
-        'resources/css/about.css',
-        'resources/css/pages/show.css',
         'resources/js/app.js'
     ])
 
