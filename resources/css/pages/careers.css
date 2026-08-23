@@ -44,19 +44,7 @@
 
 
 .careers-hero-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(16, 42, 67, 0.72),
-            rgba(16, 42, 67, 0.38)
-        );
-
-    z-index: 1;
+    display: none;
 }
 
 
@@ -177,7 +165,7 @@
 
     color: #D6A93D;
 
-    font-size: 14px;
+    font-size: 35px;
 
     font-weight: 700;
 
@@ -219,7 +207,7 @@
 
     color: #555555;
 
-    font-size: 17px;
+    font-size: 30px;
 
     line-height: 1.9;
 }
@@ -255,7 +243,7 @@
 
     color: #D6A93D;
 
-    font-size: 14px;
+    font-size: 35px;
 
     font-weight: 700;
 
@@ -297,7 +285,7 @@
 
     color: #666666;
 
-    font-size: 16px;
+    font-size: 20px;
 
     line-height: 1.8;
 }
@@ -309,7 +297,7 @@
 
 .jobs-grid {
 
-    width: min(1200px, 90%);
+    width: min(1500px, 92%);
 
     margin: 0 auto;
 
@@ -423,7 +411,7 @@
 
     color: #102A43;
 
-    font-size: 24px;
+    font-size: 27px;
 
     font-weight: 700;
 
@@ -441,7 +429,7 @@
 
     color: #D6A93D;
 
-    font-size: 14px;
+    font-size: 18px;
 
     font-weight: 600;
 
@@ -459,7 +447,7 @@
 
     color: #666666;
 
-    font-size: 15px;
+    font-size: 18px;
 
     line-height: 1.75;
 }
@@ -621,7 +609,7 @@
 
     color: #D6A93D;
 
-    font-size: 14px;
+    font-size: 35px;
 
     font-weight: 700;
 
@@ -663,7 +651,7 @@
 
     color: #d9e0e6;
 
-    font-size: 17px;
+    font-size: 25px;
 
     line-height: 1.9;
 }

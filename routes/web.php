@@ -18,5 +18,8 @@ Route::view('/contact', 'contact')->name('contact');
 
 
 
-Route::get('/careers', [CareerController::class, 'index'])
+    Route::get('/careers', [CareerController::class, 'index'])
     ->name('careers.index');
+
+Route::get('/careers/{id}', [CareerController::class, 'show'])
+    ->name('careers.show');

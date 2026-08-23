@@ -1,253 +1,226 @@
-
 @extends('layouts.app')
 
 @section('title', 'Careers | KEMET Engineering')
 
 @section('content')
 
-{{-- =====================================================
+    {{-- =====================================================
      CAREERS HERO
      ===================================================== --}}
 
-<section class="careers-hero">
+    <section class="careers-hero">
 
-    <img
-        src="{{ asset('images/careers-hero.jpg') }}"
-        alt="Careers at KEMET Engineering"
-        class="careers-hero-image"
-    >
+        <img src="{{ asset('images/careers-hero.jpg') }}" alt="Careers at KEMET Engineering" class="careers-hero-image">
 
-    <div class="careers-hero-overlay"></div>
+        <div class="careers-hero-overlay"></div>
 
-    <div class="careers-hero-content">
+        <div class="careers-hero-content">
 
-        <span>
-            CAREERS
-        </span>
+            <h1>
+                Build Your Future
+                <br>
+                With KEMET
+            </h1>
+        </div>
 
-        <div class="careers-hero-line"></div>
-
-        <h1>
-            Build Your Future
-            <br>
-            With KEMET
-        </h1>
-
-        <p>
-            Join a team of talented professionals shaping the future
-            through engineering, innovation and excellence.
-        </p>
-
-    </div>
-
-</section>
+    </section>
 
 
-{{-- =====================================================
+    {{-- =====================================================
      CAREERS INTRO
      ===================================================== --}}
 
-<section class="careers-intro">
+    <section class="careers-intro">
 
-    <div class="careers-intro-content">
+        <div class="careers-intro-content">
 
-        <span class="careers-label">
-            JOIN OUR TEAM
-        </span>
+            <span class="careers-label">
+                JOIN OUR TEAM
+            </span>
 
-        <h2>
-            Grow With Us
-        </h2>
+            <h2>
+                Grow With Us
+            </h2>
 
-        <div class="careers-line"></div>
+            <div class="careers-line"></div>
 
-        <p>
-            At KEMET Engineering, we believe that our people are
-            the foundation of everything we achieve. We are always
-            looking for talented, motivated professionals who are
-            ready to grow, innovate and make a real impact.
-        </p>
+            <p>
+                At KEMET Engineering, we believe that our people are
+                the foundation of everything we achieve. We are always
+                looking for talented, motivated professionals who are
+                ready to grow, innovate and make a real impact.
+            </p>
 
-    </div>
+        </div>
 
-</section>
+    </section>
 
 
-{{-- =====================================================
+    {{-- =====================================================
      CURRENT OPENINGS
      ===================================================== --}}
 
-<section class="careers-jobs">
+    <section class="careers-jobs">
 
-    <div class="careers-section-heading">
+        <div class="careers-section-heading">
 
-        <span>
-            CURRENT OPPORTUNITIES
-        </span>
+            <span>
+                CURRENT OPPORTUNITIES
+            </span>
 
-        <h2>
-            Explore Careers
-        </h2>
+            <h2>
+                Explore Careers
+            </h2>
 
-        <div class="careers-heading-line"></div>
+            <div class="careers-heading-line"></div>
 
-        <p>
-            Discover our current opportunities and find the role
-            that matches your skills and ambitions.
-        </p>
+            <p>
+                Discover our current opportunities and find the role
+                that matches your skills and ambitions.
+            </p>
 
-    </div>
+        </div>
 
 
-    {{-- =================================================
+        {{-- =================================================
          JOBS GRID
          ================================================= --}}
 
-    <div class="jobs-grid">
+        {{-- =================================================
+     JOBS GRID
+     ================================================= --}}
 
-        @forelse($jobs as $job)
+        <div class="jobs-grid">
 
-            <article class="job-card">
+            @forelse($jobs as $job)
+                <article class="job-card">
 
-                <div class="job-card-top">
+                    <div class="job-card-top">
 
-                    <span class="job-number">
-                        {{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}
+                        <h3>
+                            {{ $job['title'] }}
+                        </h3>
+
+                        <div class="job-meta">
+
+                            <div class="job-location">
+                                📍 {{ $job['location'] }}
+                            </div>
+
+
+
+                        </div>
+
+                        <p>
+                            {{ $job['description'] }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="job-card-bottom">
+
+                        <a href="{{ route('careers.show', $job['id']) }}" class="apply-btn">
+                            APPLY NOW
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            @empty
+
+                <div class="no-jobs">
+
+                    <span>
+                        CAREERS
                     </span>
 
                     <h3>
-                        {{ $job['title'] }}
+                        No Current Openings
                     </h3>
 
-                    <div class="job-location">
-                        {{ $job['location'] }}
-                    </div>
-
                     <p>
-                        {{ $job['description'] }}
+                        We don't have any open positions at the moment.
+                        Please check back soon for new opportunities.
                     </p>
 
                 </div>
+            @endforelse
 
+        </div>
 
-                <div class="job-card-bottom">
+    </section>
 
-                    <a
-                        href="#"
-                        class="apply-btn"
-                    >
-                        APPLY NOW
-                        <span>→</span>
-                    </a>
-
-                </div>
-
-            </article>
-
-        @empty
-
-            <div class="no-jobs">
-
-                <span>
-                    CAREERS
-                </span>
-
-                <h3>
-                    No Current Openings
-                </h3>
-
-                <p>
-                    We don't have any open positions at the moment.
-                    Please check back soon for new opportunities.
-                </p>
-
-            </div>
-
-        @endforelse
-
-    </div>
-
-</section>
-
-
-{{-- =====================================================
+    {{-- =====================================================
      CAREERS CTA
      ===================================================== --}}
 
-<section class="careers-cta">
+    <section class="careers-cta">
 
-    <div class="careers-cta-content">
+        <div class="careers-cta-content">
 
-        <span>
-            YOUR NEXT STEP
-        </span>
+            <span>
+                YOUR NEXT STEP
+            </span>
 
-        <h2>
-            Ready to Build the Future?
-        </h2>
+            <h2>
+                Ready to Build the Future?
+            </h2>
 
-        <div class="careers-cta-line"></div>
+            <div class="careers-cta-line"></div>
 
-        <p>
-            If you are passionate about engineering, innovation and
-            creating meaningful solutions, we would love to hear from you.
-        </p>
+            <p>
+                If you are passionate about engineering, innovation and
+                creating meaningful solutions, we would love to hear from you.
+            </p>
 
-        <a
-            href="{{ url('/contact-us') }}"
-            class="careers-contact-btn"
-        >
-            GET IN TOUCH
-            <span>→</span>
-        </a>
+            <a href="{{ url('/contact') }}" class="careers-contact-btn">
+                GET IN TOUCH
+                <span>→</span>
+            </a>
 
-    </div>
+        </div>
 
-</section>
+    </section>
 
 
-{{-- =====================================================
+    {{-- =====================================================
      PAGE NAVIGATION
      ===================================================== --}}
 
-<section class="page-navigation-section careers-navigation">
+    <section class="page-navigation-section careers-navigation">
 
-    <div class="page-navigation">
+        <div class="page-navigation">
 
-        <a
-            href="{{ url('/csr') }}"
-            class="page-nav-link page-nav-prev"
-        >
+            <a href="{{ url('/csr') }}" class="page-nav-link page-nav-prev">
 
-            <span class="page-nav-arrow">
-                ←
-            </span>
+                <span class="page-nav-arrow">
+                    ←
+                </span>
 
-            <span class="page-nav-label">
-                CSR
-            </span>
+                <span class="page-nav-label">
+                    CSR
+                </span>
 
-        </a>
+            </a>
 
 
-        <a
-            href="{{ url('/contact-us') }}"
-            class="page-nav-link page-nav-next"
-        >
+            <a href="{{ url('/contact-us') }}" class="page-nav-link page-nav-next">
 
-            <span class="page-nav-label">
-                Contact Us
-            </span>
+                <span class="page-nav-label">
+                    Contact Us
+                </span>
 
-            <span class="page-nav-arrow">
-                →
-            </span>
+                <span class="page-nav-arrow">
+                    →
+                </span>
 
-        </a>
+            </a>
 
-    </div>
+        </div>
 
-</section>
+    </section>
 
 @endsection
-

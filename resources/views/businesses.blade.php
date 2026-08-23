@@ -696,7 +696,7 @@
                 under one integrated approach.
             </p>
 
-            <a href="{{ url('/contact-us') }}" class="businesses-integrated-button">
+            <a href="{{ url('/contact') }}" class="businesses-integrated-button">
                 GET IN TOUCH
             </a>
 
