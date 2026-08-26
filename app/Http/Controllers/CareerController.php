@@ -2,155 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CareerJob;
+use App\Models\JobApplication;
 use Illuminate\Http\Request;
 
 class CareerController extends Controller
 {
-    private function getJobs()
-    {
-        return [
-
-            /*
-            |--------------------------------------------------------------------------
-            | JOB 1 - PROJECT MANAGER
-            |--------------------------------------------------------------------------
-            */
-
-            [
-                'id' => 1,
-
-                'title' => 'Project Manager',
-
-                'location' => 'United Arab Emirates',
-
-                'department' => 'Project Management',
-
-                'type' => 'Full Time',
-
-                'posted' => '2026-08-05',
-
-                'expires' => '2026-11-30',
-
-                'description' => 'We are looking for an experienced Project Manager to lead and coordinate engineering projects from planning through completion. The successful candidate will be responsible for managing project activities, coordinating with internal teams and clients, monitoring progress, and ensuring that projects are delivered safely, efficiently, on time, and within budget.',
-
-                'qualifications' => [
-
-                    'Bachelor’s degree in Civil Engineering, Construction Management, or a related field.',
-
-                    'Minimum 5 years of experience in project management within the engineering or construction industry.',
-
-                    'Strong knowledge of project planning, execution, cost control, and scheduling.',
-
-                    'Experience coordinating with clients, consultants, subcontractors, and internal engineering teams.',
-
-                    'Strong leadership, communication, and problem-solving skills.',
-
-                    'Ability to manage multiple projects and meet deadlines.',
-
-                    'UAE/GCC experience is preferred.',
-
-                ],
-            ],
-
-
-            /*
-            |--------------------------------------------------------------------------
-            | JOB 2 - ELECTRICAL ENGINEER
-            |--------------------------------------------------------------------------
-            */
-
-            [
-                'id' => 2,
-
-                'title' => 'Electrical Engineer',
-
-                'location' => 'United Arab Emirates',
-
-                'department' => 'Electrical Engineering',
-
-                'type' => 'Full Time',
-
-                'posted' => '2026-08-05',
-
-                'expires' => '2026-11-30',
-
-                'description' => 'We are looking for an Electrical Engineer to support the planning, coordination and execution of electrical engineering works. The candidate will be responsible for ensuring that electrical systems are designed, installed, tested and completed in accordance with project requirements, safety standards and quality expectations.',
-
-                'qualifications' => [
-
-                    'Bachelor’s degree in Electrical Engineering.',
-
-                    'Minimum 3–5 years of experience in electrical engineering or construction projects.',
-
-                    'Strong knowledge of electrical systems, installations, testing, and commissioning.',
-
-                    'Ability to read and understand electrical drawings and technical specifications.',
-
-                    'Experience coordinating with consultants, contractors, and project teams.',
-
-                    'Strong communication, analytical, and problem-solving skills.',
-
-                    'UAE/GCC experience is preferred.',
-
-                ],
-            ],
-
-
-            /*
-            |--------------------------------------------------------------------------
-            | JOB 3 - MECHANICAL ENGINEER
-            |--------------------------------------------------------------------------
-            */
-
-            [
-                'id' => 3,
-
-                'title' => 'Mechanical Engineer',
-
-                'location' => 'United Arab Emirates',
-
-                'department' => 'Mechanical Engineering',
-
-                'type' => 'Full Time',
-
-                'posted' => '2026-08-05',
-
-                'expires' => '2026-11-30',
-
-                'description' => 'We are looking for a Mechanical Engineer to contribute to the design, coordination and execution of mechanical engineering works. The candidate will support project teams in delivering mechanical systems in accordance with technical specifications, safety requirements and quality standards.',
-
-                'qualifications' => [
-
-                    'Bachelor’s degree in Mechanical Engineering.',
-
-                    'Minimum 3–5 years of experience in mechanical engineering or construction projects.',
-
-                    'Strong knowledge of HVAC, plumbing, fire protection, and mechanical systems.',
-
-                    'Ability to read mechanical drawings, specifications, and technical documents.',
-
-                    'Experience with installation, testing, commissioning, and troubleshooting.',
-
-                    'Strong communication and problem-solving skills.',
-
-                    'UAE/GCC experience is preferred.',
-
-                ],
-            ],
-
-        ];
-    }
-
-
     /*
     |--------------------------------------------------------------------------
-    | CAREERS PAGE
+    | Careers Page
     |--------------------------------------------------------------------------
     */
 
     public function index()
     {
-        $jobs = $this->getJobs();
+        $jobs = CareerJob::orderBy('id', 'desc')->get();
 
         return view('careers.index', compact('jobs'));
     }
@@ -158,24 +24,81 @@ class CareerController extends Controller
 
     /*
     |--------------------------------------------------------------------------
-    | JOB DETAILS PAGE
+    | Job Details Page
     |--------------------------------------------------------------------------
     */
 
-    public function show( $id)
+    public function show($id)
     {
-        $jobs = $this->getJobs();
+        $job = CareerJob::findOrFail($id);
 
-        $job = collect($jobs)->firstWhere(
-            'id',
-            (int) $id
-        );
+        return view('careers.show', compact('job'));
+    }
 
-        abort_if(!$job, 404);
 
-        return view(
-            'careers.show',
-            compact('job')
-        );
+    /*
+    |--------------------------------------------------------------------------
+    | Submit Job Application
+    |--------------------------------------------------------------------------
+    */
+
+    public function apply(Request $request, $id)
+    {
+        $job = CareerJob::findOrFail($id);
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+
+            'email' => 'required|email|max:255',
+
+            'phone' => 'required|string|max:50',
+
+            'message' => 'nullable|string',
+
+            'cv' => 'required|file|mimes:pdf,doc,docx|max:5120',
+        ]);
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Upload CV
+        |--------------------------------------------------------------------------
+        */
+
+        $cvFile = $request->file('cv');
+
+        $cvName = $cvFile->getClientOriginalName();
+
+        $cvPath = $cvFile->storeAs('cvs', $cvName, 'public');
+
+        /*
+        |--------------------------------------------------------------------------
+        | Save Application
+        |--------------------------------------------------------------------------
+        */
+
+        JobApplication::create([
+            'career_job_id' => $job->id,
+
+            'name' => $validated['name'],
+
+            'email' => $validated['email'],
+
+            'phone' => $validated['phone'],
+
+            'cover_letter' => $validated['message'] ?? null,
+
+            'cv' => $cvPath,
+        ]);
+       
+        /*
+        |--------------------------------------------------------------------------
+        | Success
+        |--------------------------------------------------------------------------
+        */
+
+        return redirect()
+            ->route('careers.show', $job->id)
+            ->with('success', 'Your application has been submitted successfully.');
     }
 }

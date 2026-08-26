@@ -1,0 +1,659 @@
+/* =====================================================
+   KEMET ENGINEERING
+   ADMIN - EDIT CAREER JOB
+===================================================== */
+
+.admin-edit-page {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 45px;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.admin-edit-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.admin-edit-heading {
+    flex: 1;
+}
+
+.admin-edit-heading .admin-label {
+    display: block;
+    margin-bottom: 12px;
+
+    color: #d6a93d;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.admin-edit-heading h1 {
+    margin: 0 0 10px;
+
+    color: #102a43;
+
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 700;
+
+    line-height: 1.1;
+}
+
+.admin-edit-heading p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.admin-back-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 48px;
+
+    padding: 12px 20px;
+
+    background: #ffffff;
+
+    color: #102a43;
+
+    border: 1px solid #d9dee3;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.admin-back-btn span {
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+.admin-back-btn:hover {
+    background: #102a43;
+
+    color: #ffffff;
+
+    border-color: #102a43;
+
+    transform: translateY(-2px);
+}
+
+.admin-back-btn:hover span {
+    transform: translateX(-4px);
+}
+
+
+/* =====================================================
+   ERROR MESSAGE
+===================================================== */
+
+.admin-error-message {
+    margin-bottom: 30px;
+
+    padding: 18px 22px;
+
+    background: #fff5f5;
+
+    border-left: 4px solid #b42318;
+
+    color: #8a1c1c;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.admin-error-title {
+    margin-bottom: 8px;
+
+    color: #8a1c1c;
+
+    font-weight: 700;
+}
+
+.admin-error-message ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+}
+
+
+/* =====================================================
+   MAIN EDIT CARD
+===================================================== */
+
+.admin-edit-card {
+    background: #ffffff;
+
+    border: 1px solid #e4e7eb;
+
+    box-shadow:
+        0 10px 35px rgba(16, 42, 67, 0.07);
+}
+
+
+/* =====================================================
+   CARD HEADER
+===================================================== */
+
+.admin-edit-card-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 28px 32px;
+
+    background: #102a43;
+
+    border-bottom: 4px solid #d6a93d;
+}
+
+.admin-edit-card-header .admin-table-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #d6a93d;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+}
+
+.admin-edit-card-header h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.admin-edit-job-id {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 60px;
+
+    padding: 9px 13px;
+
+    background: rgba(214, 169, 61, 0.12);
+
+    color: #d6a93d;
+
+    border: 1px solid rgba(214, 169, 61, 0.4);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.admin-edit-form {
+    width: 100%;
+}
+
+
+/* =====================================================
+   FORM SECTION
+===================================================== */
+
+.admin-form-section {
+    padding: 35px 32px;
+
+    border-bottom: 1px solid #e9ecef;
+}
+
+.admin-form-section:last-of-type {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.admin-form-section-title {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    margin-bottom: 28px;
+}
+
+.admin-form-section-title > span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    background: #f5f1e6;
+
+    color: #d6a93d;
+
+    border: 1px solid #ead9a9;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.admin-form-section-title h3 {
+    margin: 0 0 5px;
+
+    color: #102a43;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.admin-form-section-title p {
+    margin: 0;
+
+    color: #8a929b;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.admin-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.admin-form-group {
+    min-width: 0;
+}
+
+.admin-form-full {
+    grid-column: 1 / -1;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.admin-form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #102a43;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.admin-form-group label span {
+    color: #d6a93d;
+
+    margin-left: 3px;
+}
+
+
+/* =====================================================
+   INPUTS / SELECT / TEXTAREA
+===================================================== */
+
+.admin-form-group input,
+.admin-form-group select,
+.admin-form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d9dee3;
+
+    background: #ffffff;
+
+    color: #102a43;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* INPUT */
+
+.admin-form-group input,
+.admin-form-group select {
+    height: 52px;
+
+    padding: 0 15px;
+}
+
+
+/* TEXTAREA */
+
+.admin-form-group textarea {
+    min-height: 150px;
+
+    padding: 14px 15px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+}
+
+
+/* FOCUS */
+
+.admin-form-group input:focus,
+.admin-form-group select:focus,
+.admin-form-group textarea:focus {
+    border-color: #d6a93d;
+
+    background: #fffdf8;
+
+    box-shadow:
+        0 0 0 3px rgba(214, 169, 61, 0.12);
+}
+
+
+/* PLACEHOLDER */
+
+.admin-form-group input::placeholder,
+.admin-form-group textarea::placeholder {
+    color: #a5abb2;
+}
+
+
+/* SELECT */
+
+.admin-form-group select {
+    cursor: pointer;
+}
+
+
+/* SMALL HELP TEXT */
+
+.admin-form-group small {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #8a929b;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FORM ACTIONS
+===================================================== */
+
+.admin-form-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    padding: 25px 32px;
+
+    background: #fafafa;
+
+    border-top: 1px solid #e9ecef;
+}
+
+
+/* =====================================================
+   CANCEL BUTTON
+===================================================== */
+
+.admin-cancel-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0 22px;
+
+    background: #ffffff;
+
+    color: #102a43;
+
+    border: 1px solid #d9dee3;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.admin-cancel-btn:hover {
+    background: #102a43;
+
+    color: #ffffff;
+
+    border-color: #102a43;
+}
+
+
+/* =====================================================
+   UPDATE BUTTON
+===================================================== */
+
+.admin-update-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 48px;
+
+    padding: 0 24px;
+
+    background: #d6a93d;
+
+    color: #ffffff;
+
+    border: 1px solid #d6a93d;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.admin-update-btn span {
+    font-size: 17px;
+}
+
+.admin-update-btn:hover {
+    background: #102a43;
+
+    border-color: #102a43;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(16, 42, 67, 0.16);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .admin-edit-page {
+        padding: 35px 25px;
+    }
+
+    .admin-edit-header {
+        align-items: flex-start;
+    }
+
+    .admin-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-form-full {
+        grid-column: auto;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .admin-edit-page {
+        padding: 25px 15px;
+    }
+
+    .admin-edit-header {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 20px;
+    }
+
+    .admin-edit-heading h1 {
+        font-size: 34px;
+    }
+
+    .admin-back-btn {
+        width: 100%;
+    }
+
+    .admin-edit-card-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 24px 20px;
+    }
+
+    .admin-edit-card-header h2 {
+        font-size: 21px;
+    }
+
+    .admin-form-section {
+        padding: 28px 20px;
+    }
+
+    .admin-form-section-title {
+        gap: 12px;
+    }
+
+    .admin-form-section-title h3 {
+        font-size: 18px;
+    }
+
+    .admin-form-actions {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+
+        padding: 20px;
+    }
+
+    .admin-cancel-btn,
+    .admin-update-btn {
+        width: 100%;
+    }
+
+}

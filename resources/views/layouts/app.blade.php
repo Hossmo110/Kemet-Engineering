@@ -1,55 +1,87 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <title>
-        @yield('title', 'Engineering Company')
-    </title>
+<title>
+    @yield('title', 'Engineering Company')
+</title>
 
 
-    @vite([
-        'resources/css/app.css',
-        'resources/js/app.js'
-    ])
+{{-- =====================================================
+     MAIN CSS & JS
+     ===================================================== --}}
+
+@vite([
+    'resources/css/app.css',
+    'resources/js/app.js'
+])
+
+
+{{-- =====================================================
+     PAGE-SPECIFIC CSS
+     ===================================================== --}}
+
+@stack('styles')
 
 </head>
 
-
 <body>
 
-    {{-- =====================================================
-         MAIN WEBSITE HEADER
-         Hide it only on individual career job pages
-         ===================================================== --}}
 
-    @if (!request()->is('careers/*'))
+{{-- =====================================================
+     MAIN WEBSITE HEADER
+     Hide it on:
+     - Individual career pages
+     - Admin pages
+     ===================================================== --}}
 
-        @include('layouts.header')
+@if (
+    !request()->is('careers/*') &&
+    !request()->is('admin/*')
+)
 
-    @endif
+    @include('layouts.header')
 
-
-    <main>
-
-        @yield('content')
-
-    </main>
+@endif
 
 
-    {{-- =====================================================
-         FOOTER
-         ===================================================== --}}
+{{-- =====================================================
+     MAIN CONTENT
+     ===================================================== --}}
+
+<main>
+
+    @yield('content')
+
+</main>
+
+
+{{-- =====================================================
+     MAIN WEBSITE FOOTER
+     Hide it on admin pages
+     ===================================================== --}}
+
+@if (!request()->is('admin/*'))
 
     @include('layouts.footer')
 
+@endif
+
+
+{{-- =====================================================
+     PAGE-SPECIFIC SCRIPTS
+     ===================================================== --}}
+
+@stack('scripts')
 
 </body>
 

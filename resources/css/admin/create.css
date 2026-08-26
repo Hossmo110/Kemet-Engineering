@@ -1,0 +1,443 @@
+/* =========================================================
+ADMIN CAREERS
+KEMET ENGINEERING
+========================================================= */
+
+.admin-career-form-page {
+width: min(1250px, 92%);
+margin: 0 auto;
+padding: 70px 0 100px;
+}
+
+/* =========================================================
+HEADER
+========================================================= */
+
+.admin-career-form-header {
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+gap: 30px;
+margin-bottom: 45px;
+}
+
+.admin-career-form-header > div {
+flex: 1;
+}
+
+.admin-label {
+display: inline-block;
+margin-bottom: 12px;
+color: #D6A93D;
+font-size: 13px;
+font-weight: 700;
+letter-spacing: 3px;
+text-transform: uppercase;
+}
+
+.admin-career-form-header h1 {
+margin: 0 0 12px;
+color: #102A43;
+font-size: clamp(36px, 4vw, 54px);
+font-weight: 700;
+line-height: 1.1;
+}
+
+.admin-career-form-header p {
+margin: 0;
+color: #666666;
+font-size: 17px;
+}
+
+/* =========================================================
+BACK BUTTON
+========================================================= */
+
+.admin-back-btn {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+padding: 13px 22px;
+border: 1px solid #102A43;
+color: #102A43;
+background: #ffffff;
+text-decoration: none;
+font-size: 13px;
+font-weight: 700;
+transition: all 0.3s ease;
+white-space: nowrap;
+}
+
+.admin-back-btn:hover {
+background: #102A43;
+color: #ffffff;
+}
+
+/* =========================================================
+FORM CARD
+========================================================= */
+
+.admin-career-form-card {
+background: #ffffff;
+border: 1px solid #e5e5e5;
+box-shadow: 0 15px 45px rgba(0, 0, 0, 0.07);
+}
+
+/* =========================================================
+FORM SECTION
+========================================================= */
+
+.admin-form-section {
+padding: 45px 50px;
+border-bottom: 1px solid #eeeeee;
+}
+
+.admin-form-section:last-of-type {
+border-bottom: none;
+}
+
+/* =========================================================
+SECTION HEADING
+========================================================= */
+
+.admin-form-section-heading {
+display: flex;
+align-items: flex-start;
+gap: 18px;
+margin-bottom: 35px;
+}
+
+.admin-form-section-heading > span {
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+width: 42px;
+height: 42px;
+background: #D6A93D;
+color: #ffffff;
+font-size: 13px;
+font-weight: 700;
+}
+
+.admin-form-section-heading h2 {
+margin: 0 0 7px;
+color: #102A43;
+font-size: 25px;
+font-weight: 700;
+}
+
+.admin-form-section-heading p {
+margin: 0;
+color: #777777;
+font-size: 14px;
+}
+
+/* =========================================================
+FORM GRID
+========================================================= */
+
+.admin-form-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 25px;
+}
+
+/* =========================================================
+FORM GROUP
+========================================================= */
+
+.admin-form-group {
+display: flex;
+flex-direction: column;
+margin-bottom: 25px;
+}
+
+.admin-form-grid .admin-form-group {
+margin-bottom: 0;
+}
+
+.admin-form-full {
+grid-column: 1 / -1;
+}
+
+.admin-form-group label {
+margin-bottom: 9px;
+color: #102A43;
+font-size: 14px;
+font-weight: 700;
+}
+
+.admin-form-group label span {
+color: #D6A93D;
+margin-left: 3px;
+}
+
+/* =========================================================
+INPUTS
+========================================================= */
+
+.admin-form-group input,
+.admin-form-group select,
+.admin-form-group textarea {
+width: 100%;
+box-sizing: border-box;
+border: 1px solid #dddddd;
+border-radius: 0;
+outline: none;
+background: #fafafa;
+color: #222222;
+font-family: inherit;
+font-size: 15px;
+transition:
+border-color 0.25s ease,
+background 0.25s ease,
+box-shadow 0.25s ease;
+}
+
+.admin-form-group input,
+.admin-form-group select {
+height: 52px;
+padding: 0 15px;
+}
+
+.admin-form-group textarea {
+min-height: 170px;
+padding: 15px;
+resize: vertical;
+line-height: 1.7;
+}
+
+.admin-form-group input:focus,
+.admin-form-group select:focus,
+.admin-form-group textarea:focus {
+border-color: #D6A93D;
+background: #ffffff;
+box-shadow: 0 0 0 3px rgba(214, 169, 61, 0.10);
+}
+
+.admin-form-group input::placeholder,
+.admin-form-group textarea::placeholder {
+color: #aaaaaa;
+}
+
+/* =========================================================
+SMALL HELP TEXT
+========================================================= */
+
+.admin-form-group small {
+margin-top: 8px;
+color: #888888;
+font-size: 12px;
+line-height: 1.5;
+}
+
+/* =========================================================
+VALIDATION ERRORS
+========================================================= */
+
+.admin-form-errors {
+margin-bottom: 30px;
+padding: 18px 22px;
+border-left: 4px solid #c0392b;
+background: #fff5f4;
+color: #8f2d24;
+font-size: 14px;
+}
+
+.admin-form-errors strong {
+display: block;
+margin-bottom: 8px;
+}
+
+.admin-form-errors ul {
+margin: 0;
+padding-left: 20px;
+}
+
+.admin-form-errors li {
+margin-bottom: 4px;
+}
+
+/* =========================================================
+FORM ACTIONS
+========================================================= */
+
+.admin-form-actions {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+gap: 15px;
+padding: 30px 50px;
+background: #f8f8f8;
+border-top: 1px solid #eeeeee;
+}
+
+/* =========================================================
+CANCEL BUTTON
+========================================================= */
+
+.admin-cancel-btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+min-width: 110px;
+height: 48px;
+padding: 0 20px;
+border: 1px solid #cccccc;
+background: #ffffff;
+color: #555555;
+text-decoration: none;
+font-size: 13px;
+font-weight: 700;
+transition: all 0.3s ease;
+}
+
+.admin-cancel-btn:hover {
+border-color: #102A43;
+background: #102A43;
+color: #ffffff;
+}
+
+/* =========================================================
+SUBMIT BUTTON
+========================================================= */
+
+.admin-submit-btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 13px;
+min-width: 150px;
+height: 48px;
+padding: 0 22px;
+border: none;
+background: #D6A93D;
+color: #ffffff;
+cursor: pointer;
+font-family: inherit;
+font-size: 13px;
+font-weight: 700;
+transition:
+background 0.3s ease,
+gap 0.3s ease;
+}
+
+.admin-submit-btn span {
+font-size: 18px;
+transition: transform 0.3s ease;
+}
+
+.admin-submit-btn:hover {
+background: #102A43;
+gap: 18px;
+}
+
+.admin-submit-btn:hover span {
+transform: translateX(4px);
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+
+.admin-career-form-page {
+    width: 94%;
+    padding: 55px 0 80px;
+}
+
+.admin-career-form-header {
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.admin-form-section {
+    padding: 35px 30px;
+}
+
+.admin-form-actions {
+    padding: 25px 30px;
+}
+
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+.admin-career-form-page {
+    width: 92%;
+    padding: 40px 0 60px;
+}
+
+.admin-career-form-header {
+    margin-bottom: 30px;
+}
+
+.admin-career-form-header h1 {
+    font-size: 36px;
+}
+
+.admin-career-form-header p {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.admin-back-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.admin-form-section {
+    padding: 30px 20px;
+}
+
+.admin-form-section-heading {
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.admin-form-section-heading > span {
+    width: 36px;
+    height: 36px;
+    font-size: 11px;
+}
+
+.admin-form-section-heading h2 {
+    font-size: 21px;
+}
+
+.admin-form-section-heading p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.admin-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+.admin-form-full {
+    grid-column: auto;
+}
+
+.admin-form-group {
+    margin-bottom: 22px !important;
+}
+
+.admin-form-actions {
+    flex-direction: column-reverse;
+    padding: 22px 20px;
+}
+
+.admin-cancel-btn,
+.admin-submit-btn {
+    width: 100%;
+}
+
+}

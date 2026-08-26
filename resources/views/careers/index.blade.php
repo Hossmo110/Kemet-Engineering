@@ -98,13 +98,13 @@
                     <div class="job-card-top">
 
                         <h3>
-                            {{ $job['title'] }}
+                            {{ $job->title }}
                         </h3>
 
                         <div class="job-meta">
 
                             <div class="job-location">
-                                📍 {{ $job['location'] }}
+                                📍 {{ $job->location }}
                             </div>
 
 
@@ -112,7 +112,7 @@
                         </div>
 
                         <p>
-                            {{ $job['description'] }}
+                            {{ $job->description }}
                         </p>
 
                     </div>
@@ -120,7 +120,7 @@
 
                     <div class="job-card-bottom">
 
-                        <a href="{{ route('careers.show', $job['id']) }}" class="apply-btn">
+                        <a href="{{ route('careers.show', $job->id) }}" class="apply-btn">
                             APPLY NOW
                             <span>→</span>
                         </a>

@@ -1,15 +1,36 @@
 @extends('layouts.app')
 
-@section('title', $job['title'] . ' | KEMET Engineering')
+@section('title', $job->title . ' | KEMET Engineering')
 
 @section('content')
 
     <div class="careers-job-page">
 
+        @if (session('success'))
+            <div class="application-success-toast" id="successToast">
+
+                <div class="success-toast-icon">
+                    ✓
+                </div>
+
+                <div class="success-toast-content">
+                    <strong>Application Submitted</strong>
+
+                    <span>
+                        {{ session('success') }}
+                    </span>
+                </div>
+
+                <button type="button" class="success-toast-close" id="closeSuccessToast">
+                    ×
+                </button>
+
+            </div>
+        @endif
 
         {{-- =====================================================
-         CAREERS HEADER
-         ===================================================== --}}
+     CAREERS HEADER
+     ===================================================== --}}
 
         <header class="careers-job-header">
 
@@ -24,6 +45,7 @@
 
                 <a href="{{ url('/careers') }}" class="careers-home-link">
                     CAREERS HOME
+
                     <span>
                         →
                     </span>
@@ -36,8 +58,8 @@
 
 
         {{-- =====================================================
-         JOB CONTENT
-         ===================================================== --}}
+     JOB CONTENT
+     ===================================================== --}}
 
         <main class="careers-job-main">
 
@@ -45,8 +67,8 @@
 
 
                 {{-- =================================================
-                 LEFT SIDE - JOB DETAILS
-                 ================================================= --}}
+             LEFT SIDE - JOB DETAILS
+             ================================================= --}}
 
                 <section class="job-details">
 
@@ -54,7 +76,7 @@
                     {{-- JOB TITLE --}}
 
                     <h1 class="job-details-title">
-                        {{ $job['title'] }}
+                        {{ $job->title }}
                     </h1>
 
 
@@ -65,7 +87,7 @@
                         <div class="job-department-name">
 
                             <strong>
-                                {{ $job['department'] }}
+                                {{ $job->department }}
                             </strong>
 
                         </div>
@@ -75,7 +97,7 @@
                             Department:
 
                             <strong>
-                                {{ $job['department'] }}
+                                {{ $job->department }}
                             </strong>
 
                         </div>
@@ -92,7 +114,7 @@
                             Posted:
 
                             <strong>
-                                {{ $job['posted'] }}
+                                {{ $job->posted_at?->format('Y-m-d') }}
                             </strong>
 
                         </div>
@@ -103,7 +125,7 @@
                             Expires:
 
                             <strong>
-                                {{ $job['expires'] }}
+                                {{ $job->expires_at?->format('Y-m-d') }}
                             </strong>
 
                         </div>
@@ -118,8 +140,8 @@
 
 
                     {{-- =================================================
-                     JOB DESCRIPTION
-                     ================================================= --}}
+                 JOB DESCRIPTION
+                 ================================================= --}}
 
                     <div class="job-section">
 
@@ -128,7 +150,7 @@
                         </h2>
 
                         <p>
-                            {{ $job['description'] }}
+                            {{ $job->description }}
                         </p>
 
                     </div>
@@ -136,10 +158,10 @@
 
 
                     {{-- =================================================
-                     QUALIFICATIONS
-                     ================================================= --}}
+                 QUALIFICATIONS
+                 ================================================= --}}
 
-                    @if (isset($job['qualifications']) && count($job['qualifications']) > 0)
+                    @if (!empty($job->qualifications))
 
                         <div class="job-section">
 
@@ -149,10 +171,12 @@
 
                             <ul>
 
-                                @foreach ($job['qualifications'] as $qualification)
-                                    <li>
-                                        {{ $qualification }}
-                                    </li>
+                                @foreach (explode("\n", $job->qualifications) as $qualification)
+                                    @if (trim($qualification) !== '')
+                                        <li>
+                                            {{ trim($qualification) }}
+                                        </li>
+                                    @endif
                                 @endforeach
 
                             </ul>
@@ -164,8 +188,8 @@
 
 
                     {{-- =================================================
-                     EMPLOYMENT DETAILS
-                     ================================================= --}}
+                 EMPLOYMENT DETAILS
+                 ================================================= --}}
 
                     <div class="job-section">
 
@@ -182,7 +206,7 @@
                                 </span>
 
                                 <strong>
-                                    {{ $job['location'] }}
+                                    {{ $job->location }}
                                 </strong>
 
                             </div>
@@ -195,7 +219,7 @@
                                 </span>
 
                                 <strong>
-                                    {{ $job['type'] }}
+                                    {{ $job->type }}
                                 </strong>
 
                             </div>
@@ -210,8 +234,8 @@
 
 
                 {{-- =================================================
-                 RIGHT SIDE - APPLICATION FORM
-                 ================================================= --}}
+             RIGHT SIDE - APPLICATION FORM
+             ================================================= --}}
 
                 <aside class="application-card">
 
@@ -235,8 +259,8 @@
 
 
 
-                    <form action="#" method="POST" enctype="multipart/form-data" class="application-form">
-
+                    <form action="{{ route('careers.apply', $job->id) }}" method="POST" enctype="multipart/form-data"
+                        class="application-form">
                         @csrf
 
 
@@ -299,8 +323,8 @@
 
 
                         {{-- =================================================
-                         UPLOAD CV
-                         ================================================= --}}
+                     UPLOAD CV
+                     ================================================= --}}
 
                         <div class="career-form-group">
 
@@ -329,6 +353,8 @@
 
                         </div>
 
+
+
                         {{-- SUBMIT --}}
 
                         <button type="submit" class="apply-submit">
@@ -354,8 +380,8 @@
 
 
     {{-- =====================================================
-     CV FILE NAME SCRIPT
-     ===================================================== --}}
+ CV FILE NAME SCRIPT
+ ===================================================== --}}
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -388,26 +414,34 @@
         });
     </script>
 
-    <script>
-        const cvInput = document.getElementById('cv');
-        const cvFileName = document.querySelector('.cv-file-name');
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
 
-        if (cvInput && cvFileName) {
+        const toast = document.getElementById('successToast');
+        const closeButton = document.getElementById('closeSuccessToast');
 
-            cvInput.addEventListener('change', function() {
+        if (!toast) {
+            return;
+        }
 
-                if (this.files.length > 0) {
+        function closeToast() {
 
-                    cvFileName.textContent = this.files[0].name;
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateX(40px)';
 
-                } else {
+            setTimeout(function () {
+                toast.remove();
+            }, 400);
+        }
 
-                    cvFileName.textContent = 'No file chosen';
+        if (closeButton) {
 
-                }
-
-            });
+            closeButton.addEventListener('click', closeToast);
 
         }
-    </script>
+
+        setTimeout(closeToast, 5000);
+
+    });
+</script>
 @endsection
