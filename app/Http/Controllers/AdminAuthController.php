@@ -36,9 +36,9 @@ class AdminAuthController extends Controller
             $request->session()->regenerate();
 
 
-            // Go directly to Admin Career Management
+            // Go directly to Admin Dashboard
             return redirect()
-                ->route('admin.careers.index');
+                ->route('admin.dashboard');
         }
 
 
@@ -63,6 +63,7 @@ class AdminAuthController extends Controller
 
         // Invalidate current session
         $request->session()->invalidate();
+
 
         // Generate a new CSRF token
         $request->session()->regenerateToken();

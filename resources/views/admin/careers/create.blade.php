@@ -1,4 +1,5 @@
-@extends('layouts.app')
+
+@extends('layouts.admin')
 
 {{-- =========================================================
 PAGE CSS
@@ -38,7 +39,7 @@ PAGE CSS
             </div>
 
 
-            <a href="{{ route('admin.careers.index') }}" class="admin-back-btn">
+            <a href="{{ route('admin.dashboard') }}" class="admin-back-btn">
                 ← Back to Jobs
             </a>
 
@@ -345,7 +346,7 @@ PAGE CSS
 
                 <div class="admin-form-actions">
 
-                    <a href="{{ route('admin.careers.index') }}" class="admin-cancel-btn">
+                    <a href="{{ route('admin.dashboard') }}" class="admin-cancel-btn">
                         Cancel
                     </a>
 

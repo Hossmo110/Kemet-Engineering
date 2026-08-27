@@ -9,6 +9,9 @@ class AdminCareerController extends Controller
 {
     /**
      * Display all career jobs.
+     *
+     * This is the main Admin Dashboard:
+     * /admin
      */
     public function index()
     {
@@ -20,6 +23,8 @@ class AdminCareerController extends Controller
 
     /**
      * Show create job form.
+     *
+     * /admin/careers/create
      */
     public function create()
     {
@@ -58,14 +63,18 @@ class AdminCareerController extends Controller
         CareerJob::create($validated);
 
 
+        // After creating the job,
+        // return directly to Admin Dashboard.
         return redirect()
-            ->route('admin.careers.index')
+            ->route('admin.dashboard')
             ->with('success', 'Job has been added successfully.');
     }
 
 
     /**
      * Display a specific job.
+     *
+     * Not used by the Admin Panel.
      */
     public function show(string $id)
     {
@@ -75,6 +84,8 @@ class AdminCareerController extends Controller
 
     /**
      * Show edit job form.
+     *
+     * /admin/careers/{id}/edit
      */
     public function edit(string $id)
     {
@@ -118,8 +129,10 @@ class AdminCareerController extends Controller
         $job->update($validated);
 
 
+        // After updating the job,
+        // return directly to Admin Dashboard.
         return redirect()
-            ->route('admin.careers.index')
+            ->route('admin.dashboard')
             ->with('success', 'Job has been updated successfully.');
     }
 
@@ -134,8 +147,10 @@ class AdminCareerController extends Controller
         $job->delete();
 
 
+        // After deleting the job,
+        // return directly to Admin Dashboard.
         return redirect()
-            ->route('admin.careers.index')
+            ->route('admin.dashboard')
             ->with('success', 'Job has been deleted successfully.');
     }
 }

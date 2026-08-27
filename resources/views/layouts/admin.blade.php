@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,25 +5,26 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
         @yield('title', 'KEMET Engineering | Admin')
     </title>
+
+    {{-- FAVICON --}}
+
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
+
+    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
 
 
     {{-- =====================================================
          VITE CSS & JS
     ===================================================== --}}
 
-    @vite([
-        'resources/css/app.css',
-        'resources/css/admin/admin.css',
-        'resources/js/app.js'
-    ])
+    @vite(['resources/css/app.css', 'resources/css/admin/admin.css', 'resources/js/app.js'])
+
+    @stack('styles')
 
 </head>
 
@@ -46,27 +46,20 @@
         <aside class="admin-sidebar">
 
 
-            {{-- =================================================
-                 LOGO
-            ================================================= --}}
+            {{-- LOGO --}}
 
             <div class="admin-sidebar-logo">
 
-                <a href="{{ route('admin.careers.index') }}">
+                <a href="{{ route('admin.dashboard') }}">
 
-                    <img
-                        src="{{ asset('images/logo.png') }}"
-                        alt="KEMET Engineering"
-                    >
+                    <img src="{{ asset('images/logo.png') }}" alt="KEMET Engineering">
 
                 </a>
 
             </div>
 
 
-            {{-- =================================================
-                 ADMIN TITLE
-            ================================================= --}}
+            {{-- ADMIN TITLE --}}
 
             <div class="admin-sidebar-title">
 
@@ -88,12 +81,10 @@
             <nav class="admin-sidebar-nav">
 
 
-                {{-- CAREER JOBS --}}
+                {{-- CAREER JOBS / DASHBOARD --}}
 
-                <a
-                    href="{{ route('admin.careers.index') }}"
-                    class="{{ request()->routeIs('admin.careers.index') ? 'active' : '' }}"
-                >
+                <a href="{{ route('admin.dashboard') }}"
+                    class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
 
                     <span class="admin-nav-icon">
                         💼
@@ -108,10 +99,8 @@
 
                 {{-- ADD NEW JOB --}}
 
-                <a
-                    href="{{ route('admin.careers.create') }}"
-                    class="{{ request()->routeIs('admin.careers.create') ? 'active' : '' }}"
-                >
+                <a href="{{ route('admin.careers.create') }}"
+                    class="{{ request()->routeIs('admin.careers.create') ? 'active' : '' }}">
 
                     <span class="admin-nav-icon">
                         ＋
@@ -126,10 +115,7 @@
 
                 {{-- VIEW WEBSITE --}}
 
-                <a
-                    href="{{ route('home') }}"
-                    target="_blank"
-                >
+                <a href="{{ route('home') }}" target="_blank">
 
                     <span class="admin-nav-icon">
                         🌐
@@ -179,17 +165,11 @@
 
                 {{-- LOGOUT --}}
 
-                <form
-                    action="{{ route('admin.logout') }}"
-                    method="POST"
-                >
+                <form action="{{ route('admin.logout') }}" method="POST">
 
                     @csrf
 
-                    <button
-                        type="submit"
-                        class="admin-logout-btn"
-                    >
+                    <button type="submit" class="admin-logout-btn">
 
                         <span>
                             ↪
@@ -219,7 +199,6 @@
 
             <header class="admin-topbar">
 
-
                 <div>
 
                     <span class="admin-topbar-label">
@@ -235,11 +214,7 @@
 
                 {{-- VISIT WEBSITE --}}
 
-                <a
-                    href="{{ route('home') }}"
-                    target="_blank"
-                    class="admin-website-btn"
-                >
+                <a href="{{ route('home') }}" target="_blank" class="admin-website-btn">
 
                     Visit Website
 
