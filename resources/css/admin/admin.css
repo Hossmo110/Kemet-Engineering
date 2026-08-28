@@ -1181,3 +1181,439 @@
     }
 
 }
+
+
+
+/* =====================================================
+   JOB APPLICATIONS PAGE
+===================================================== */
+
+.admin-page-header {
+    width: 100%;
+    max-width: 1600px;
+
+    margin: 0 auto 30px;
+}
+
+.admin-page-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--admin-gold);
+
+    font-size: 20px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.admin-page-header h1 {
+    margin: 0 0 10px;
+
+    color: var(--admin-navy);
+
+    font-size: 38px;
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+.admin-page-header p {
+    margin: 0;
+
+    color: var(--admin-muted);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+/* =====================================================
+   APPLICATION PHONE
+===================================================== */
+
+.application-phone {
+    display: inline-block;
+
+    color: #486581;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
+}
+
+.application-phone:hover {
+    color: var(--admin-gold);
+}
+
+
+/* =====================================================
+   APPLICATIONS CARD
+===================================================== */
+
+.admin-card {
+    width: 100%;
+    max-width: 1600px;
+
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    border: 1px solid var(--admin-border);
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 30px rgba(16, 42, 67, 0.05);
+}
+
+
+/* =====================================================
+   CARD HEADER
+===================================================== */
+
+.admin-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 25px 28px;
+
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-card-header h2 {
+    margin: 0 0 6px;
+
+    color: var(--admin-navy);
+
+    font-size: 21px;
+}
+
+.admin-card-header span {
+    color: var(--admin-muted);
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   APPLICATIONS TABLE
+===================================================== */
+
+.admin-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+
+    min-width: 1050px;
+
+    border-collapse: collapse;
+}
+
+.admin-table thead {
+    background: #f8fafc;
+}
+
+.admin-table th {
+    padding: 16px 18px;
+
+    color: #627d98;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-table td {
+    padding: 18px;
+
+    color: #486581;
+
+    font-size: 12px;
+
+    border-bottom: 1px solid #edf0f3;
+
+    vertical-align: middle;
+}
+
+.admin-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.admin-table tbody tr:hover {
+    background: #fbfcfd;
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   APPLICANT
+===================================================== */
+
+.application-applicant {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 180px;
+}
+
+.application-avatar {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #f8f1df;
+
+    color: var(--admin-gold);
+
+    border-radius: 50%;
+
+    font-size: px;
+    font-weight: 700;
+}
+
+.application-applicant strong {
+    color: var(--admin-navy);
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   JOB POSITION
+===================================================== */
+
+.application-job {
+    display: inline-block;
+
+    max-width: 220px;
+
+    color: var(--admin-navy);
+
+    font-size: 17px;
+    font-weight: 700;
+
+    line-height: 1.5;
+}
+
+.application-muted {
+    color: var(--admin-muted);
+
+    font-size: 17px;
+
+    font-style: italic;
+}
+
+
+
+/* =====================================================
+   EMAIL
+===================================================== */
+
+.application-email {
+    color: #486581;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+    font-size: 17px;
+}
+
+.application-email:hover {
+    color: var(--admin-gold);
+
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   DATE
+===================================================== */
+
+.application-date {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #486581;
+
+    font-size: 17px;
+
+    white-space: nowrap;
+}
+
+.admin-table td small {
+    display: block;
+
+    color: var(--admin-muted);
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   VIEW APPLICATION BUTTON
+===================================================== */
+
+.admin-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 34px;
+
+    padding: 0 13px;
+
+    background: #eef4f8;
+
+    color: var(--admin-navy);
+
+    border: 1px solid #dce7ee;
+
+    border-radius: 4px;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.admin-action-btn span {
+    font-size: 14px;
+
+    line-height: 1;
+}
+
+.admin-action-btn:hover {
+    background: var(--admin-navy);
+
+    color: #ffffff;
+
+    border-color: var(--admin-navy);
+}
+
+
+/* =====================================================
+   EMPTY APPLICATIONS
+===================================================== */
+
+.admin-empty-state {
+    padding: 90px 30px;
+
+    text-align: center;
+}
+
+.admin-empty-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    background: #f8f1df;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+}
+
+.admin-empty-state h3 {
+    margin: 0 0 10px;
+
+    color: var(--admin-navy);
+
+    font-size: 26px;
+}
+
+.admin-empty-state p {
+    margin: 0;
+
+    color: var(--admin-muted);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   APPLICATIONS RESPONSIVE
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .admin-page-header h1 {
+        font-size: 32px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .admin-page-header h1 {
+        font-size: 28px;
+    }
+
+    .admin-page-header p {
+        font-size: 14px;
+    }
+
+    .admin-card-header {
+        padding: 20px;
+    }
+
+    .admin-empty-state {
+        padding: 70px 20px;
+    }
+
+    .admin-empty-state h3 {
+        font-size: 23px;
+    }
+
+}
+

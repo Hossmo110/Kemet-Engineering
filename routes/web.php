@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminCareerController;
+use App\Http\Controllers\AdminApplicationController;
 
 
 /*
@@ -48,32 +49,35 @@ Route::post('/careers/{id}/apply', [CareerController::class, 'apply'])
 |--------------------------------------------------------------------------
 */
 
+// Admin Login Page
 Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])
     ->name('admin.login');
 
+// Admin Login Submit
 Route::post('/admin/login', [AdminAuthController::class, 'login'])
     ->name('admin.login.submit');
 
+// Admin Logout
 Route::post('/admin/logout', [AdminAuthController::class, 'logout'])
     ->name('admin.logout');
 
 
 /*
 |--------------------------------------------------------------------------
-| ADMIN PANEL
+| PROTECTED ADMIN PANEL
 |--------------------------------------------------------------------------
+|
+| Everything inside this group requires authentication.
+|
 */
 
-Route::middleware('auth')->prefix('admin')->group(function () {
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+
 
     /*
     |--------------------------------------------------------------------------
     | ADMIN DASHBOARD
     |--------------------------------------------------------------------------
-    |
-    | /admin
-    | This is now the main Admin page.
-    |
     */
 
     Route::get('/', [AdminCareerController::class, 'index'])
@@ -106,4 +110,20 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::delete('/careers/{id}', [AdminCareerController::class, 'destroy'])
         ->name('admin.careers.destroy');
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | JOB APPLICATIONS
+    |--------------------------------------------------------------------------
+    */
+
+    // All applications
+    Route::get('/applications', [AdminApplicationController::class, 'index'])
+        ->name('admin.applications.index');
+
+    // Application details
+    Route::get('/applications/{id}', [AdminApplicationController::class, 'show'])
+        ->name('admin.applications.show');
+
 });
+
