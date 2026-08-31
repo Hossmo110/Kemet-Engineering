@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,11 +22,7 @@
          VITE CSS & JS
     ===================================================== --}}
 
-    @vite([
-        'resources/css/app.css',
-        'resources/css/admin/admin.css',
-        'resources/js/app.js'
-    ])
+    @vite(['resources/css/app.css', 'resources/css/admin/admin.css', 'resources/js/app.js'])
 
     @stack('styles')
 
@@ -57,10 +52,7 @@
 
                 <a href="{{ route('admin.dashboard') }}">
 
-                    <img
-                        src="{{ asset('images/logo.png') }}"
-                        alt="KEMET Engineering"
-                    >
+                    <img src="{{ asset('images/logo.png') }}" alt="KEMET Engineering">
 
                 </a>
 
@@ -104,6 +96,21 @@
 
                 </a>
 
+
+                {{-- PROJECTS --}}
+
+                <a href="{{ route('admin.projects.index') }}"
+                    class="{{ request()->routeIs('admin.projects.*') ? 'active' : '' }}">
+
+                    <span class="admin-nav-icon">
+                        🏗️
+                    </span>
+
+                    <span>
+                        Projects
+                    </span>
+
+                </a>
 
                 {{-- ADD NEW JOB --}}
 
@@ -239,11 +246,7 @@
 
                 {{-- VISIT WEBSITE --}}
 
-                <a
-                    href="{{ route('home') }}"
-                    target="_blank"
-                    class="admin-website-btn"
-                >
+                <a href="{{ route('home') }}" target="_blank" class="admin-website-btn">
 
                     Visit Website
 

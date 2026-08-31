@@ -29,6 +29,11 @@
 @import './admin/edit.css';
 
 
+/* projects */
+@import "./projects/create.css";
+@import "./projects/show.css";
+
+
 /* =====================================================
    ADMIN LOGIN
    KEMET ENGINEERING

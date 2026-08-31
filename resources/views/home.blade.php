@@ -239,7 +239,9 @@
 
             <div class="section-heading">
 
-                <span class="section-subtitle">LATEST PROJECTS</span>
+                <span class="section-subtitle">
+                    LATEST PROJECTS
+                </span>
 
                 <h2 class="section-title">
                     Our Featured Projects
@@ -254,94 +256,119 @@
 
             </div>
 
-            <div class="swiper projectsSwiper">
 
-                <div class="swiper-wrapper">
+            @if ($projects->count())
 
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <img src="{{ asset('images/project1.jpg') }}">
-                            <div class="project-overlay">
-                                <span>Commercial</span>
-                                <h3>Business Tower</h3>
+                <div class="swiper projectsSwiper">
+
+                    <div class="swiper-wrapper">
+
+                        @foreach ($projects as $project)
+                            <div class="swiper-slide">
+
+                                <div class="project-card">
+
+                                    {{-- PROJECT IMAGE --}}
+
+                                    @if ($project->main_image)
+                                        <img src="{{ asset('storage/' . $project->main_image) }}"
+                                            alt="{{ $project->title }}">
+                                    @else
+                                        <img src="{{ asset('images/project-placeholder.jpg') }}"
+                                            alt="{{ $project->title }}">
+                                    @endif
+
+
+                                    {{-- PROJECT CONTENT --}}
+
+                                    <div class="project-overlay">
+
+                                        {{-- CATEGORY --}}
+
+                                        @if ($project->category)
+                                            <span>
+                                                {{ $project->category }}
+                                            </span>
+                                        @endif
+
+
+                                        {{-- PROJECT TITLE --}}
+
+                                        <h3>
+                                            {{ $project->title }}
+                                        </h3>
+
+
+                                        {{-- MORE DETAILS --}}
+
+                                        <a href="{{ route('projects.show', $project->slug) }}" class="project-read-more">
+
+                                            <span>
+                                                More Details
+                                            </span>
+
+                                            <svg viewBox="0 0 30 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <line x1="1" y1="6" x2="27" y2="6" />
+                                                <polyline points="21,1 27,6 21,11" />
+                                            </svg>
+
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
                             </div>
-                        </div>
-                    </div>
+                        @endforeach
 
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <img src="{{ asset('images/project2.jpg') }}">
-                            <div class="project-overlay">
-                                <span>Infrastructure</span>
-                                <h3>Modern Bridge</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <img src="{{ asset('images/project3.jpg') }}">
-                            <div class="project-overlay">
-                                <span>Residential</span>
-                                <h3>Luxury Compound</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <img src="{{ asset('images/project4.jpg') }}">
-                            <div class="project-overlay">
-                                <span>Industrial</span>
-                                <h3>Industrial Plant</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <img src="{{ asset('images/project5.jpg') }}">
-                            <div class="project-overlay">
-                                <span>Healthcare</span>
-                                <h3>Medical Center</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <img src="{{ asset('images/project6.jpg') }}">
-                            <div class="project-overlay">
-                                <span>Education</span>
-                                <h3>University Campus</h3>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
 
-            </div>
 
-            <div class="projects-navigation">
+                {{-- PROJECT NAVIGATION --}}
 
-                <button class="project-arrow project-prev" type="button" aria-label="Previous project">
-                    <svg viewBox="0 0 17 7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M1.3 3.5H16.8" fill="none" stroke="currentColor" stroke-width="1" />
+                <div class="projects-navigation">
 
-                        <path d="M3.8 6.5L.8 3.5L3.8 .5" fill="none" stroke="currentColor" stroke-width="1" />
-                    </svg>
-                </button>
+                    <button class="project-arrow project-prev" type="button" aria-label="Previous project">
+
+                        <svg viewBox="0 0 17 7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+                            <path d="M1.3 3.5H16.8" fill="none" stroke="currentColor" stroke-width="1" />
+
+                            <path d="M3.8 6.5L.8 3.5L3.8 .5" fill="none" stroke="currentColor" stroke-width="1" />
+
+                        </svg>
+
+                    </button>
 
 
-                <button class="project-arrow project-next" type="button" aria-label="Next project">
-                    <svg viewBox="0 0 17 7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M15.7 3.5H.2" fill="none" stroke="currentColor" stroke-width="1" />
+                    <button class="project-arrow project-next" type="button" aria-label="Next project">
 
-                        <path d="M13.2 .5L16.2 3.5L13.2 6.5" fill="none" stroke="currentColor" stroke-width="1" />
-                    </svg>
-                </button>
+                        <svg viewBox="0 0 17 7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 
-            </div>
+                            <path d="M15.7 3.5H.2" fill="none" stroke="currentColor" stroke-width="1" />
+
+                            <path d="M13.2 .5L16.2 3.5L13.2 6.5" fill="none" stroke="currentColor" stroke-width="1" />
+
+                        </svg>
+
+                    </button>
+
+                </div>
+            @else
+                <div class="projects-empty">
+
+                    <p>
+                        No projects available at the moment.
+                    </p>
+
+                </div>
+
+            @endif
+
+        </div>
+
     </section>
 
 
@@ -604,8 +631,8 @@
     <!-- Careers -->
 
     <!--==========================
-        CAREERS
-        ==========================-->
+                CAREERS
+                ==========================-->
 
     <section class="careers-section">
 

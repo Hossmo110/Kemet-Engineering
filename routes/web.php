@@ -1,11 +1,14 @@
-
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminCareerController;
 use App\Http\Controllers\AdminApplicationController;
+use App\Http\Controllers\AdminProjectController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectController;
 
 
 /*
@@ -14,7 +17,8 @@ use App\Http\Controllers\AdminApplicationController;
 |--------------------------------------------------------------------------
 */
 
-Route::view('/', 'home')->name('home');
+Route::get('/', [HomeController::class, 'index'])
+    ->name('home');
 
 Route::view('/about', 'about')->name('about');
 
@@ -41,6 +45,15 @@ Route::get('/careers/{id}', [CareerController::class, 'show'])
 
 Route::post('/careers/{id}/apply', [CareerController::class, 'apply'])
     ->name('careers.apply');
+
+/*
+|--------------------------------------------------------------------------
+| PUBLIC PROJECTS
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/projects/{slug}', [ProjectController::class, 'show'])
+    ->name('projects.show');
 
 
 /*
@@ -125,5 +138,43 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/applications/{id}', [AdminApplicationController::class, 'show'])
         ->name('admin.applications.show');
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | PROJECTS
+    |--------------------------------------------------------------------------
+    */
+
+    // All projects
+    Route::get('/projects', [AdminProjectController::class, 'index'])
+        ->name('admin.projects.index');
+
+    // Create project
+    Route::get('/projects/create', [AdminProjectController::class, 'create'])
+        ->name('admin.projects.create');
+
+    // Store project
+    Route::post('/projects', [AdminProjectController::class, 'store'])
+        ->name('admin.projects.store');
+
+    // Edit project
+    Route::get('/projects/{id}/edit', [AdminProjectController::class, 'edit'])
+        ->name('admin.projects.edit');
+
+    // Update project
+    Route::put('/projects/{id}', [AdminProjectController::class, 'update'])
+        ->name('admin.projects.update');
+
+    // Delete project
+    Route::delete('/projects/{id}', [AdminProjectController::class, 'destroy'])
+        ->name('admin.projects.destroy');
+
+    // Delete gallery image
+    Route::delete('/project-images/{id}', [AdminProjectController::class, 'destroyImage'])
+        ->name('admin.projects.images.destroy');
 });
 
+
+
+Route::get('/projects/{project:slug}', [ProjectController::class, 'show'])
+    ->name('projects.show');

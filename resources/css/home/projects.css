@@ -22,63 +22,132 @@ LATEST PROJECTS
     transition: transform .4s ease;
 }
 
+
+/*==========================
+PROJECT CARD
+==========================*/
+
 .project-card {
     position: relative;
+
     height: 450px;
+
     border-radius: 15px;
+
     overflow: hidden;
+
     cursor: pointer;
+
     box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
 }
+
+
+/*==========================
+PROJECT IMAGE
+==========================*/
 
 .project-card img {
     width: 100%;
     height: 100%;
+
     display: block;
+
     object-fit: cover;
+
     transition: transform .5s ease;
 }
 
+
+/*==========================
+PROJECT OVERLAY
+==========================*/
+
 .project-overlay {
     position: absolute;
-    inset: 0;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    min-height: 45%;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: flex-end;
 
-    padding: 30px;
+    padding: 35px 30px 30px;
 
-    background: linear-gradient(to top,
-            rgba(15, 33, 77, .92),
-            rgba(15, 33, 77, .35),
-            transparent);
+    box-sizing: border-box;
 
-    opacity: 0;
-    transition: opacity .4s ease;
+    background: linear-gradient(
+        to top,
+        rgba(15, 33, 77, .95),
+        rgba(15, 33, 77, .65),
+        rgba(15, 33, 77, 0)
+    );
+
+    /* الكلام ظاهر دائمًا */
+    opacity: 1;
+
+    transition: background .4s ease;
 }
 
+
+/*==========================
+PROJECT CATEGORY
+==========================*/
+
 .project-overlay span {
+    display: block;
+
     color: #D6A93D;
+
     text-transform: uppercase;
+
     letter-spacing: 2px;
+
     font-size: 14px;
+
+    font-weight: 600;
+
     margin-bottom: 10px;
 }
 
+
+/*==========================
+PROJECT TITLE
+==========================*/
+
 .project-overlay h3 {
     color: #fff;
+
     font-size: 30px;
+
     font-weight: 700;
+
+    line-height: 1.2;
+
     margin: 0;
 }
+
+
+/*==========================
+PROJECT HOVER
+==========================*/
 
 .project-card:hover img {
     transform: scale(1.08);
 }
 
 .project-card:hover .project-overlay {
-    opacity: 1;
+    background: linear-gradient(
+        to top,
+        rgba(15, 33, 77, 1),
+        rgba(15, 33, 77, .7),
+        rgba(15, 33, 77, .05)
+    );
 }
 
 
@@ -88,7 +157,9 @@ PROJECT NAVIGATION
 
 .projects-navigation {
     display: flex;
+
     justify-content: flex-end;
+
     align-items: center;
 
     gap: 15px;
@@ -98,19 +169,24 @@ PROJECT NAVIGATION
     padding-right: 5%;
 }
 
+
 .project-arrow {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     width: 65px;
+
     height: 55px;
 
     padding: 0;
+
     margin: 0;
 
     border: none;
+
     outline: none;
 
     background: transparent;
@@ -122,8 +198,10 @@ PROJECT NAVIGATION
     transition: .3s ease;
 }
 
+
 .project-arrow svg {
     width: 65px;
+
     height: 30px;
 
     display: block;
@@ -131,13 +209,16 @@ PROJECT NAVIGATION
     transition: .3s ease;
 }
 
+
 .project-arrow:hover {
     color: #D6A93D;
 }
 
+
 .project-prev:hover svg {
     transform: translateX(-6px);
 }
+
 
 .project-next:hover svg {
     transform: translateX(6px);
@@ -150,6 +231,60 @@ PROJECT MOBILE
 
 @media (max-width: 767px) {
 
+    .projects-section {
+        padding: 80px 0;
+    }
+
+
+    .projectsSwiper {
+        margin-top: 40px;
+    }
+
+
+    .project-card {
+        height: 350px;
+
+        border-radius: 12px;
+    }
+
+
+    .project-overlay {
+        min-height: 50%;
+
+        padding: 25px 20px 22px;
+
+        background: linear-gradient(
+            to top,
+            rgba(15, 33, 77, .95),
+            rgba(15, 33, 77, .6),
+            transparent
+        );
+    }
+
+
+    .project-overlay span {
+        font-size: 11px;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 7px;
+    }
+
+
+    .project-overlay h3 {
+        font-size: 23px;
+    }
+
+
+    .project-card:hover img {
+        transform: scale(1.04);
+    }
+
+
+    /*==========================
+    MOBILE NAVIGATION
+    ==========================*/
+
     .projects-navigation {
         margin-top: 25px;
 
@@ -158,16 +293,53 @@ PROJECT MOBILE
         gap: 10px;
     }
 
+
     .project-arrow {
         width: 55px;
+
         height: 45px;
     }
 
+
     .project-arrow svg {
         width: 55px;
+
         height: 25px;
     }
 
 }
 
+
+/*==========================
+SMALL MOBILE
+==========================*/
+
+@media (max-width: 480px) {
+
+    .project-card {
+        height: 300px;
+
+        border-radius: 10px;
+    }
+
+
+    .project-overlay {
+        min-height: 55%;
+
+        padding: 22px 18px 18px;
+    }
+
+
+    .project-overlay span {
+        font-size: 10px;
+
+        letter-spacing: 1.2px;
+    }
+
+
+    .project-overlay h3 {
+        font-size: 20px;
+    }
+
+}
 
