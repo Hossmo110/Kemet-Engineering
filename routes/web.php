@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminApplicationController;
 use App\Http\Controllers\AdminProjectController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ContactController;
 
 
 /*
@@ -178,3 +179,10 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
 Route::get('/projects/{project:slug}', [ProjectController::class, 'show'])
     ->name('projects.show');
+
+
+Route::get('/contact-us', [ContactController::class, 'index'])
+    ->name('contact');
+
+Route::post('/contact-us', [ContactController::class, 'store'])
+    ->name('contact.store');
