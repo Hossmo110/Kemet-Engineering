@@ -6,7 +6,7 @@
 
 <div class="admin-project-page">
 
-```
+
 {{-- PAGE HEADER --}}
 <div class="admin-project-header">
 
