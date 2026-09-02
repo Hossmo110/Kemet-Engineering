@@ -229,6 +229,7 @@
     margin: 8px 0 0;
 
     color: #172535 !important;
+
     font-family: inherit;
 
     font-size: 22px !important;
@@ -241,9 +242,10 @@
 
     -webkit-line-clamp: 3;
 
+    line-clamp: 3;
+
     overflow: hidden;
 }
-
 
 
 /* =========================================================
