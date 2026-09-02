@@ -1,185 +1,371 @@
-/*==========================
-LATEST PROJECTS
-==========================*/
+/* =========================================================
+   KEMET ENGINEERING
+   LATEST PROJECTS
+========================================================= */
+
+
+/* =========================================================
+   PROJECTS SECTION
+========================================================= */
 
 .projects-section {
-    background: #fff;
-    padding: 120px 0;
+    position: relative;
+
+    width: 100%;
+
+    padding: 100px 0;
+
+    overflow: hidden;
 }
+
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.projects-section .section-heading {
+    margin-bottom: 50px;
+}
+
+
+
+/* =========================================================
+   SWIPER
+========================================================= */
 
 .projectsSwiper {
     width: 100%;
-    margin-top: 60px;
+
     overflow: hidden;
 }
+
 
 .projectsSwiper .swiper-wrapper {
     align-items: stretch;
 }
 
+
 .projectsSwiper .swiper-slide {
     height: auto;
-    transition: transform .4s ease;
 }
 
 
-/*==========================
-PROJECT CARD
-==========================*/
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
 
 .project-card {
-    position: relative;
-
-    height: 450px;
-
-    border-radius: 15px;
-
-    overflow: hidden;
-
-    cursor: pointer;
-
-    box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
-}
-
-
-/*==========================
-PROJECT IMAGE
-==========================*/
-
-.project-card img {
     width: 100%;
     height: 100%;
 
-    display: block;
+    display: flex;
+    flex-direction: column;
 
-    object-fit: cover;
+    background: transparent;
 
-    transition: transform .5s ease;
+    transition:
+        transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
-/*==========================
-PROJECT OVERLAY
-==========================*/
+.project-card:hover {
+    transform: translateY(-4px);
+}
 
-.project-overlay {
+
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
+
+.project-image {
+    position: relative;
+
+    width: 100%;
+
+    /*
+     * نفس شكل الصور الواسعة في التصميم
+     */
+
+    height: 26rem;
+
+    overflow: hidden;
+
+    background: #172535;
+}
+
+
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
+
+.project-image>img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.project-card:hover .project-image>img {
+    transform: scale(1.025);
+}
+
+
+
+/* =========================================================
+   IMAGE GRADIENT
+========================================================= */
+
+.project-image-gradient {
     position: absolute;
 
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
 
-    min-height: 45%;
+    pointer-events: none;
+
+    background:
+        linear-gradient(to top,
+            rgba(0, 0, 0, 0.60) 0%,
+            rgba(0, 0, 0, 0.20) 50%,
+            rgba(0, 0, 0, 0) 100%);
+}
+
+
+
+/* =========================================================
+   PROJECT LOGO
+========================================================= */
+
+.project-logo {
+    position: absolute;
+
+    left: 16px;
+    bottom: 16px;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    pointer-events: none;
+}
+
+
+.project-logo img {
+    display: block;
+
+    width: auto !important;
+
+    height: 3.75rem !important;
+
+    max-width: 11rem !important;
+
+    max-height: 3.75rem !important;
+
+    object-fit: contain;
+}
+
+
+
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
+
+.project-content {
+    flex: 1;
 
     display: flex;
 
     flex-direction: column;
 
-    justify-content: flex-end;
-
-    padding: 35px 30px 30px;
-
-    box-sizing: border-box;
-
-    background: linear-gradient(
-        to top,
-        rgba(15, 33, 77, .95),
-        rgba(15, 33, 77, .65),
-        rgba(15, 33, 77, 0)
-    );
-
-    /* الكلام ظاهر دائمًا */
-    opacity: 1;
-
-    transition: background .4s ease;
+    padding-top: 20px;
 }
 
 
-/*==========================
-PROJECT CATEGORY
-==========================*/
 
-.project-overlay span {
-    display: block;
+/* =========================================================
+   PROJECT TITLE
+========================================================= */
 
-    color: #D6A93D;
+.project-title {
+    margin: 0;
 
-    text-transform: uppercase;
+    color: #D6A93D !important;
 
-    letter-spacing: 2px;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    margin-bottom: 10px;
-}
-
-
-/*==========================
-PROJECT TITLE
-==========================*/
-
-.project-overlay h3 {
-    color: #fff;
+    font-family: inherit;
 
     font-size: 30px;
 
-    font-weight: 700;
+    font-weight: 600;
 
-    line-height: 1.2;
+    line-height: 1.25;
 
-    margin: 0;
+    letter-spacing: 1px;
 }
 
 
-/*==========================
-PROJECT HOVER
-==========================*/
 
-.project-card:hover img {
-    transform: scale(1.08);
+/* =========================================================
+   PROJECT DESCRIPTION
+========================================================= */
+
+.project-description {
+    margin: 8px 0 0;
+
+    color: #172535 !important;
+    font-family: inherit;
+
+    font-size: 22px !important;
+
+    line-height: 1.7;
+
+    display: -webkit-box;
+
+    -webkit-box-orient: vertical;
+
+    -webkit-line-clamp: 3;
+
+    overflow: hidden;
 }
 
-.project-card:hover .project-overlay {
-    background: linear-gradient(
-        to top,
-        rgba(15, 33, 77, 1),
-        rgba(15, 33, 77, .7),
-        rgba(15, 33, 77, .05)
-    );
+
+
+/* =========================================================
+   MORE DETAILS
+========================================================= */
+
+.project-details {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    color: #172535;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.project-details svg {
+    width: 30px;
+    height: 12px;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.2;
+}
+
+.project-details:hover {
+    color: #D6A93D;
+}
+
+.project-details:hover svg {
+    transform: translateX(5px);
+}
+
+.project-details svg {
+    transition: transform 0.3s ease;
+}
+
+/* =========================================================
+   MORE DETAILS ARROW
+========================================================= */
+
+.project-details img {
+    display: block !important;
+
+    width: 28px !important;
+
+    height: auto !important;
+
+    max-width: none !important;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    transition:
+        transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
-/*==========================
-PROJECT NAVIGATION
-==========================*/
+.project-details:hover img {
+    transform: translateX(5px);
+}
+
+
+
+/* =========================================================
+   PROJECT BOTTOM LINE
+========================================================= */
+
+.project-line {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    border-bottom:
+        1px solid rgba(23, 37, 53, 0.25);
+}
+
+
+
+/* =========================================================
+   PROJECT NAVIGATION
+========================================================= */
 
 .projects-navigation {
     display: flex;
+
+    width: 100%;
 
     justify-content: flex-end;
 
     align-items: center;
 
-    gap: 15px;
+    gap: 25px;
 
-    margin-top: 35px;
-
-    padding-right: 5%;
+    margin-top: 28px;
 }
 
 
+
+/* =========================================================
+   PROJECT ARROW BUTTON
+========================================================= */
+
 .project-arrow {
+    position: relative;
+
     display: flex;
 
     align-items: center;
 
     justify-content: center;
 
-    width: 65px;
+    width: 45px;
 
-    height: 55px;
+    height: 35px;
 
     padding: 0;
 
@@ -191,155 +377,329 @@ PROJECT NAVIGATION
 
     background: transparent;
 
-    color: #0F214D;
-
     cursor: pointer;
 
-    transition: .3s ease;
+    color: #172535;
+
+    appearance: none;
+
+    -webkit-appearance: none;
 }
 
 
-.project-arrow svg {
-    width: 65px;
 
-    height: 30px;
+/* =========================================================
+   REMOVE SWIPER DEFAULT ARROW
+========================================================= */
 
-    display: block;
+.project-arrow::after {
+    display: none !important;
 
-    transition: .3s ease;
+    content: none !important;
 }
 
 
-.project-arrow:hover {
-    color: #D6A93D;
+
+/* =========================================================
+   NAVIGATION ARROW IMAGE
+========================================================= */
+
+.project-arrow img {
+    display: block !important;
+
+    width: 35px !important;
+
+    height: auto !important;
+
+    max-width: none !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    object-fit: contain;
+
+    transition:
+        transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
-.project-prev:hover svg {
-    transform: translateX(-6px);
+
+/* =========================================================
+   PREVIOUS ARROW
+========================================================= */
+
+.project-prev img {
+    transform: rotate(180deg);
 }
 
 
-.project-next:hover svg {
-    transform: translateX(6px);
+
+/* =========================================================
+   PREVIOUS HOVER
+========================================================= */
+
+.project-prev:hover img {
+    transform:
+        rotate(180deg) translateX(5px);
 }
 
 
-/*==========================
-PROJECT MOBILE
-==========================*/
 
-@media (max-width: 767px) {
+/* =========================================================
+   NEXT HOVER
+========================================================= */
+
+.project-next:hover img {
+    transform:
+        translateX(5px);
+}
+
+
+
+/* =========================================================
+   EMPTY PROJECTS
+========================================================= */
+
+.projects-empty {
+    padding: 60px 20px;
+
+    text-align: center;
+}
+
+
+.projects-empty p {
+    margin: 0;
+
+    color: #59636d;
+
+    font-size: 16px;
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1199px) {
+
+    .project-image {
+        height: 24rem;
+    }
+
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
 
     .projects-section {
         padding: 80px 0;
     }
 
+    .project-image {
+        height: 24rem;
+    }
 
-    .projectsSwiper {
-        margin-top: 40px;
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .projects-section {
+        padding: 70px 0;
     }
 
 
-    .project-card {
-        height: 350px;
+    .projects-section .container-fluid {
+        padding-left: 25px !important;
 
-        border-radius: 12px;
+        padding-right: 25px !important;
     }
 
 
-    .project-overlay {
-        min-height: 50%;
-
-        padding: 25px 20px 22px;
-
-        background: linear-gradient(
-            to top,
-            rgba(15, 33, 77, .95),
-            rgba(15, 33, 77, .6),
-            transparent
-        );
+    .projects-section .section-heading {
+        margin-bottom: 40px;
     }
 
 
-    .project-overlay span {
-        font-size: 11px;
-
-        letter-spacing: 1.5px;
-
-        margin-bottom: 7px;
+    .project-image {
+        height: 22rem;
     }
 
 
-    .project-overlay h3 {
-        font-size: 23px;
+    .project-title {
+        font-size: 19px;
     }
 
 
-    .project-card:hover img {
-        transform: scale(1.04);
+    .project-description {
+        font-size: 14px;
+
+        line-height: 1.7;
     }
 
 
-    /*==========================
-    MOBILE NAVIGATION
-    ==========================*/
+    .project-content {
+        padding-top: 17px;
+    }
+
 
     .projects-navigation {
-        margin-top: 25px;
+        margin-top: 24px;
 
-        padding-right: 20px;
-
-        gap: 10px;
+        gap: 18px;
     }
 
 
     .project-arrow {
-        width: 55px;
+        width: 42px;
 
-        height: 45px;
+        height: 34px;
     }
 
 
-    .project-arrow svg {
-        width: 55px;
-
-        height: 25px;
-    }
-
-}
-
-
-/*==========================
-SMALL MOBILE
-==========================*/
-
-@media (max-width: 480px) {
-
-    .project-card {
-        height: 300px;
-
-        border-radius: 10px;
-    }
-
-
-    .project-overlay {
-        min-height: 55%;
-
-        padding: 22px 18px 18px;
-    }
-
-
-    .project-overlay span {
-        font-size: 10px;
-
-        letter-spacing: 1.2px;
-    }
-
-
-    .project-overlay h3 {
-        font-size: 20px;
+    .project-arrow img {
+        width: 33px !important;
     }
 
 }
 
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+
+    .projects-section {
+        padding: 60px 0;
+    }
+
+
+    .projects-section .container-fluid {
+        padding-left: 20px !important;
+
+        padding-right: 20px !important;
+    }
+
+
+    .projectsSwiper {
+        overflow: hidden;
+    }
+
+
+    .project-image {
+        height: 22rem;
+    }
+
+
+    .project-logo {
+        left: 14px;
+
+        bottom: 14px;
+    }
+
+
+    .project-logo img {
+        height: 3.25rem !important;
+
+        max-height: 3.25rem !important;
+
+        max-width: 10rem !important;
+    }
+
+
+    .projects-navigation {
+        margin-top: 24px;
+
+        gap: 15px;
+    }
+
+
+    .project-arrow {
+        width: 38px;
+
+        height: 32px;
+    }
+
+
+    .project-arrow img {
+        width: 30px !important;
+    }
+
+}
+
+/* =====================================================
+   PROJECT CARD TEXT
+===================================================== */
+
+.project-title {
+    color: #172535;
+}
+
+.project-description {
+    color: #172535;
+}
+
+
+/* =====================================================
+   MORE DETAILS
+===================================================== */
+
+.project-details {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    color: #D6A93D;
+    text-decoration: none;
+    margin-top: 25px;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.project-details span {
+    color: #D6A93D;
+}
+
+.project-details svg {
+    width: 30px;
+    height: 12px;
+    display: block;
+
+    fill: none;
+    stroke: #D6A93D;
+    stroke-width: 1.2;
+
+    transition: transform 0.3s ease;
+}
+
+.project-details:hover {
+    color: #D6A93D;
+}
+
+.project-details:hover span {
+    color: #D6A93D;
+}
+
+.project-details:hover svg {
+    transform: translateX(5px);
+}
+
+.projects-section .container-fluid {
+    padding-left: 120px !important;
+    padding-right: 120px !important;
+}

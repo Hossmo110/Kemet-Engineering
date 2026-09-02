@@ -230,12 +230,18 @@
 
     </section>
 
-
-    <!-- Projects -->
+    <!-- =====================================================
+             LATEST PROJECTS
+        ===================================================== -->
 
     <section class="projects-section">
 
         <div class="container-fluid px-5">
+
+
+            <!-- =================================================
+                     SECTION HEADING
+                ================================================== -->
 
             <div class="section-heading">
 
@@ -250,61 +256,109 @@
                 <div class="section-line"></div>
 
                 <p class="section-description">
-                    Discover our latest engineering and construction projects delivered with excellence,
-                    innovation and quality.
+                    Discover our latest engineering and construction
+                    projects delivered with excellence, innovation and quality.
                 </p>
 
             </div>
 
 
+
             @if ($projects->count())
+
+
+                <!-- =================================================
+                         PROJECTS SWIPER
+                    ================================================== -->
 
                 <div class="swiper projectsSwiper">
 
                     <div class="swiper-wrapper">
 
+
                         @foreach ($projects as $project)
-                            <div class="swiper-slide">
+                            <!-- =================================================
+                                     PROJECT SLIDE
+                                ================================================== -->
+
+                            <article class="swiper-slide project-slide">
 
                                 <div class="project-card">
 
-                                    {{-- PROJECT IMAGE --}}
 
-                                    @if ($project->main_image)
-                                        <img src="{{ asset('storage/' . $project->main_image) }}"
-                                            alt="{{ $project->title }}">
-                                    @else
-                                        <img src="{{ asset('images/project-placeholder.jpg') }}"
-                                            alt="{{ $project->title }}">
-                                    @endif
+                                    <!-- =============================================
+                                             PROJECT IMAGE
+                                        ============================================== -->
+
+                                    <div class="project-image">
 
 
-                                    {{-- PROJECT CONTENT --}}
-
-                                    <div class="project-overlay">
-
-                                        {{-- CATEGORY --}}
-
-                                        @if ($project->category)
-                                            <span>
-                                                {{ $project->category }}
-                                            </span>
+                                        @if ($project->main_image)
+                                            <img src="{{ asset('storage/' . $project->main_image) }}"
+                                                alt="{{ $project->title }}" loading="lazy" decoding="async">
+                                        @else
+                                            <img src="{{ asset('images/project-placeholder.jpg') }}"
+                                                alt="{{ $project->title }}" loading="lazy" decoding="async">
                                         @endif
 
 
-                                        {{-- PROJECT TITLE --}}
+                                        <!-- DARK GRADIENT -->
 
-                                        <h3>
+                                        <span class="project-image-gradient"></span>
+
+
+                                        <!-- KEMET LOGO -->
+
+                                        <span class="project-logo">
+
+                                            <img src="{{ asset('images/logo-light.png') }}" alt="KEMET Engineering"
+                                                loading="lazy" decoding="async">
+
+                                        </span>
+
+                                    </div>
+
+
+
+                                    <!-- =============================================
+                                             PROJECT CONTENT
+                                        ============================================== -->
+
+                                    <div class="project-content">
+
+
+                                        <!-- PROJECT TITLE -->
+
+                                        <h3 class="project-title">
                                             {{ $project->title }}
                                         </h3>
 
 
-                                        {{-- MORE DETAILS --}}
 
-                                        <a href="{{ route('projects.show', $project->slug) }}" class="project-read-more">
+                                        <!-- PROJECT DESCRIPTION -->
+
+                                        @if ($project->description)
+                                            <p class="project-description">
+                                                {{ \Illuminate\Support\Str::limit(strip_tags($project->description), 180) }}
+                                            </p>
+                                        @else
+                                            <p class="project-description">
+                                                A high-quality engineering and construction
+                                                project delivered with excellence,
+                                                innovation and attention to detail.
+                                            </p>
+                                        @endif
+
+
+
+                                        <!-- =========================================
+                                                 MORE DETAILS
+                                            ========================================== -->
+
+                                        <a href="{{ route('projects.show', $project->slug) }}" class="project-details">
 
                                             <span>
-                                                More Details
+                                                More details
                                             </span>
 
                                             <svg viewBox="0 0 30 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -314,49 +368,43 @@
 
                                         </a>
 
+
+                                        <!-- BOTTOM LINE -->
+
+                                        <span class="project-line"></span>
+
+
                                     </div>
 
                                 </div>
 
-                            </div>
+                            </article>
                         @endforeach
+
 
                     </div>
 
                 </div>
 
 
-                {{-- PROJECT NAVIGATION --}}
 
-                <div class="projects-navigation">
-
-                    <button class="project-arrow project-prev" type="button" aria-label="Previous project">
-
-                        <svg viewBox="0 0 17 7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-
+                <!-- Navigation Arrows -->
+                <div class="clients-navigation"> <button class="client-arrow client-prev" type="button"
+                        aria-label="Previous client"> <svg viewBox="0 0 17 7" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
                             <path d="M1.3 3.5H16.8" fill="none" stroke="currentColor" stroke-width="1" />
-
                             <path d="M3.8 6.5L.8 3.5L3.8 .5" fill="none" stroke="currentColor" stroke-width="1" />
-
-                        </svg>
-
-                    </button>
-
-
-                    <button class="project-arrow project-next" type="button" aria-label="Next project">
-
-                        <svg viewBox="0 0 17 7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-
+                        </svg> </button> <button class="client-arrow client-next" type="button"
+                        aria-label="Next client"> <svg viewBox="0 0 17 7" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
                             <path d="M15.7 3.5H.2" fill="none" stroke="currentColor" stroke-width="1" />
-
                             <path d="M13.2 .5L16.2 3.5L13.2 6.5" fill="none" stroke="currentColor" stroke-width="1" />
-
-                        </svg>
-
-                    </button>
-
-                </div>
+                        </svg> </button> </div>
             @else
+                <!-- =================================================
+                         EMPTY STATE
+                    ================================================== -->
+
                 <div class="projects-empty">
 
                     <p>
@@ -365,12 +413,13 @@
 
                 </div>
 
+
             @endif
+
 
         </div>
 
     </section>
-
 
     <!-- Clients -->
 
@@ -631,8 +680,8 @@
     <!-- Careers -->
 
     <!--==========================
-                CAREERS
-                ==========================-->
+                        CAREERS
+                        ==========================-->
 
     <section class="careers-section">
 
