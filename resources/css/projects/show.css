@@ -1,736 +1,987 @@
-/* =====================================================
+/* =========================================================
+   KEMET ENGINEERING
    PROJECT DETAILS PAGE
-===================================================== */
+========================================================= */
 
-.project-details-page {
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.kemet-project-page {
     width: 100%;
+    margin: 0;
+    padding: 0;
+
     background: #ffffff;
+    color: #172535;
+
+    overflow: hidden;
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
-.project-details-hero {
+.kemet-project-hero {
     position: relative;
+
     width: 100%;
-    height: 620px;
+    height: 680px;
+
     overflow: hidden;
+
     background: #0F214D;
 }
 
-.project-details-hero-image,
-.project-details-hero-placeholder {
+
+.kemet-project-hero-image {
     position: absolute;
+
     inset: 0;
+
     width: 100%;
     height: 100%;
-}
 
-.project-details-hero-image {
     display: block;
+
     object-fit: cover;
 }
 
-.project-details-hero-placeholder {
-    background: #0F214D;
-}
 
-.project-details-hero-overlay {
+.kemet-project-hero-overlay {
     position: absolute;
+
     inset: 0;
-    z-index: 1;
 
     background:
         linear-gradient(
-            to top,
-            rgba(15, 33, 77, 0.98) 0%,
-            rgba(15, 33, 77, 0.72) 38%,
-            rgba(15, 33, 77, 0.18) 100%
+            to bottom,
+            rgba(15, 33, 77, 0.02) 0%,
+            rgba(15, 33, 77, 0.10) 40%,
+            rgba(15, 33, 77, 0.78) 100%
         );
 }
 
-.project-details-hero-content {
+
+.kemet-project-hero-content {
     position: absolute;
-    left: 0;
-    right: 0;
+
+    left: 50%;
     bottom: 0;
 
-    z-index: 2;
+    transform: translateX(-50%);
 
-    max-width: 1500px;
+    width: min(1500px, calc(100% - 100px));
 
-    margin: 0 auto;
+    display: flex;
 
-    padding: 80px 50px;
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    padding-bottom: 65px;
 }
 
-.project-details-category {
-    display: block;
 
-    margin-bottom: 18px;
+/* =========================================================
+   HERO TITLE + CATEGORY
+========================================================= */
+
+.kemet-project-hero-info {
+    max-width: 900px;
+}
+
+
+.kemet-project-hero h1 {
+    margin: 0;
 
     color: #D6A93D;
 
-    font-size: 14px;
-    font-weight: 700;
+    font-size: clamp(48px, 6vw, 82px);
 
-    letter-spacing: 4px;
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+
+.kemet-project-category {
+    display: block;
+
+    margin-top: 18px;
+
+    color: #D6A93D;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    letter-spacing: 2px;
 
     text-transform: uppercase;
 }
 
-.project-details-hero-content h1 {
-    max-width: 1100px;
 
-    margin: 0;
+/* =========================================================
+   SHARE
+========================================================= */
 
-    color: #ffffff;
-
-    font-size: 64px;
-    font-weight: 700;
-
-    line-height: 1.12;
-
-    text-shadow:
-        0 4px 20px rgba(0, 0, 0, 0.35);
-}
-
-.project-details-location {
+.kemet-project-share {
     display: flex;
 
     align-items: center;
 
-    gap: 14px;
+    gap: 22px;
 
-    margin-top: 25px;
+    padding-bottom: 3px;
 
     color: #ffffff;
 
-    font-size: 17px;
-}
-
-.project-details-location span {
-    color: #D6A93D;
-
-    font-size: 11px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-}
-
-.project-details-location strong {
-    font-weight: 500;
+    flex-shrink: 0;
 }
 
 
-/* =====================================================
-   MAIN CONTAINER
-===================================================== */
+.kemet-share-title {
+    display: flex;
 
-.project-details-container {
-    width: calc(100% - 100px);
+    align-items: center;
 
-    max-width: 1400px;
+    gap: 9px;
 
-    margin: 0 auto;
-
-    padding: 110px 0 90px;
-}
-
-
-/* =====================================================
-   SECTION HEADING
-===================================================== */
-
-.project-section-heading {
-    margin-bottom: 45px;
-}
-
-.project-section-heading > span {
-    display: block;
-
-    margin-bottom: 12px;
-
-    color: #D6A93D;
+    color: #ffffff;
 
     font-size: 12px;
-    font-weight: 700;
 
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-}
-
-.project-section-heading h2 {
-    margin: 0 0 20px;
-
-    color: #0F214D;
-
-    font-size: 44px;
-    font-weight: 700;
-
-    line-height: 1.2;
-}
-
-.project-section-heading > div {
-    width: 75px;
-    height: 3px;
-
-    background: #D6A93D;
+    white-space: nowrap;
 }
 
 
-/* =====================================================
-   PROJECT INFORMATION
-===================================================== */
+.kemet-share-icon {
+    display: flex;
 
-.project-info-section {
-    margin-bottom: 100px;
+    align-items: center;
+    justify-content: center;
+
+    color: #D6A93D;
 }
 
-.project-info-grid {
-    display: grid;
 
-    grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-
-    gap: 18px;
+.kemet-share-icon svg {
+    width: 19px;
+    height: 19px;
 }
 
-.project-info-item {
-    min-height: 125px;
 
-    padding: 25px;
+.kemet-share-links {
+    display: flex;
 
-    background: #f7f8fa;
+    align-items: center;
 
-    border-left: 3px solid #D6A93D;
+    gap: 7px;
+}
+
+
+.kemet-share-links a {
+    width: 33px;
+    height: 33px;
 
     display: flex;
 
-    flex-direction: column;
-
+    align-items: center;
     justify-content: center;
 
-    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-decoration: none;
 
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
 }
 
-.project-info-item:hover {
-    transform: translateY(-4px);
 
-    box-shadow:
-        0 12px 30px rgba(15, 33, 77, 0.08);
+.kemet-share-links a:hover {
+    background: #D6A93D;
+
+    border-color: #D6A93D;
+
+    color: #0F214D;
 }
 
-.project-info-item span {
-    color: #78909c;
 
-    font-size: 10px;
-    font-weight: 700;
+/* =========================================================
+   PROJECT INFORMATION
+   ECC STYLE
+   NO BACKGROUND
+   NO CARDS
+========================================================= */
 
-    letter-spacing: 2px;
+.kemet-project-information {
+    width: 100%;
+
+    margin: 0;
+    padding: 95px 0 105px;
+
+    background: #ffffff;
 }
 
-.project-info-item strong {
+
+.kemet-project-info-container {
+    width: min(1500px, calc(100% - 100px));
+
+    margin: 0 auto;
+}
+
+
+.kemet-project-info-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    column-gap: 65px;
+
+    row-gap: 75px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   INFORMATION ITEM
+========================================================= */
+
+.kemet-project-grid-wrapper {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 64px minmax(0, 1fr);
+
+    column-gap: 20px;
+
+    align-items: start;
+
+    padding: 0;
+    margin: 0;
+
+    background: transparent;
+
+    border: 0;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   INFORMATION ICON
+========================================================= */
+
+.kemet-project-icon {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #0F214D;
+
+    color: #D6A93D;
+}
+
+
+.kemet-project-icon svg {
+    width: 32px;
+    height: 32px;
+
+    display: block;
+}
+
+
+/* =========================================================
+   INFORMATION TEXT
+========================================================= */
+
+.kemet-project-info-col {
+    min-width: 0;
+
+    padding: 3px 0 0;
+}
+
+
+.kemet-project-info-heading {
+    margin: 0 0 8px;
+
     color: #0F214D;
 
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 13px;
+
+    font-weight: 600;
 
     line-height: 1.4;
 }
 
-.project-info-item .project-status {
-    color: #D6A93D;
+
+.kemet-project-info-value {
+    color: #172535;
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    line-height: 1.55;
+
+    word-break: break-word;
 }
 
 
-/* =====================================================
-   PARTNERS
-===================================================== */
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
-.project-partners-section {
-    margin-bottom: 100px;
+.kemet-project-description {
+    width: 100%;
+
+    padding: 95px 0;
+
+    background: #ffffff;
 }
 
-.project-partners-grid {
+
+.kemet-description-container {
+    width: min(1500px, calc(100% - 100px));
+
+    margin: 0 auto;
+
     display: grid;
 
     grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        minmax(250px, 0.7fr)
+        minmax(0, 1.3fr);
 
-    gap: 22px;
+    column-gap: 90px;
+
+    align-items: start;
 }
 
-.project-partner-card {
-    min-height: 130px;
 
-    padding: 30px;
-
-    background: #ffffff;
-
-    border: 1px solid #e2e7ec;
-
-    border-radius: 6px;
-
-    box-shadow:
-        0 10px 30px rgba(15, 33, 77, 0.05);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
-}
-
-.project-partner-card:hover {
-    transform: translateY(-5px);
-
-    border-color: #D6A93D;
-
-    box-shadow:
-        0 15px 35px rgba(15, 33, 77, 0.09);
-}
-
-.project-partner-card span {
+.kemet-description-heading span {
     display: block;
 
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 
     color: #D6A93D;
 
-    font-size: 10px;
+    font-size: 11px;
+
     font-weight: 700;
 
+    line-height: 1.4;
+
     letter-spacing: 2px;
+
+    text-transform: uppercase;
 }
 
-.project-partner-card h3 {
+
+.kemet-description-heading h2 {
     margin: 0;
 
     color: #0F214D;
 
-    font-size: 19px;
-    font-weight: 700;
+    font-size: clamp(35px, 4vw, 55px);
 
-    line-height: 1.45;
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.5px;
 }
 
 
-/* =====================================================
-   DESCRIPTION
-===================================================== */
+.kemet-description-text {
+    color: #172535;
 
-.project-description-section {
-    margin-bottom: 100px;
-}
+    font-size: 17px;
 
-.project-description {
-    max-width: 1100px;
+    font-weight: 400;
 
-    color: #596675;
-
-    font-size: 18px;
-
-    line-height: 2;
+    line-height: 1.9;
 }
 
 
-/* =====================================================
-   TIMELINE
-===================================================== */
+/* =========================================================
+   GALLERY
+========================================================= */
 
-.project-timeline-section {
-    margin-bottom: 100px;
-}
+.kemet-project-gallery-section {
+    width: 100%;
 
-.project-timeline-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 22px;
-}
-
-.project-date-card {
-    padding: 35px;
+    margin: 0;
+    padding: 0;
 
     background: #0F214D;
-
-    border-radius: 6px;
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-.project-date-card::after {
-    content: "";
-
-    position: absolute;
-
-    right: -30px;
-    bottom: -50px;
-
-    width: 150px;
-    height: 150px;
-
-    border: 1px solid rgba(214, 169, 61, 0.25);
-
-    border-radius: 50%;
-}
-
-.project-date-card span {
-    display: block;
-
-    margin-bottom: 12px;
-
-    color: #D6A93D;
-
-    font-size: 10px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-}
-
-.project-date-card strong {
-    color: #ffffff;
-
-    font-size: 23px;
-    font-weight: 700;
 }
 
 
-/* =====================================================
-   GALLERY
-===================================================== */
+.kemet-project-gallery-wrapper {
+    width: min(1500px, calc(100% - 100px));
 
-.project-gallery-section {
-    margin-bottom: 80px;
+    margin: 0 auto;
+
+    padding: 75px 0;
 }
 
-.project-gallery-grid {
+
+.kemet-project-gallery-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    gap: 20px;
+    gap: 25px;
 }
 
-.project-gallery-item {
+
+.kemet-project-gallery-item {
     position: relative;
 
-    height: 310px;
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 3 / 2;
 
     overflow: hidden;
 
-    border-radius: 6px;
+    background: #172535;
 
-    background: #f4f5f7;
+    text-decoration: none;
 }
 
-.project-gallery-item img {
+
+.kemet-project-gallery-item img {
+    display: block;
+
     width: 100%;
     height: 100%;
-
-    display: block;
 
     object-fit: cover;
 
     transition:
-        transform 0.6s ease;
-}
-
-.project-gallery-item:hover img {
-    transform: scale(1.07);
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
-/* =====================================================
-   BACK TO PROJECTS
-===================================================== */
+.kemet-project-gallery-overlay {
+    position: absolute;
 
-.project-details-back {
+    inset: 0;
+
     display: flex;
 
+    align-items: center;
     justify-content: center;
 
-    padding-top: 25px;
+    background: rgba(15, 33, 77, 0);
+
+    transition:
+        background 0.35s ease;
 }
 
-.project-details-back a {
-    display: inline-flex;
+
+.kemet-gallery-view-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    color: #ffffff;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+.kemet-gallery-view-icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+
+.kemet-project-gallery-item:hover img {
+    transform: scale(1.045);
+}
+
+
+.kemet-project-gallery-item:hover .kemet-project-gallery-overlay {
+    background: rgba(15, 33, 77, 0.38);
+}
+
+
+.kemet-project-gallery-item:hover .kemet-gallery-view-icon {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   SEE MORE PROJECTS
+========================================================= */
+
+.kemet-see-more-projects {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    background: #ffffff;
+}
+
+
+.kemet-see-more-container {
+    width: min(1500px, calc(100% - 100px));
+
+    margin: 0 auto;
+}
+
+
+.kemet-see-more-link {
+    min-height: 150px;
+
+    display: flex;
 
     align-items: center;
 
-    gap: 12px;
+    justify-content: space-between;
 
-    color: #D6A93D;
+    gap: 30px;
 
-    font-size: 14px;
-    font-weight: 700;
+    color: #0F214D;
 
     text-decoration: none;
 
-    text-transform: uppercase;
+    border-bottom: 1px solid #dddddd;
 
-    letter-spacing: 1.5px;
-
-    transition:
-        color 0.3s ease;
-}
-
-.project-details-back a:hover {
-    color: #0F214D;
-}
-
-.project-details-back a svg {
-    width: 35px;
-    height: 14px;
-
-    display: block;
-
-    overflow: visible;
-
-    transition:
-        transform 0.3s ease;
-}
-
-.project-details-back a svg line,
-.project-details-back a svg polyline {
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 1.5;
-
-    stroke-linecap: round;
-
-    stroke-linejoin: round;
-}
-
-.project-details-back a:hover svg {
-    transform: translateX(-6px);
+    transition: color 0.3s ease;
 }
 
 
-/* =====================================================
+.kemet-see-more-link span {
+    font-size: 40px;
+
+    font-weight: 500;
+
+    line-height: 1.3;
+}
+
+
+.kemet-see-more-link svg {
+    width: 65px;
+
+    color: #D6A93D;
+
+    transition: transform 0.3s ease;
+}
+
+
+.kemet-see-more-link:hover {
+    color: #D6A93D;
+}
+
+
+.kemet-see-more-link:hover svg {
+    transform: translateX(8px);
+}
+
+
+/* =========================================================
    TABLET
-===================================================== */
+========================================================= */
 
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
 
-    .project-details-hero {
-        height: 540px;
+    .kemet-project-info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 55px;
+
+        row-gap: 65px;
     }
 
-    .project-details-hero-content {
-        padding: 65px 40px;
-    }
-
-    .project-details-hero-content h1 {
-        font-size: 52px;
-    }
-
-    .project-details-container {
-        width: calc(100% - 70px);
-
-        padding: 85px 0 75px;
-    }
-
-    .project-info-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-    .project-partners-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-    .project-gallery-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-    .project-section-heading h2 {
-        font-size: 38px;
-    }
 }
 
 
-/* =====================================================
+@media (max-width: 1024px) {
+
+    .kemet-project-hero-content,
+    .kemet-project-info-container,
+    .kemet-description-container,
+    .kemet-project-gallery-wrapper,
+    .kemet-see-more-container {
+
+        width: calc(100% - 60px);
+    }
+
+
+    .kemet-project-hero {
+        height: 590px;
+    }
+
+
+    .kemet-project-hero-content {
+        padding-bottom: 50px;
+    }
+
+
+    .kemet-project-hero h1 {
+        font-size: 58px;
+    }
+
+
+    .kemet-project-information {
+        padding: 75px 0 85px;
+    }
+
+
+    .kemet-project-info-grid {
+        column-gap: 45px;
+
+        row-gap: 60px;
+    }
+
+
+    .kemet-project-grid-wrapper {
+        grid-template-columns: 58px minmax(0, 1fr);
+
+        column-gap: 18px;
+    }
+
+
+    .kemet-project-icon {
+        width: 58px;
+        height: 58px;
+    }
+
+
+    .kemet-project-icon svg {
+        width: 29px;
+        height: 29px;
+    }
+
+
+    .kemet-project-gallery-wrapper {
+        padding: 55px 0;
+    }
+
+
+    .kemet-project-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+}
+
+
+/* =========================================================
    MOBILE
-===================================================== */
+========================================================= */
 
 @media (max-width: 767px) {
 
-    .project-details-hero {
-        height: 450px;
-    }
+    .kemet-project-hero-content,
+    .kemet-project-info-container,
+    .kemet-description-container,
+    .kemet-project-gallery-wrapper,
+    .kemet-see-more-container {
 
-    .project-details-hero-content {
-        padding: 45px 25px;
-    }
-
-    .project-details-category {
-        margin-bottom: 12px;
-
-        font-size: 10px;
-
-        letter-spacing: 2.5px;
-    }
-
-    .project-details-hero-content h1 {
-        font-size: 35px;
-
-        line-height: 1.2;
-    }
-
-    .project-details-location {
-        gap: 9px;
-
-        margin-top: 18px;
-
-        font-size: 14px;
-    }
-
-    .project-details-location span {
-        font-size: 9px;
-    }
-
-    .project-details-container {
         width: calc(100% - 40px);
-
-        padding: 65px 0 60px;
     }
 
-    .project-section-heading {
-        margin-bottom: 30px;
+
+    /* HERO */
+
+    .kemet-project-hero {
+        height: 620px;
     }
 
-    .project-section-heading h2 {
-        font-size: 31px;
 
-        margin-bottom: 17px;
+    .kemet-project-hero-content {
+        display: block;
+
+        padding-bottom: 35px;
     }
 
-    .project-info-section,
-    .project-partners-section,
-    .project-description-section,
-    .project-timeline-section {
-        margin-bottom: 65px;
+
+    .kemet-project-hero h1 {
+        font-size: 43px;
+
+        line-height: 1.05;
+
+        letter-spacing: -1px;
     }
 
-    .project-info-grid {
+
+    .kemet-project-category {
+        margin-top: 13px;
+
+        font-size: 12px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    /* SHARE */
+
+    .kemet-project-share {
+        margin-top: 28px;
+
+        padding: 0;
+
+        justify-content: space-between;
+    }
+
+
+    .kemet-share-title {
+        font-size: 12px;
+    }
+
+
+    .kemet-share-links a {
+        width: 31px;
+        height: 31px;
+    }
+
+
+    /* INFORMATION */
+
+    .kemet-project-information {
+        padding: 55px 0 65px;
+    }
+
+
+    .kemet-project-info-grid {
         grid-template-columns: 1fr;
 
-        gap: 14px;
+        row-gap: 45px;
     }
 
-    .project-info-item {
-        min-height: 105px;
 
-        padding: 22px;
+    .kemet-project-grid-wrapper {
+        grid-template-columns: 56px minmax(0, 1fr);
+
+        column-gap: 18px;
     }
 
-    .project-partners-grid {
+
+    .kemet-project-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+
+    .kemet-project-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+
+    .kemet-project-info-heading {
+        margin-bottom: 7px;
+
+        font-size: 13px;
+    }
+
+
+    .kemet-project-info-value {
+        font-size: 15px;
+
+        line-height: 1.5;
+    }
+
+
+    /* DESCRIPTION */
+
+    .kemet-project-description {
+        padding: 65px 0;
+    }
+
+
+    .kemet-description-container {
+        display: block;
+    }
+
+
+    .kemet-description-heading {
+        margin-bottom: 35px;
+    }
+
+
+    .kemet-description-heading h2 {
+        font-size: 36px;
+    }
+
+
+    .kemet-description-text {
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+
+    /* GALLERY */
+
+    .kemet-project-gallery-wrapper {
+        padding: 30px 0;
+    }
+
+
+    .kemet-project-gallery-grid {
         grid-template-columns: 1fr;
 
-        gap: 15px;
+        gap: 30px;
     }
 
-    .project-partner-card {
-        padding: 25px;
+
+    .kemet-project-gallery-item {
+        aspect-ratio: 3 / 2;
     }
 
-    .project-timeline-grid {
-        grid-template-columns: 1fr;
 
-        gap: 15px;
+    .kemet-project-gallery-overlay {
+        background: rgba(15, 33, 77, 0.15);
     }
 
-    .project-date-card {
-        padding: 27px;
+
+    .kemet-gallery-view-icon {
+        width: 50px;
+        height: 50px;
+
+        opacity: 1;
+
+        transform: none;
     }
 
-    .project-gallery-grid {
-        grid-template-columns: 1fr;
 
-        gap: 15px;
+    /* SEE MORE */
+
+    .kemet-see-more-link {
+        min-height: 110px;
     }
 
-    .project-gallery-item {
-        height: 270px;
+
+    .kemet-see-more-link span {
+        font-size: 18px;
     }
 
-    .project-description {
-        font-size: 16px;
 
-        line-height: 1.9;
+    .kemet-see-more-link svg {
+        width: 34px;
     }
+
 }
 
 
-/* =====================================================
+/* =========================================================
    SMALL MOBILE
-===================================================== */
+========================================================= */
 
 @media (max-width: 480px) {
 
-    .project-details-hero {
-        height: 390px;
+    .kemet-project-hero-content,
+    .kemet-project-info-container,
+    .kemet-description-container,
+    .kemet-project-gallery-wrapper,
+    .kemet-see-more-container {
+
+        width: calc(100% - 30px);
     }
 
-    .project-details-hero-content {
-        padding: 35px 20px;
+
+    .kemet-project-hero {
+        height: 570px;
     }
 
-    .project-details-hero-content h1 {
-        font-size: 29px;
+
+    .kemet-project-hero h1 {
+        font-size: 38px;
     }
 
-    .project-details-container {
-        width: calc(100% - 32px);
 
-        padding: 50px 0;
+    .kemet-project-category {
+        font-size: 11px;
+
+        margin-top: 11px;
     }
 
-    .project-section-heading h2 {
-        font-size: 27px;
+
+    .kemet-project-share {
+        align-items: flex-start;
     }
 
-    .project-info-item {
-        padding: 20px;
+
+    .kemet-project-info-grid {
+        row-gap: 38px;
     }
 
-    .project-partner-card {
-        padding: 22px;
+
+    .kemet-project-grid-wrapper {
+        grid-template-columns: 52px minmax(0, 1fr);
+
+        column-gap: 15px;
     }
 
-    .project-date-card {
-        padding: 23px;
+
+    .kemet-project-icon {
+        width: 52px;
+        height: 52px;
     }
 
-    .project-gallery-item {
-        height: 230px;
+
+    .kemet-project-icon svg {
+        width: 26px;
+        height: 26px;
     }
 
-    .project-details-back a {
-        font-size: 12px;
 
-        gap: 9px;
+    .kemet-project-gallery-wrapper {
+        padding: 25px 0;
     }
 
-    .project-details-back a svg {
-        width: 30px;
-        height: 12px;
+
+    .kemet-project-gallery-grid {
+        gap: 25px;
     }
+
 }

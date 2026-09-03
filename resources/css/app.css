@@ -1,3 +1,30 @@
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+}
+
 @import 'bootstrap/dist/css/bootstrap.min.css';
 @import 'tailwindcss';
 
