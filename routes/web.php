@@ -10,7 +10,7 @@ use App\Http\Controllers\AdminProjectController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ContactController;
-
+use App\Http\Controllers\AdminContactMessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +29,11 @@ Route::view('/innovation', 'innovation')->name('innovation');
 
 Route::view('/csr', 'csr')->name('csr');
 
-Route::view('/contact', 'contact')->name('contact');
+Route::get('/contact', [ContactController::class, 'index'])
+    ->name('contact');
 
+Route::post('/contact', [ContactController::class, 'store'])
+    ->name('contact.store');
 
 /*
 |--------------------------------------------------------------------------
@@ -176,13 +179,20 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 });
 
 
+Route::prefix('admin')
+    ->name('admin.')
+    ->middleware('auth')
+    ->group(function () {
 
-Route::get('/projects/{project:slug}', [ProjectController::class, 'show'])
-    ->name('projects.show');
+        Route::get('/messages', [AdminContactMessageController::class, 'index'])
+            ->name('messages.index');
 
+        Route::get('/messages/{id}', [AdminContactMessageController::class, 'show'])
+            ->name('messages.show');
 
-Route::get('/contact-us', [ContactController::class, 'index'])
-    ->name('contact');
+        Route::patch('/messages/{id}/read', [AdminContactMessageController::class, 'markAsRead'])
+            ->name('messages.read');
 
-Route::post('/contact-us', [ContactController::class, 'store'])
-    ->name('contact.store');
+        Route::delete('/messages/{id}', [AdminContactMessageController::class, 'destroy'])
+            ->name('messages.destroy');
+    });

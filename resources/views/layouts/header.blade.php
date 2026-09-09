@@ -47,7 +47,7 @@
                             href="{{ route('businesses') }}"
                             class="{{ request()->routeIs('businesses') ? 'active' : '' }}"
                         >
-                            BUSINESSES
+                           OUR BUSINESSES
                         </a>
                     </li>
 

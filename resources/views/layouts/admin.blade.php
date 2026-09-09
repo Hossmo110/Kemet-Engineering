@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -112,6 +113,7 @@
 
                 </a>
 
+
                 {{-- ADD NEW JOB --}}
 
                 <a href="{{ route('admin.careers.create') }}"
@@ -139,6 +141,22 @@
 
                     <span>
                         Job Applications
+                    </span>
+
+                </a>
+
+
+                {{-- CONTACT MESSAGES --}}
+
+                <a href="{{ route('admin.messages.index') }}"
+                    class="{{ request()->routeIs('admin.messages.*') ? 'active' : '' }}">
+
+                    <span class="admin-nav-icon">
+                        ✉️
+                    </span>
+
+                    <span>
+                        Contact Messages
                     </span>
 
                 </a>
