@@ -9,7 +9,7 @@
             <a href="{{ route('home') }}" class="logo">
 
                 <img
-                    src="{{ asset('images/logo.png') }}"
+                    src="{{ asset('images/download.png') }}"
                     alt="KEMET"
                 >
 
