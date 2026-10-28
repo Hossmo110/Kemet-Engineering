@@ -167,75 +167,49 @@
 
 
             {{-- =====================================================
-         PROJECT PARTIES
-    ====================================================== --}}
+     PROJECT PARTIES
+====================================================== --}}
 
             <div class="admin-project-card">
 
                 <div class="admin-project-card-header">
+                    <span>PROJECT PARTIES</span>
 
-                    <span>
-                        PROJECT PARTIES
-                    </span>
-
-                    <h2>
-                        Project Partners
-                    </h2>
-
+                    <h2>Project Partners</h2>
                 </div>
-
 
                 <div class="admin-project-form-grid">
 
-                    {{-- CONSULTANT --}}
-                    <div class="admin-project-field">
-
-                        <label for="consultant">
-                            Consultant
-                        </label>
-
-                        <input type="text" id="consultant" name="consultant" value="{{ old('consultant') }}"
-                            placeholder="Consultant company">
-
-                    </div>
-
-
-                    {{-- MAIN CONTRACTOR --}}
-                    <div class="admin-project-field">
-
-                        <label for="main_contractor">
-                            Main Contractor
-                        </label>
-
-                        <input type="text" id="main_contractor" name="main_contractor"
-                            value="{{ old('main_contractor') }}" placeholder="Main contractor company">
-
-                    </div>
-
-
-                    {{-- SUBCONTRACTOR --}}
-                    <div class="admin-project-field admin-project-field-full">
-
-                        <label for="subcontractor">
-                            Subcontractor
-                        </label>
-
-                        <input type="text" id="subcontractor" name="subcontractor" value="{{ old('subcontractor') }}"
-                            placeholder="Subcontractor company">
-
-                    </div>
-
-                    
                     {{-- CLIENT --}}
                     <div class="admin-project-field">
-
-                        <label for="client">
-                            Client
-                        </label>
+                        <label for="client">Client</label>
 
                         <input type="text" id="client" name="client" value="{{ old('client') }}"
                             placeholder="Client company">
+                    </div>
 
+                    {{-- CONSULTANT --}}
+                    <div class="admin-project-field">
+                        <label for="consultant">Consultant</label>
+
+                        <input type="text" id="consultant" name="consultant" value="{{ old('consultant') }}"
+                            placeholder="Consultant company">
+                    </div>
+
+                    {{-- MAIN CONTRACTOR --}}
+                    <div class="admin-project-field">
+                        <label for="main_contractor">Main Contractor</label>
+
+                        <input type="text" id="main_contractor" name="main_contractor"
+                            value="{{ old('main_contractor') }}" placeholder="Main contractor company">
+                    </div>
+
+                    {{-- SUBCONTRACTOR --}}
+                    <div class="admin-project-field admin-project-field-full">
+                        <label for="subcontractor">Subcontractor</label>
+
+                        <input type="text" id="subcontractor" name="subcontractor" value="{{ old('subcontractor') }}"
+                            placeholder="Subcontractor company">
                     </div>
 
                 </div>

@@ -374,3 +374,32 @@ body {
     }
 
 }
+
+
+/* Newsletter AJAX Message */
+.newsletter-message {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 16px;
+    margin-top: 10px;
+    border: 1px solid #D6A93D;
+    border-radius: 5px;
+    background: #102a43;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.newsletter-message[hidden] {
+    display: none !important;
+}
+
+.newsletter-message.is-error {
+    border-color: #dc7777;
+}
+
+.newsletter-form button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}

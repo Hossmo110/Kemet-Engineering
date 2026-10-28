@@ -212,3 +212,78 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('newsletter-form');
+
+    if (!form) {
+        return;
+    }
+
+    const message = document.getElementById('newsletter-message');
+    const button = document.getElementById('newsletter-button');
+
+    let resetTimer;
+
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        if (!form.reportValidity()) {
+            return;
+        }
+
+        clearTimeout(resetTimer);
+
+        button.disabled = true;
+        button.textContent = 'SUBSCRIBING...';
+
+        message.hidden = true;
+        message.classList.remove('is-error');
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                const errors = data.errors || {};
+                const firstError = Object.values(errors).flat()[0];
+
+                throw new Error(
+                    firstError || 'Something went wrong. Please try again.'
+                );
+            }
+
+            message.textContent =
+                'Thank you for your message. We will get in touch with you shortly.';
+
+            message.classList.remove('is-error');
+            message.hidden = false;
+
+            form.hidden = true;
+            form.reset();
+
+            resetTimer = setTimeout(function () {
+                message.hidden = true;
+                form.hidden = false;
+            }, 5000);
+
+        } catch (error) {
+            message.textContent = error.message;
+            message.classList.add('is-error');
+            message.hidden = false;
+
+        } finally {
+            button.disabled = false;
+            button.textContent = 'SUBSCRIBE';
+        }
+    });
+});

@@ -1045,3 +1045,11 @@
     }
 
 }
+
+
+/* Hide the main website header on the job details page */
+.careers-job-page ~ .site-header,
+body:has(.careers-job-page) .site-header,
+body:has(.careers-job-page) .main-header {
+    display: none !important;
+}

@@ -11,6 +11,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminContactMessageController;
+use App\Http\Controllers\NewsletterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -196,3 +198,10 @@ Route::prefix('admin')
         Route::delete('/messages/{id}', [AdminContactMessageController::class, 'destroy'])
             ->name('messages.destroy');
     });
+
+
+
+Route::post('/newsletter/subscribe', [
+    NewsletterController::class,
+    'subscribe'
+])->name('newsletter.subscribe');

@@ -38,7 +38,7 @@
 
                 <a href="{{ url('/') }}" class="careers-job-logo">
 
-                    <img src="{{ asset('images/logo.png') }}" alt="KEMET Engineering">
+                    <img src="{{ asset('images/Transparent KEMET Logo with Gold Ankh.png') }}" alt="KEMET Engineering">
 
                 </a>
 

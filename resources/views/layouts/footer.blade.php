@@ -25,27 +25,47 @@
         </div>
 
 
-        {{-- ==========================
-             NEWSLETTER
-        =========================== --}}
+{{-- ==========================
+     NEWSLETTER
+=========================== --}}
 
-        <div class="footer-newsletter">
+<div class="footer-newsletter">
 
-            <h3>
-                Subscribe Our Newsletter
-            </h3>
+    <h3>
+        Subscribe Our Newsletter
+    </h3>
 
-            <form class="newsletter-form">
+    <form
+        class="newsletter-form"
+        id="newsletter-form"
+        action="{{ route('newsletter.subscribe') }}"
+        method="POST"
+    >
+        @csrf
 
-                <input type="email" name="email" placeholder="Enter your email address" required>
+        <input
+            type="email"
+            name="email"
+            id="newsletter-email"
+            placeholder="Enter your email address"
+            required
+        >
 
-                <button type="submit">
-                    SUBSCRIBE
-                </button>
+        <button type="submit" id="newsletter-button">
+            SUBSCRIBE
+        </button>
+    </form>
 
-            </form>
+    <div
+        id="newsletter-message"
+        class="newsletter-message"
+        role="status"
+        aria-live="polite"
+        hidden
+    ></div>
 
-        </div>
+</div>
+
 
 
         {{-- ==========================
@@ -87,8 +107,8 @@
                     </span>
 
 
-                    <a href="tel:043736777">
-                        043736777
+                    <a href="tel:+971504655687">
+                        +971504655687
                     </a>
 
                 </div>
@@ -111,7 +131,7 @@
                     </span>
 
 
-                    <a href="mailto:info@eccgroup.ae">
+                    <a href="mailto:info.kemet.uae@gmail.com">
                         info.kemet.uae@gmail.com
                     </a>
 
@@ -138,7 +158,7 @@
 
 
                     <span>
-                        Al Qouz Ind.third - Al Quoz - Dubai
+                        Al Dewan Towers - Al Ajman - United Arab Emirates
                     </span>
 
                 </div>
@@ -154,7 +174,7 @@
         <div class="footer-social">
 
             {{-- Facebook --}}
-            <a href="#" aria-label="Facebook" target="_blank">
+            <a href="https://www.facebook.com/share/p/19YPUPURHB/" aria-label="Facebook" target="_blank">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M14 8h3V4h-3c-3.3 0-5 1.9-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.7.3-1 1-1z" />
                 </svg>
@@ -162,7 +182,7 @@
 
 
             {{-- Instagram --}}
-            <a href="#" aria-label="Instagram" target="_blank">
+            <a href="https://www.instagram.com/info.kemet?exln=M2FkN29lMmQzcnc0" aria-label="Instagram" target="_blank">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <rect x="3" y="3" width="18" height="18" rx="5" />
                     <circle cx="12" cy="12" r="4" />
@@ -196,16 +216,16 @@
 
         <div class="footer-bottom">
 
-    <p>
-        © {{ date('Y') }}
+            <p>
+                © {{ date('Y') }}
 
-        <a href="{{ url('/') }}">
-            KEMET Group
-        </a>
+                <a href="{{ url('/') }}">
+                    KEMET Group
+                </a>
 
-    . All Rights Reserved.
-    </p>
+                . All Rights Reserved.
+            </p>
 
-</div>
+        </div>
 
 </footer>
