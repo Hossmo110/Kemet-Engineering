@@ -56,6 +56,8 @@ class AdminProjectController extends Controller
 
             'subcontractor' => 'nullable|string|max:255',
 
+            'client' => 'nullable|string|max:255',
+
             'bua' => 'nullable|numeric|min:0',
 
             'description' => 'nullable|string',
@@ -136,6 +138,8 @@ class AdminProjectController extends Controller
             'main_contractor' => $validated['main_contractor'] ?? null,
 
             'subcontractor' => $validated['subcontractor'] ?? null,
+
+            'client' => $validated['client'] ?? null,
 
             'bua' => $validated['bua'] ?? null,
 
@@ -229,6 +233,8 @@ class AdminProjectController extends Controller
 
             'subcontractor' => 'nullable|string|max:255',
 
+            'client' => 'nullable|string|max:255',
+
             'bua' => 'nullable|numeric|min:0',
 
             'description' => 'nullable|string',
@@ -264,8 +270,8 @@ class AdminProjectController extends Controller
 
         while (
             Project::where('slug', $slug)
-                ->where('id', '!=', $project->id)
-                ->exists()
+            ->where('id', '!=', $project->id)
+            ->exists()
         ) {
 
             $slug = $originalSlug . '-' . $counter;
@@ -325,6 +331,8 @@ class AdminProjectController extends Controller
             'main_contractor' => $validated['main_contractor'] ?? null,
 
             'subcontractor' => $validated['subcontractor'] ?? null,
+
+            'client' => $validated['client'] ?? null,
 
             'bua' => $validated['bua'] ?? null,
 

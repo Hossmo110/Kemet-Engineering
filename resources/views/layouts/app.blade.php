@@ -21,7 +21,7 @@
 <link
     rel="icon"
     type="image/png"
-    href="{{ asset('images/logo.png') }}"
+    href="{{ asset('images/KEMET WIDE LOGO.png') }}"
 >
 
 @vite([

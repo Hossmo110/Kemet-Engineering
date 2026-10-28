@@ -2,145 +2,129 @@
 KEMET HEADER
 ==========================*/
 
-/*========================
-HEADER
-========================*/
 /* ==========================
    HEADER
 ========================== */
 
 .site-header {
-
     position: fixed;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     z-index: 9999;
-
     padding: 18px 0;
-
-    transition: .4s;
-
+    background: transparent;
+    transition: background .4s, box-shadow .4s, padding .4s;
 }
 
+/* Header after scrolling */
 .site-header.scrolled {
-
-    background: #ffffff;
-
-    box-shadow: 0 5px 25px rgba(0, 0, 0, .08);
-
+    background: #0b1f33;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     padding: 10px 0;
-
 }
 
+/* Header layout */
 .header-wrapper {
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
 }
 
+/* Logo */
 .logo img {
-
     height: 185px;
-
-    transition: .4s;
-
+    width: auto;
+    object-fit: contain;
+    transition: height .4s;
 }
 
 .site-header.scrolled .logo img {
-
     height: 120px;
-
 }
 
+/* Navigation */
 nav {
-
     flex: 1;
-
     display: flex;
-
     justify-content: center;
-
 }
 
 .nav-menu {
-
     display: flex;
-
     align-items: center;
-
     gap: 38px;
-
     list-style: none;
-
     margin: 0;
-
     padding: 0;
-
 }
 
 .nav-menu a {
-
     color: #fff;
-
     font-size: 18px;
-
     font-weight: 600;
-
     text-decoration: none;
-
-    transition: .3s;
-
+    transition: color .3s;
 }
 
+/* Keep navigation white after scrolling */
 .site-header.scrolled .nav-menu a {
-
-    color: #0F214D;
-
+    color: #fff;
 }
 
 .nav-menu a:hover {
-
     color: #D6A93D;
-
 }
 
 .active {
-
     color: #D6A93D !important;
-
 }
 
+/* Get in touch button */
 .header-btn {
-
     background: #D6A93D;
-
     color: #fff;
-
     padding: 15px 34px;
-
     border-radius: 4px;
-
     text-decoration: none;
-
     font-weight: 600;
-
-    transition: .3s;
-
+    transition: background .3s, color .3s;
 }
 
 .header-btn:hover {
-
     background: #fff;
-
     color: #0F214D;
+}
 
+/* Mobile and tablet */
+@media (max-width: 991px) {
+    .logo img {
+        height: 110px;
+    }
+
+    .site-header.scrolled .logo img {
+        height: 85px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .nav-menu a {
+        font-size: 15px;
+    }
+
+    .header-btn {
+        padding: 10px 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo img {
+        height: 80px;
+    }
+
+    .site-header.scrolled .logo img {
+        height: 65px;
+    }
 }

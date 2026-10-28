@@ -291,6 +291,7 @@
     </section>
 
 
+
     {{-- =========================================================
          OUR EXPERTISE
          ========================================================= --}}
@@ -312,17 +313,17 @@
 
             </div>
 
-
             <div class="our-expertise-grid">
 
                 {{-- Engineering & Design --}}
                 <div class="expertise-item">
 
-                    <img src="{{ asset('images/about/expertise-engineering.jpg') }}" alt="Engineering and Design">
+                    <img src="{{ asset('images/about/expertise-engineering.jpg') }}"
+                         alt="Engineering and Design">
 
                     <div class="expertise-content">
 
-                        <h3>Engineering & Design</h3>
+                        <h3>Engineering &amp; Design</h3>
 
                         <p>
                             Engineering and design solutions developed with
@@ -334,11 +335,11 @@
 
                 </div>
 
-
                 {{-- Construction --}}
                 <div class="expertise-item">
 
-                    <img src="{{ asset('images/about/expertise-construction.jpg') }}" alt="Construction">
+                    <img src="{{ asset('images/about/expertise-construction.jpg') }}"
+                         alt="Construction">
 
                     <div class="expertise-content">
 
@@ -354,31 +355,11 @@
 
                 </div>
 
-
-                {{-- Infrastructure --}}
-                <div class="expertise-item">
-
-                    <img src="{{ asset('images/about/expertise-infrastructure.jpg') }}" alt="Infrastructure">
-
-                    <div class="expertise-content">
-
-                        <h3>Infrastructure</h3>
-
-                        <p>
-                            Practical infrastructure solutions designed
-                            to support sustainable development and
-                            long-term performance.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
                 {{-- Project Management --}}
                 <div class="expertise-item">
 
-                    <img src="{{ asset('images/about/expertise-project-management.jpg') }}" alt="Project Management">
+                    <img src="{{ asset('images/about/expertise-project-management.jpg') }}"
+                         alt="Project Management">
 
                     <div class="expertise-content">
 
@@ -394,11 +375,11 @@
 
                 </div>
 
-
                 {{-- Technical Solutions --}}
                 <div class="expertise-item">
 
-                    <img src="{{ asset('images/about/expertise-technical-solutions.jpg') }}" alt="Technical Solutions">
+                    <img src="{{ asset('images/about/expertise-technical-solutions.jpg') }}"
+                         alt="Technical Solutions">
 
                     <div class="expertise-content">
 
@@ -414,31 +395,11 @@
 
                 </div>
 
+            </div> {{-- End our-expertise-grid --}}
 
-                {{-- Industrial Services --}}
-                <div class="expertise-item">
+        </div> {{-- End container --}}
 
-                    <img src="{{ asset('images/about/expertise-industrial-services.jpg') }}" alt="Industrial Services">
-
-                    <div class="expertise-content">
-
-                        <h3>Industrial Services</h3>
-
-                        <p>
-                            Professional industrial services delivered
-                            with a focus on reliability, performance,
-                            and operational efficiency.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
+    </section> {{-- End our-expertise-section --}}
 
 
     {{-- =========================================================
@@ -448,15 +409,17 @@
 
         <div class="commitment-responsibility-background">
 
-            <img src="{{ asset('images/about/commitment-responsibility.jpg') }}"
-                alt="KEMET Engineering Commitment and Responsibility">
+            <img
+                src="{{ asset('images/about/commitment-responsibility.jpg') }}"
+                alt="KEMET Engineering Commitment and Responsibility"
+            >
 
             <div class="commitment-responsibility-overlay"></div>
 
             <div class="commitment-responsibility-content">
 
                 <span class="commitment-responsibility-label">
-                    OUR COMMITMENT & RESPONSIBILITY
+                    OUR COMMITMENT &amp; RESPONSIBILITY
                 </span>
 
                 <h2>
@@ -472,12 +435,11 @@
                     impact for our clients, people, communities, and the environment.
                 </p>
 
-
                 <div class="commitment-responsibility-values">
 
                     <div class="commitment-responsibility-value">
 
-                        <h3>Quality & Reliability</h3>
+                        <h3>Quality &amp; Reliability</h3>
 
                         <p>
                             Delivering dependable solutions with high professional
@@ -486,10 +448,9 @@
 
                     </div>
 
-
                     <div class="commitment-responsibility-value">
 
-                        <h3>People & Community</h3>
+                        <h3>People &amp; Community</h3>
 
                         <p>
                             Building strong relationships and contributing positively
@@ -497,7 +458,6 @@
                         </p>
 
                     </div>
-
 
                     <div class="commitment-responsibility-value">
 
@@ -512,11 +472,11 @@
 
                 </div>
 
-            </div>
+            </div> {{-- End commitment-responsibility-content --}}
 
-        </div>
+        </div> {{-- End commitment-responsibility-background --}}
 
-    </section>
+    </section> {{-- End commitment-responsibility-section --}}
 
 
     {{-- =========================================================
@@ -527,29 +487,22 @@
         <div class="page-navigation">
 
             {{-- Previous Page --}}
-            <a href="{{ url('/') }}" class="page-nav-link page-nav-prev">
+            <a href="{{ url('/') }}"
+               class="page-nav-link page-nav-prev">
 
-                <span class="page-nav-arrow">
-                    ←
-                </span>
+                <span class="page-nav-arrow" aria-hidden="true">←</span>
 
-                <span class="page-nav-label">
-                    Home
-                </span>
+                <span class="page-nav-label">Home</span>
 
             </a>
 
-
             {{-- Next Page --}}
-            <a href="{{ url('/our-businesses') }}" class="page-nav-link page-nav-next">
+            <a href="{{ url('/businesses') }}"
+               class="page-nav-link page-nav-next">
 
-                <span class="page-nav-label">
-                    Our Businesses
-                </span>
+                <span class="page-nav-label">Our Businesses</span>
 
-                <span class="page-nav-arrow">
-                    →
-                </span>
+                <span class="page-nav-arrow" aria-hidden="true">→</span>
 
             </a>
 
@@ -558,3 +511,4 @@
     </section>
 
 @endsection
+

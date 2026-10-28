@@ -14,9 +14,9 @@
 
     {{-- FAVICON --}}
 
-    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/KEMET WIDE LOGO.png') }}">
 
-    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/KEMET WIDE LOGO.png') }}">
 
 
     {{-- =====================================================

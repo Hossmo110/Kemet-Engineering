@@ -32,7 +32,7 @@
         <div class="businesses-container">
 
             <div class="businesses-intro-label">
-                OUR BUSINESSES
+                OUR BUSINESS
             </div>
 
             <h2 class="businesses-intro-title">
@@ -268,110 +268,12 @@
     </section>
 
 
-    {{-- =========================================================
-     BUSINESS 03
-     ========================================================= --}}
-    <section class="business-company business-company-dark">
-
-        <div class="business-company-container">
-
-            <div class="business-company-media">
-
-                <div class="business-company-main-image">
-
-                    <img src="{{ asset('images/businesses/infrastructure.jpg') }}" alt="Infrastructure">
-
-                </div>
-
-                <div class="business-company-image-caption">
-                    INFRASTRUCTURE
-                </div>
-
-            </div>
-
-
-            <div class="business-company-content">
-
-
-
-                <h2>
-                    Infrastructure
-                </h2>
-
-                <div class="business-company-line"></div>
-
-                <p>
-                    We deliver infrastructure solutions designed to support
-                    sustainable development, operational efficiency, and
-                    long-term performance.
-                </p>
-
-                <p>
-                    Our approach combines practical engineering, coordinated
-                    execution, and project-specific solutions designed around
-                    the requirements of each environment.
-                </p>
-
-
-                <div class="business-company-info">
-
-                    <div class="business-info-item">
-
-                        <strong>
-                            CORE
-                        </strong>
-
-                        <span>
-                            Infrastructure
-                        </span>
-
-                    </div>
-
-
-                    <div class="business-info-item">
-
-                        <strong>
-                            FOCUS
-                        </strong>
-
-                        <span>
-                            Development
-                        </span>
-
-                    </div>
-
-
-                    <div class="business-info-item">
-
-                        <strong>
-                            APPROACH
-                        </strong>
-
-                        <span>
-                            Long-Term Performance
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <a href="{{ url('/') }}" class="business-company-button">
-                    EXPLORE BUSINESS
-                    <span>→</span>
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
 
 
     {{-- =========================================================
      BUSINESS 04
      ========================================================= --}}
-    <section class="business-company">
+    <section class="business-company business-company-dark">
 
         <div class="business-company-container business-company-reverse">
 
@@ -472,7 +374,7 @@
     {{-- =========================================================
      BUSINESS 05
      ========================================================= --}}
-    <section class="business-company business-company-dark">
+    <section class="business-company">
         <div class="business-company-container">
 
             <div class="business-company-media">
@@ -568,105 +470,6 @@
     </section>
 
 
-    {{-- =========================================================
-     BUSINESS 06
-     ========================================================= --}}
-    <section class="business-company">
-
-        <div class="business-company-container business-company-reverse">
-
-            <div class="business-company-media">
-
-                <div class="business-company-main-image">
-
-                    <img src="{{ asset('images/businesses/industrial-services.jpg') }}" alt="Industrial Services">
-
-                </div>
-
-                <div class="business-company-image-caption">
-                    INDUSTRIAL SERVICES
-                </div>
-
-            </div>
-
-
-            <div class="business-company-content">
-
-
-
-                <h2>
-                    Industrial
-                    <span>Services</span>
-                </h2>
-
-                <div class="business-company-line"></div>
-
-                <p>
-                    Our industrial services support clients with reliable
-                    engineering and technical solutions focused on operational
-                    efficiency and performance.
-                </p>
-
-                <p>
-                    We combine professional expertise, practical execution,
-                    and a commitment to quality to support demanding industrial
-                    environments and project requirements.
-                </p>
-
-
-                <div class="business-company-info">
-
-                    <div class="business-info-item">
-
-                        <strong>
-                            CORE
-                        </strong>
-
-                        <span>
-                            Industrial Services
-                        </span>
-
-                    </div>
-
-
-                    <div class="business-info-item">
-
-                        <strong>
-                            FOCUS
-                        </strong>
-
-                        <span>
-                            Operational Support
-                        </span>
-
-                    </div>
-
-
-                    <div class="business-info-item">
-
-                        <strong>
-                            APPROACH
-                        </strong>
-
-                        <span>
-                            Reliability
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <a href="{{ url('/') }}" class="business-company-button">
-                    EXPLORE BUSINESS
-                    <span>→</span>
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
 
 
     {{-- =========================================================

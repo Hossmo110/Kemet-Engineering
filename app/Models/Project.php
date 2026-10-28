@@ -16,6 +16,7 @@ class Project extends Model
         'consultant',
         'main_contractor',
         'subcontractor',
+        'client',
         'bua',
         'description',
         'main_image',
