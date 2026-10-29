@@ -1,3 +1,4 @@
+
 /*=========================
 OUR BUSINESSES
 =========================*/
@@ -6,6 +7,8 @@ OUR BUSINESSES
     background: #fff;
     padding: 120px 0;
 }
+
+/* Section Heading */
 
 .section-heading {
     text-align: center;
@@ -42,98 +45,120 @@ OUR BUSINESSES
     line-height: 1.9;
 }
 
-/* Business Cards */
+/*=========================
+BUSINESS CARDS
+=========================*/
 
 .business-card {
     position: relative;
+    isolation: isolate;
     width: 95%;
     margin: auto;
     height: 500px;
     overflow: hidden;
     border-radius: 12px;
     cursor: pointer;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    background: #0F214D;
 }
 
+/* Business Image */
+
 .business-card img {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform .6s;
+    transition: transform 0.6s ease;
 }
 
-/* Overlay is always visible */
-
+/* Always Visible Overlay - Very Light Navy */
 
 .business-overlay {
     position: absolute;
     inset: 0;
-    display: flex;
+    z-index: 2;
+    display: flex !important;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: flex-start;
     padding: 35px;
 
-    /* تظليل خفيف جدًا أسفل الصورة */
+    /* تظليل كحلي خفيف جدًا أسفل الصورة */
+
     background: linear-gradient(
         to top,
-        rgba(15, 33, 77, 0.45),
-        rgba(15, 33, 77, 0.12) 45%,
-        transparent 75%
+        rgba(15, 33, 77, 0.25) 0%,
+        rgba(15, 33, 77, 0.10) 35%,
+        rgba(15, 33, 77, 0.02) 65%,
+        transparent 100%
     );
 
-    opacity: 1;
-    visibility: visible;
-    transition: background .45s;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: none;
 }
 
+/* Card Title */
 
-/* Card title */
+.business-card .business-overlay h3 {
+    position: relative;
+    z-index: 3;
+    display: block;
+    width: 100%;
 
-.business-overlay h3 {
-    color: #D6A93D;
+    color: #D6A93D !important;
     font-size: 32px;
     font-weight: 700;
-    margin-bottom: 15px;
+    line-height: 1.3;
+    margin: 0 0 15px;
     text-transform: uppercase;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 
-    transform: translateY(0);
-    transition: transform .45s;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
 }
 
-/* Card description */
+/* Card Description */
 
-.business-overlay p {
-    color: #fff;
+.business-card .business-overlay p {
+    position: relative;
+    z-index: 3;
+    display: block;
+    width: 100%;
+
+    color: #fff !important;
     font-size: 18px;
+    font-weight: 400;
     line-height: 1.8;
-    margin-bottom: 0;
+    margin: 0;
 
-    transform: translateY(0);
-    transition: transform .55s;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
 }
 
-/* Keep the existing image zoom effect */
+/* Hover Effects */
 
 .business-card:hover img {
     transform: scale(1.08);
 }
 
-/* Keep text visible on hover */
-
 .business-card:hover .business-overlay {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-.business-card:hover h3,
-.business-card:hover p {
-    transform: translateY(0);
-}
-
-/* Tablet */
+/*=========================
+TABLET
+=========================*/
 
 @media (max-width: 991px) {
+
     .business-section {
         padding: 90px 0;
     }
@@ -158,20 +183,28 @@ OUR BUSINESSES
         padding: 25px;
     }
 
-    .business-overlay h3 {
+    .business-card .business-overlay h3 {
         font-size: 27px;
     }
 
-    .business-overlay p {
+    .business-card .business-overlay p {
         font-size: 16px;
+        line-height: 1.7;
     }
 }
 
-/* Mobile */
+/*=========================
+MOBILE
+=========================*/
 
 @media (max-width: 576px) {
+
     .business-section {
         padding: 70px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
     }
 
     .section-subtitle {
@@ -185,6 +218,7 @@ OUR BUSINESSES
 
     .section-description {
         font-size: 17px;
+        line-height: 1.8;
     }
 
     .business-card {
@@ -196,12 +230,12 @@ OUR BUSINESSES
         padding: 22px;
     }
 
-    .business-overlay h3 {
+    .business-card .business-overlay h3 {
         font-size: 24px;
         margin-bottom: 10px;
     }
 
-    .business-overlay p {
+    .business-card .business-overlay p {
         font-size: 15px;
         line-height: 1.7;
     }
