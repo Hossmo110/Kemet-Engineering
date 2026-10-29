@@ -75,7 +75,7 @@ BUSINESS CARDS
     transition: transform 0.6s ease;
 }
 
-/* Always Visible Overlay - Very Light Navy */
+/* Always Visible Overlay - Light Navy */
 
 .business-overlay {
     position: absolute;
@@ -87,7 +87,7 @@ BUSINESS CARDS
     align-items: flex-start;
     padding: 35px;
 
-    /* تظليل كحلي خفيف جدًا أسفل الصورة */
+    /* تظليل خفيف جدًا في الوضع العادي */
 
     background: linear-gradient(
         to top,
@@ -99,6 +99,7 @@ BUSINESS CARDS
 
     opacity: 1 !important;
     visibility: visible !important;
+    transition: background 0.4s ease;
     pointer-events: none;
 }
 
@@ -142,15 +143,37 @@ BUSINESS CARDS
     transform: none !important;
 }
 
-/* Hover Effects */
+/*=========================
+HOVER EFFECTS
+=========================*/
 
-.business-card:hover img {
-    transform: scale(1.08);
-}
+/* تظليل كحلي متوسط عند الوقوف على الصورة */
 
 .business-card:hover .business-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(15, 33, 77, 0.65) 0%,
+        rgba(15, 33, 77, 0.35) 50%,
+        rgba(15, 33, 77, 0.12) 100%
+    );
+
     opacity: 1 !important;
     visibility: visible !important;
+}
+
+/* تكبير الصورة بشكل بسيط */
+
+.business-card:hover img {
+    transform: scale(1.06);
+}
+
+/* تثبيت ظهور الكلام في جميع الحالات */
+
+.business-card:hover .business-overlay h3,
+.business-card:hover .business-overlay p {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
 }
 
 /*=========================
