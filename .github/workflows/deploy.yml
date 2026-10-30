@@ -1,0 +1,118 @@
+
+name: Deploy KEMET Engineering
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+concurrency:
+  group: kemet-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, bcmath, ctype, fileinfo, json, openssl, pdo, pdo_mysql, tokenizer, xml, curl, gd, zip
+          tools: composer:v2
+
+      - name: Install Composer dependencies
+        run: composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install and build frontend
+        run: |
+          npm ci
+          npm run build
+
+      - name: Prepare deployment package
+        run: |
+          mkdir -p deploy-package
+
+          rsync -a \
+            --exclude='.env*' \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='node_modules/' \
+            --exclude='storage/' \
+            --exclude='database/*.sqlite' \
+            --exclude='public/storage' \
+            --exclude='public/index.php' \
+            --exclude='public/.htaccess' \
+            --exclude='public/build/' \
+            ./ deploy-package/
+
+          mkdir -p deploy-package/public/build
+          cp -a public/build/. deploy-package/public/build/
+
+      - name: Configure SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/kemet_deploy
+          chmod 600 ~/.ssh/kemet_deploy
+          ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts
+
+      - name: Upload Laravel application
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+        run: |
+          rsync -az \
+            -e "ssh -i ~/.ssh/kemet_deploy -p $SSH_PORT" \
+            --exclude='.env' \
+            --exclude='storage/' \
+            --exclude='public/storage' \
+            --exclude='public/index.php' \
+            --exclude='public/.htaccess' \
+            deploy-package/ \
+            "$SSH_USER@$SSH_HOST:~/domains/kemet-con.com/kemet_app/engineering-company-upload/"
+
+      - name: Upload public assets
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+        run: |
+          rsync -az \
+            -e "ssh -i ~/.ssh/kemet_deploy -p $SSH_PORT" \
+            --exclude='index.php' \
+            --exclude='.htaccess' \
+            --exclude='storage/' \
+            --exclude='build/' \
+            deploy-package/public/ \
+            "$SSH_USER@$SSH_HOST:~/domains/kemet-con.com/public_html/"
+
+          rsync -az \
+            -e "ssh -i ~/.ssh/kemet_deploy -p $SSH_PORT" \
+            deploy-package/public/build/ \
+            "$SSH_USER@$SSH_HOST:~/domains/kemet-con.com/public_html/build/"
+
+      - name: Refresh Laravel caches
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USER }}
+        run: |
+          ssh -i ~/.ssh/kemet_deploy -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
+            'cd ~/domains/kemet-con.com/kemet_app/engineering-company-upload && php artisan optimize:clear'
