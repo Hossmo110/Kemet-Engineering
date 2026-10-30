@@ -2,6 +2,10 @@
 /*========================
 HERO
 ========================*/
+.hero {
+    margin-top: 0 !important;
+    top: 0;
+}
 
 .hero {
     position: relative;
@@ -229,21 +233,4 @@ RESPONSIVE
 }
 
 
-/*========================
-HEADER ABOVE HOME HERO
-========================*/
 
-.site-header {
-    z-index: 10000;
-}
-
-@media (max-width: 991px) {
-
-    .site-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 10000;
-    }
-}
