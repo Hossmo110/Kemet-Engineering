@@ -403,3 +403,23 @@ body {
     opacity: 0.6;
     cursor: wait;
 }
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
+@media (max-width: 991px) {
+    .site-header {
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .hero {
+        width: 100%;
+        max-width: 100%;
+    }
+}
