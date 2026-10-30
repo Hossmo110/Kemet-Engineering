@@ -216,6 +216,7 @@ TABLET
     }
 }
 
+
 /*=========================
 MOBILE
 =========================*/
@@ -224,6 +225,12 @@ MOBILE
 
     .business-section {
         padding: 70px 0;
+    }
+
+    .business-section .container {
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .section-heading {
@@ -247,10 +254,13 @@ MOBILE
     .business-card {
         width: 100%;
         height: 350px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
     }
 
     .business-overlay {
-        padding: 22px;
+        padding: 20px;
     }
 
     .business-card .business-overlay h3 {
