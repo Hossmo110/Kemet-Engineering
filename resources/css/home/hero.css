@@ -1,17 +1,14 @@
+
 /*========================
 HERO
 ========================*/
 
 .hero {
-
     position: relative;
-
+    z-index: 1;
     width: 100%;
-
     height: 100vh;
-
     overflow: hidden;
-
 }
 
 
@@ -20,21 +17,14 @@ HERO IMAGE
 ========================*/
 
 .hero-image {
-
     position: absolute;
-
+    z-index: 0;
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
     object-position: center;
-
 }
 
 
@@ -43,13 +33,10 @@ HERO OVERLAY
 ========================*/
 
 .hero-overlay {
-
     position: absolute;
-
+    z-index: 1;
     inset: 0;
-
     background: rgba(0, 0, 0, .45);
-
 }
 
 
@@ -58,27 +45,17 @@ HERO CONTENT
 ========================*/
 
 .hero-content {
-
     position: absolute;
-
-    z-index: 10;
-
+    z-index: 2;
     top: 50%;
-
     left: 50%;
-
     transform: translate(-50%, -50%);
-
     width: 100%;
-
     max-width: 1000px;
-
     padding: 0 30px;
-
     color: #fff;
-
     text-align: center;
-
+    animation: fadeUp 1s ease;
 }
 
 
@@ -87,23 +64,14 @@ HERO SMALL TITLE
 ========================*/
 
 .hero-content span {
-
     display: block;
-
     color: #D6A93D;
-
     font-size: 35px;
-
     letter-spacing: 6px;
-
     font-weight: 700;
-
     text-transform: uppercase;
-
     margin-top: 0;
-
     margin-bottom: 20px;
-
 }
 
 
@@ -112,17 +80,11 @@ HERO LINE
 ========================*/
 
 .hero-line {
-
     width: 120px;
-
     height: 3px;
-
     background: #D6A93D;
-
     margin: 25px auto;
-
     border-radius: 50px;
-
 }
 
 
@@ -131,17 +93,11 @@ HERO TITLE
 ========================*/
 
 .hero-content h1 {
-
     font-size: 70px;
-
     line-height: 1.05;
-
     margin: 25px 0;
-
     font-weight: 700;
-
     text-align: center;
-
 }
 
 
@@ -150,17 +106,11 @@ HERO DESCRIPTION
 ========================*/
 
 .hero-content p {
-
     font-size: 25px;
-
     color: #ddd;
-
     line-height: 1.8;
-
     margin-bottom: 40px;
-
     text-align: center;
-
 }
 
 
@@ -169,15 +119,10 @@ HERO BUTTONS
 ========================*/
 
 .hero-buttons {
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     gap: 20px;
-
 }
 
 
@@ -186,17 +131,11 @@ GOLD BUTTON
 ========================*/
 
 .gold-btn {
-
     background: #D6A93D;
-
     color: #fff;
-
     padding: 16px 35px;
-
     text-decoration: none;
-
     font-weight: 600;
-
 }
 
 
@@ -205,17 +144,11 @@ OUTLINE BUTTON
 ========================*/
 
 .outline-btn {
-
     border: 1px solid #fff;
-
     color: #fff;
-
     padding: 16px 35px;
-
     text-decoration: none;
-
     font-weight: 600;
-
 }
 
 
@@ -223,30 +156,16 @@ OUTLINE BUTTON
 HERO ANIMATION
 ========================*/
 
-.hero-content {
-
-    animation: fadeUp 1s ease;
-
-}
-
 @keyframes fadeUp {
-
     from {
-
         opacity: 0;
-
         margin-top: 60px;
-
     }
 
     to {
-
         opacity: 1;
-
         margin-top: 0;
-
     }
-
 }
 
 
@@ -257,83 +176,74 @@ RESPONSIVE
 @media (max-width: 768px) {
 
     .hero-content {
-
         max-width: 100%;
-
         padding: 0 20px;
-
     }
 
     .hero-content span {
-
         font-size: 18px;
-
         letter-spacing: 3px;
-
         margin-bottom: 15px;
-
     }
 
     .hero-line {
-
         width: 80px;
-
         height: 3px;
-
         margin: 20px auto;
-
     }
 
     .hero-content h1 {
-
         font-size: 45px;
-
         line-height: 1.1;
-
     }
 
     .hero-content p {
-
         font-size: 18px;
-
     }
 
     .hero-buttons {
-
         flex-wrap: wrap;
-
     }
-
 }
 
 
 @media (max-width: 480px) {
 
     .hero-content span {
-
         font-size: 15px;
-
         letter-spacing: 2px;
-
     }
 
     .hero-content h1 {
-
         font-size: 36px;
-
     }
 
     .hero-content p {
-
         font-size: 16px;
-
     }
 
     .gold-btn,
     .outline-btn {
-
         padding: 13px 25px;
-
     }
+}
 
+
+/*========================
+HEADER ABOVE HOME HERO
+========================*/
+
+.site-header {
+    z-index: 10000;
+}
+
+@media (max-width: 991px) {
+
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10000;
+    }
 }
