@@ -77,9 +77,9 @@
 
                     <div class="kemet-share-links">
 
-                        <a href="https://twitter.com/intent/tweet?url={{ urlencode(request()->fullUrl()) }}&text={{ urlencode($project->title) }}"
+                        <a href="https://www.facebook.com/share/p/19YPUPURHB/={{ urlencode(request()->fullUrl()) }}&text={{ urlencode($project->title) }}"
                             target="_blank" rel="noopener noreferrer" aria-label="Share on X">
-                            X
+                            F
                         </a>
 
 
