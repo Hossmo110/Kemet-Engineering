@@ -77,10 +77,12 @@
 
                     <div class="kemet-share-links">
 
-                        <a href="https://www.facebook.com/share/p/19YPUPURHB/={{ urlencode(request()->fullUrl()) }}&text={{ urlencode($project->title) }}"
-                            target="_blank" rel="noopener noreferrer" aria-label="Share on X">
-                            F
-                        </a>
+                       {{-- Facebook --}}
+            <a href="https://www.facebook.com/share/p/19YPUPURHB/" aria-label="Facebook" target="_blank">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 8h3V4h-3c-3.3 0-5 1.9-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.7.3-1 1-1z" />
+                </svg>
+            </a>
 
 
                         <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode(request()->fullUrl()) }}"
