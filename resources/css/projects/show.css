@@ -985,3 +985,36 @@
     }
 
 }
+
+/* KEMET Social Media Icons - Gold */
+
+.kemet-share-links a {
+    color: #D6A93D;
+}
+
+.kemet-share-links svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: #D6A93D;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 0.3s ease;
+}
+
+/* Facebook icon */
+.kemet-share-links a:first-child svg path {
+    fill: #D6A93D;
+    stroke: none;
+}
+
+/* Hover */
+.kemet-share-links a:hover svg {
+    stroke: #fff;
+    transform: translateY(-3px);
+}
+
+.kemet-share-links a:first-child:hover svg path {
+    fill: #fff;
+}
