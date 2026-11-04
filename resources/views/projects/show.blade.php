@@ -77,23 +77,37 @@
 
                     <div class="kemet-share-links">
 
-                       {{-- Facebook --}}
-            <a href="https://www.facebook.com/share/p/19YPUPURHB/" aria-label="Facebook" target="_blank">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M14 8h3V4h-3c-3.3 0-5 1.9-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.7.3-1 1-1z" />
-                </svg>
-            </a>
-
-
-                        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode(request()->fullUrl()) }}"
-                            target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
-                            in
+                        {{-- Facebook --}}
+                        <a href="https://www.facebook.com/share/p/19YPUPURHB/" aria-label="Facebook" target="_blank">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M14 8h3V4h-3c-3.3 0-5 1.9-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.7.3-1 1-1z" />
+                            </svg>
                         </a>
 
 
-                        <a href="mailto:?subject={{ rawurlencode($project->title) }}&body={{ rawurlencode(request()->fullUrl()) }}"
-                            aria-label="Share by Email">
-                            @
+
+                        {{-- Instagram --}}
+                        <a href="https://www.instagram.com/info.kemet?exln=M2FkN29lMmQzcnc0" aria-label="Instagram"
+                            target="_blank">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="5" />
+                                <circle cx="12" cy="12" r="4" />
+                                <circle cx="17.5" cy="6.5" r="1" />
+                            </svg>
+                        </a>
+
+
+
+                        {{-- LinkedIn --}}
+                        <a href="https://www.linkedin.com/company/kemet-constructions/" aria-label="LinkedIn"
+                            target="_blank">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="4" y="4" width="16" height="16" rx="2" />
+                                <line x1="8" y1="10" x2="8" y2="16" />
+                                <line x1="8" y1="7" x2="8" y2="7" />
+                                <path d="M12 16v-3.2c0-1.8 1-2.8 2.5-2.8s2.5 1 2.5 2.8V16" />
+                                <line x1="12" y1="10" x2="12" y2="16" />
+                            </svg>
                         </a>
 
                     </div>
@@ -172,7 +186,8 @@
                                         stroke="currentColor" stroke-width="20" stroke-linecap="round"
                                         stroke-linejoin="round" />
 
-                                    <circle cx="128" cy="104" r="24" stroke="currentColor" stroke-width="20" />
+                                    <circle cx="128" cy="104" r="24" stroke="currentColor"
+                                        stroke-width="20" />
 
                                 </svg>
 
